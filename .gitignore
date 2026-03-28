@@ -1,0 +1,51 @@
+# Shopify Theme Files
+.shopifyignore
+
+# Node modules (if using npm)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS files
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+dist/
+build/
+*.zip
+
+# Theme export files (large archives)
+theme_export__*.zip
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Package manager files (if added later)
+package-lock.json
+yarn.lock
+
+# IDE settings (but keep important config)
+.vscode/settings.json
+.idea/
+
+# Don't ignore documentation
+!*.md
+
+# Don't ignore config
+!config/
