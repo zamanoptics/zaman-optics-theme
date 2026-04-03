@@ -1,0 +1,57 @@
+/* Custom Announcement Bar Styling */
+
+.announcement-bar-custom {
+  background-color: #FF8C00;
+  color: #FFFFFF;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.announcement-bar-custom.hidden {
+  display: none !important;
+}
+
+.announcement-bar-custom__text {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.announcement-bar-custom__close {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: auto;
+  min-height: auto;
+  font-family: inherit;
+}
+
+.announcement-bar-custom__close:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 749px) {
+  .announcement-bar-custom {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+  }
+}

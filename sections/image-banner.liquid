@@ -1,118 +1,205 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  /* Premium Hero Section Styling for Optical Store */
-  #Banner-{{ section.id }} .banner__heading {
-    letter-spacing: -0.02em;
+  /* Premium Homepage Hero Section */
+  
+  .hero-section {
+    background-color: #FFFFFF;
+    min-height: 500px;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .hero-section__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 4rem 3rem;
+    max-width: 50%;
+  }
+
+  .hero-section__text-wrapper {
+    width: 100%;
+  }
+
+  .hero-section__label {
+    color: #6BA3BE;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 0 0 1.5rem 0;
+    display: block;
+  }
+
+  .hero-section__heading {
+    color: #1A1A1A;
+    font-size: 3.25rem;
     font-weight: 700;
     line-height: 1.1;
+    letter-spacing: -0.02em;
     margin: 0 0 1.5rem 0;
   }
 
-  #Banner-{{ section.id }} .banner__text {
-    font-size: 1.2rem;
+  .hero-section__subheading {
+    color: #666666;
+    font-size: 1.125rem;
     line-height: 1.6;
-    margin: 0 0 2rem 0;
-    color: rgba(26, 26, 26, 0.75);
-    letter-spacing: 0.3px;
+    margin: 0 0 2.5rem 0;
+    font-weight: 400;
   }
 
-  #Banner-{{ section.id }} .banner__buttons {
+  .hero-section__buttons {
+    display: flex;
     gap: 1.5rem;
+    margin-bottom: 2.5rem;
   }
 
-  #Banner-{{ section.id }} .banner__box {
-    padding: 3rem 2rem;
-  }
-
-  @media screen and (min-width: 750px) {
-    #Banner-{{ section.id }} .banner__heading {
-      margin: 0 0 1.5rem 0;
-    }
-
-    #Banner-{{ section.id }} .banner__box {
-      padding: 4rem 3rem;
-    }
-
-    #Banner-{{ section.id }} .banner__text {
-      margin: 0 0 2.5rem 0;
-    }
-  }
-
-  @media screen and (min-width: 990px) {
-    #Banner-{{ section.id }} .banner__heading {
-      margin: 0 0 2rem 0;
-    }
-
-    #Banner-{{ section.id }} .banner__box {
-      padding: 5rem 4rem;
-    }
-
-    #Banner-{{ section.id }} .banner__text {
-      margin: 0 0 3rem 0;
-    }
-  }
-
-  /* Brand Orange CTA Button */
-  #Banner-{{ section.id }} .button--primary {
-    background-color: #FF8C00;
-    color: white;
+  .hero-section__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
     border-radius: 10px;
+    font-size: 1rem;
     font-weight: 500;
-    letter-spacing: 0.5px;
-    padding: 0 3rem;
-    min-height: 4.5rem;
-    box-shadow: 0 4px 12px rgba(107, 163, 190, 0.15);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
   }
 
-  #Banner-{{ section.id }} .button--primary:hover {
+  .hero-section__button--primary {
+    background-color: #6BA3BE;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(107, 163, 190, 0.15);
+  }
+
+  .hero-section__button--primary:hover {
     background-color: #4A7A94;
     box-shadow: 0 8px 20px rgba(107, 163, 190, 0.25);
     transform: translateY(-2px);
   }
 
-  #Banner-{{ section.id }} .button--secondary {
-    background-color: rgba(245, 245, 245, 0.95);
-    color: #1A1A1A;
-    border: 1px solid #E8E8E8;
-    border-radius: 10px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+  .hero-section__button--secondary {
+    background-color: transparent;
+    color: #6BA3BE;
+    border: 1px solid #6BA3BE;
   }
 
-  #Banner-{{ section.id }} .button--secondary:hover {
-    background-color: #F5F5F5;
-    border-color: #FF8C00;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  .hero-section__button--secondary:hover {
+    background-color: #E8F4F8;
+    border-color: #4A7A94;
+    color: #4A7A94;
   }
 
-  /* Minimalist spacing adjustments */
-  #Banner-{{ section.id }}.banner--content-align-center .banner__box {
-    max-width: 90%;
-    margin: 0 auto;
+  .hero-section__badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid #E8E8E8;
+    padding-top: 2rem;
   }
 
-  #Banner-{{ section.id }}.banner--content-align-left .banner__box {
-    max-width: 80%;
+  .hero-section__badge {
+    color: #666666;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 
-  #Banner-{{ section.id }}.banner--content-align-right .banner__box {
-    max-width: 80%;
+  .hero-section__badge::before {
+    content: "✓";
+    color: #6BA3BE;
+    font-weight: 700;
+    flex-shrink: 0;
   }
 
-  @media screen and (min-width: 750px) {
-    #Banner-{{ section.id }}.banner--content-align-center .banner__box {
-      max-width: 75%;
-      margin: 0 auto;
+  .hero-section__image {
+    flex: 1;
+    background-color: #E8F4F8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6BA3BE;
+    font-size: 0.9375rem;
+    text-align: center;
+    padding: 2rem;
+    line-height: 1.6;
+    overflow: hidden;
+  }
+
+  .hero-section__image img,
+  .hero-section__image .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Mobile Responsive */
+  @media screen and (max-width: 749px) {
+    .hero-section {
+      min-height: 350px;
+      flex-direction: column;
     }
 
-    #Banner-{{ section.id }}.banner--content-align-left .banner__box {
-      max-width: 70%;
+    .hero-section__content {
+      max-width: 100%;
+      padding: 2.5rem 1.5rem;
+      order: 2;
     }
 
-    #Banner-{{ section.id }}.banner--content-align-right .banner__box {
-      max-width: 70%;
+    .hero-section__image {
+      order: 1;
+      min-height: 250px;
+    }
+
+    .hero-section__heading {
+      font-size: 2rem;
+    }
+
+    .hero-section__subheading {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-section__buttons {
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-section__button {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .hero-section__badges {
+      border-top: 1px solid #E8E8E8;
+      padding-top: 1.5rem;
+    }
+
+    .hero-section__badge {
+      font-size: 0.7rem;
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .hero-section__content {
+      padding: 3rem 2rem;
+    }
+
+    .hero-section__heading {
+      font-size: 2.5rem;
+    }
+
+    .hero-section__subheading {
+      font-size: 1rem;
     }
   }
 {%- endstyle -%}
@@ -168,90 +255,24 @@
   endif
 -%}
 
-<div
-  id="Banner-{{ section.id }}"
-  class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
->
-  {%- if section.settings.image != blank -%}
-    <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {%- liquid
-        assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
-        if section.settings.image_2 != blank
-          assign image_class = 'banner__media-image-half'
-        endif
-        if section.settings.image_2 != blank and section.settings.stack_images_on_mobile
-          assign sizes = stacked_sizes
-        elsif section.settings.image_2 != blank
-          assign sizes = half_width
-        else
-          assign sizes = full_width
-        endif
-      -%}
-      {{
-        section.settings.image
-        | image_url: width: 3840
-        | image_tag:
-          width: section.settings.image.width,
-          height: image_height,
-          class: image_class,
-          sizes: sizes,
-          widths: widths,
-          fetchpriority: fetch_priority
-      }}
-    </div>
-  {%- elsif section.settings.image_2 == blank -%}
-    <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    </div>
-  {%- endif -%}
-  {%- if section.settings.image_2 != blank -%}
-    <div class="banner__media media{% if section.settings.image != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {%- liquid
-        assign image_height_2 = section.settings.image_2.width | divided_by: section.settings.image_2.aspect_ratio
-        if section.settings.image != blank
-          assign image_class_2 = 'banner__media-image-half'
-        endif
-        if section.settings.image != blank and section.settings.stack_images_on_mobile
-          assign sizes = stacked_sizes
-        elsif section.settings.image_2 != blank
-          assign sizes = half_width
-        else
-          assign sizes = full_width
-        endif
-      -%}
-      {{
-        section.settings.image_2
-        | image_url: width: 3840
-        | image_tag:
-          width: section.settings.image_2.width,
-          height: image_height_2,
-          class: image_class_2,
-          sizes: sizes,
-          widths: widths,
-          fetchpriority: fetch_priority
-      }}
-    </div>
-  {%- endif -%}
-  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
+<!-- Premium Homepage Hero Section -->
+<div id="Banner-{{ section.id }}" class="hero-section{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+  <!-- Left Content Area -->
+  <div class="hero-section__content">
+    <div class="hero-section__text-wrapper">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
-            <h2
-              class="banner__heading inline-richtext {{ block.settings.heading_size }}"
-              {{ block.shopify_attributes }}
-            >
-              {{ block.settings.heading }}
-            </h2>
+            <span class="hero-section__label" {{ block.shopify_attributes }}>Premium Vision Care</span>
+            <h1 class="hero-section__heading" {{ block.shopify_attributes }}>
+              {{ block.settings.heading | default: "Discover Your Perfect Frame" }}
+            </h1>
           {%- when 'text' -%}
-            <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-              <p>{{ block.settings.text }}</p>
-            </div>
+            <p class="hero-section__subheading" {{ block.shopify_attributes }}>
+              {{ block.settings.text | default: "Experience premium eyewear crafted for style and comfort" }}
+            </p>
           {%- when 'buttons' -%}
-            <div
-              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
-              {{ block.shopify_attributes }}
-            >
+            <div class="hero-section__buttons" {{ block.shopify_attributes }}>
               {%- if block.settings.button_label_1 != blank -%}
                 <a
                   {% if block.settings.button_link_1 == blank %}
@@ -259,10 +280,12 @@
                   {% else %}
                     href="{{ block.settings.button_link_1 }}"
                   {% endif %}
-                  class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
+                  class="hero-section__button hero-section__button--primary"
                 >
                   {{- block.settings.button_label_1 | escape -}}
                 </a>
+              {%- else -%}
+                <a href="/collections/all" class="hero-section__button hero-section__button--primary">Shop Now</a>
               {%- endif -%}
               {%- if block.settings.button_label_2 != blank -%}
                 <a
@@ -271,15 +294,47 @@
                   {% else %}
                     href="{{ block.settings.button_link_2 }}"
                   {% endif %}
-                  class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
+                  class="hero-section__button hero-section__button--secondary"
                 >
                   {{- block.settings.button_label_2 | escape -}}
                 </a>
+              {%- else -%}
+                <a href="/pages/about" class="hero-section__button hero-section__button--secondary">Learn More</a>
               {%- endif -%}
+            </div>
+            <!-- Trust Badges -->
+            <div class="hero-section__badges">
+              <div class="hero-section__badge">Free shipping on orders above Rs 3,000</div>
+              <div class="hero-section__badge">100% Original Products Guaranteed</div>
+              <div class="hero-section__badge">Expert Customer Support Available</div>
             </div>
         {%- endcase -%}
       {%- endfor -%}
     </div>
+  </div>
+
+  <!-- Right Image Area -->
+  <div class="hero-section__image">
+    {%- if section.settings.image != blank -%}
+      {%- liquid
+        assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
+      -%}
+      {{
+        section.settings.image
+        | image_url: width: 3840
+        | image_tag:
+          width: section.settings.image.width,
+          height: image_height,
+          class: 'hero-image',
+          sizes: '(min-width: 750px) 50vw, 100vw',
+          widths: widths,
+          fetchpriority: fetch_priority
+      }}
+    {%- else -%}
+      <div style="text-align: center; padding: 2rem;">
+        <p style="color: #6BA3BE; font-size: 0.9375rem; line-height: 1.6;">Featured Product<br>Image Placeholder</p>
+      </div>
+    {%- endif -%}
   </div>
 </div>
 
