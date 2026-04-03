@@ -1,6 +1,8 @@
 :root {
   /* Brand Colors */
-  --color-brand-primary: #FF8C00;
+  --color-brand-primary: #6BA3BE;        /* Ivory Blue - Primary CTAs */
+  --color-brand-primary-dark: #4A7A94;   /* Darker blue for hover states */
+  --color-brand-primary-light: #E8F4F8;  /* Very light blue for backgrounds */
   --color-text: #1A1A1A;
   --color-background-primary: #FFFFFF;
   --color-surface: #F5F5F5;
@@ -205,8 +207,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button--primary:hover {
-  background-color: #E67E00;
-  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15);
+  background-color: var(--color-brand-primary-dark);
+  box-shadow: 0 4px 12px rgba(107, 163, 190, 0.15);
 }
 
 /* Secondary button with light background */
@@ -240,7 +242,7 @@ input[type="tel"]:focus,
 textarea:focus,
 select:focus {
   border-color: var(--color-brand-primary);
-  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+  box-shadow: 0 0 0 3px rgba(107, 163, 190, 0.1);
 }
 
 /* Section dividers - minimalist style */
@@ -1428,13 +1430,13 @@ button.shopify-payment-button__button--unbranded {
 .button:not(.button--secondary):not(.button--tertiary) {
   background-color: var(--color-brand-primary);
   color: white;
-  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(107, 163, 190, 0.15);
 }
 
 .button--primary:hover,
 .button:not(.button--secondary):not(.button--tertiary):hover {
-  background-color: #E67E00;
-  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.25);
+  background-color: var(--color-brand-primary-dark);
+  box-shadow: 0 8px 20px rgba(107, 163, 190, 0.25);
   transform: translateY(-2px);
 }
 
@@ -1456,7 +1458,7 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button--tertiary:hover {
-  background-color: rgba(255, 140, 0, 0.05);
+  background-color: var(--color-brand-primary-light);
   border-color: var(--color-brand-primary);
 }
 

@@ -507,16 +507,16 @@
 }
 
 .banner .button--primary {
-  background-color: #FF8C00;
+  background-color: #6BA3BE;
   color: #FFFFFF;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(107, 163, 190, 0.15);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .banner .button--primary:hover {
-  background-color: #E67E00;
-  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.25);
+  background-color: #4A7A94;
+  box-shadow: 0 8px 20px rgba(107, 163, 190, 0.25);
   transform: translateY(-2px);
 }
 
@@ -530,7 +530,7 @@
 
 .banner .button--secondary:hover {
   background-color: #F5F5F5;
-  border-color: #FF8C00;
+  border-color: #6BA3BE;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
