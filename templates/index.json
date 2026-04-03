@@ -39,6 +39,124 @@
         "show_text_below": false
       }
     },
+    "category_grid": {
+      "type": "category-grid",
+      "blocks": {
+        "eyeglasses": {
+          "type": "category",
+          "settings": {
+            "category_name": "Eyeglasses",
+            "category_subtitle": "Prescription Frames",
+            "category_link": "/collections/eyeglasses"
+          }
+        },
+        "sunglasses": {
+          "type": "category",
+          "settings": {
+            "category_name": "Sunglasses",
+            "category_subtitle": "UV Protection",
+            "category_link": "/collections/sunglasses"
+          }
+        },
+        "blue_light": {
+          "type": "category",
+          "settings": {
+            "category_name": "Blue Light Glasses",
+            "category_subtitle": "Screen Protection",
+            "category_link": "/collections/blue-light-glasses"
+          }
+        },
+        "kids": {
+          "type": "category",
+          "settings": {
+            "category_name": "Kids Glasses",
+            "category_subtitle": "For Ages 4–16",
+            "category_link": "/collections/kids-glasses"
+          }
+        },
+        "new_arrivals": {
+          "type": "category",
+          "settings": {
+            "category_name": "New Arrivals",
+            "category_subtitle": "Just Landed",
+            "category_link": "/collections/all?sort_by=created-descending"
+          }
+        },
+        "best_sellers": {
+          "type": "category",
+          "settings": {
+            "category_name": "Best Sellers",
+            "category_subtitle": "Most Popular",
+            "category_link": "/collections/all?sort_by=best-selling"
+          }
+        }
+      },
+      "block_order": [
+        "eyeglasses",
+        "sunglasses",
+        "blue_light",
+        "kids",
+        "new_arrivals",
+        "best_sellers"
+      ],
+      "settings": {
+        "section_title": "Shop by Category"
+      }
+    },
+    "trust_features": {
+      "type": "trust-features",
+      "blocks": {
+        "prescription": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔬",
+            "title": "Prescription Guaranteed",
+            "description": "Every pair made to your exact prescription by certified opticians"
+          }
+        },
+        "delivery": {
+          "type": "feature",
+          "settings": {
+            "icon": "🚚",
+            "title": "Fast Delivery Across Pakistan",
+            "description": "Delivered to your door in 3–5 business days. Free above Rs 3,000"
+          }
+        },
+        "payment": {
+          "type": "feature",
+          "settings": {
+            "icon": "💳",
+            "title": "Easy Payment",
+            "description": "Cash on Delivery, EasyPaisa & JazzCash accepted"
+          }
+        },
+        "returns": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔄",
+            "title": "Hassle-Free Returns",
+            "description": "7-day return policy. Not satisfied? We'll fix it"
+          }
+        }
+      },
+      "block_order": [
+        "prescription",
+        "delivery",
+        "payment",
+        "returns"
+      ],
+      "settings": {
+        "section_title": "Why Choose Zaman Optics?"
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "section_title": "Best Sellers",
+        "collection_handle": "all",
+        "view_all_link": "/collections/all?sort_by=best-selling"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -70,6 +188,9 @@
   },
   "order": [
     "image_banner",
+    "category_grid",
+    "trust_features",
+    "featured_products",
     "featured_collection"
   ]
 }

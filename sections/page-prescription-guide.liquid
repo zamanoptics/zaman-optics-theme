@@ -1,0 +1,267 @@
+{% comment %}
+  Prescription Guide Section
+  Displays prescription terminology explanations with sample prescription image and FAQ accordion
+{% endcomment %}
+
+{{ 'page-prescription-guide.css' | asset_url | stylesheet_tag }}
+
+<div class="prescription-guide">
+  <div class="prescription-guide__container">
+    <header class="prescription-guide__header">
+      <h1 class="prescription-guide__title">{{ page.title }}</h1>
+      {% if page.content %}
+        <div class="prescription-guide__intro">
+          {{ page.content }}
+        </div>
+      {% endif %}
+    </header>
+
+    <!-- Prescription Definitions -->
+    <section class="prescription-guide__section">
+      <h2 class="prescription-guide__section-title">Understanding Your Prescription</h2>
+      
+      <div class="prescription-definitions">
+        <!-- OD/OS -->
+        <div class="prescription-definitions__card">
+          <div class="prescription-definitions__label">OD / OS</div>
+          <p class="prescription-definitions__description">
+            <strong>OD (Oculus Dexter)</strong> = Right Eye<br>
+            <strong>OS (Oculus Sinister)</strong> = Left Eye
+          </p>
+          <p class="prescription-definitions__note">
+            These Latin abbreviations indicate which eye the measurement applies to. It's important to get the correct lens in each eye for optimal vision.
+          </p>
+        </div>
+
+        <!-- SPH -->
+        <div class="prescription-definitions__card">
+          <div class="prescription-definitions__label">SPH (Sphere)</div>
+          <p class="prescription-definitions__description">
+            Measures the power of the lens needed to correct nearsightedness (minus sign: -) or farsightedness (plus sign: +).
+          </p>
+          <p class="prescription-definitions__note">
+            <strong>Example:</strong> -2.00 means you have nearsightedness requiring 2.00 diopters of correction.<br>
+            <strong>Example:</strong> +1.50 means you have farsightedness requiring 1.50 diopters of correction.
+          </p>
+        </div>
+
+        <!-- CYL -->
+        <div class="prescription-definitions__card">
+          <div class="prescription-definitions__label">CYL (Cylinder)</div>
+          <p class="prescription-definitions__description">
+            Measures the power of astigmatism correction. Astigmatism is when your cornea is slightly irregular, causing blurred vision at all distances.
+          </p>
+          <p class="prescription-definitions__note">
+            <strong>Example:</strong> -1.00 means you have 1.00 diopter of astigmatism correction needed. If blank, you have no astigmatism.
+          </p>
+        </div>
+
+        <!-- AXIS -->
+        <div class="prescription-definitions__card">
+          <div class="prescription-definitions__label">AXIS</div>
+          <p class="prescription-definitions__description">
+            The angle (in degrees from 1 to 180) at which your astigmatism correction is oriented. Only relevant if you have a CYL value.
+          </p>
+          <p class="prescription-definitions__note">
+            <strong>Example:</strong> Axis 090 means the astigmatism is corrected along the vertical meridian. This works in conjunction with your CYL measurement.
+          </p>
+        </div>
+
+        <!-- ADD -->
+        <div class="prescription-definitions__card">
+          <div class="prescription-definitions__label">ADD (Addition)</div>
+          <p class="prescription-definitions__description">
+            The additional power needed for progressive or bifocal lenses to correct presbyopia (age-related near vision loss). Only applies to people 40+.
+          </p>
+          <p class="prescription-definitions__note">
+            <strong>Example:</strong> ADD +2.00 means an additional 2.00 diopters of magnification for reading. Only appears on progressive or multifocal lens prescriptions.
+          </p>
+        </div>
+
+        <!-- PD -->
+        <div class="prescription-definitions__card">
+          <div class="prescription-definitions__label">PD (Pupillary Distance)</div>
+          <p class="prescription-definitions__description">
+            The distance (in millimeters) between the centers of your pupils. Essential for accurate lens alignment and optimal vision correction.
+          </p>
+          <p class="prescription-definitions__note">
+            <strong>Example:</strong> PD 62mm means your pupils are 62 millimeters apart. This ensures the optical center of each lens aligns perfectly with your pupils.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Prescription Image -->
+    <section class="prescription-guide__section prescription-guide__sample">
+      <h2 class="prescription-guide__section-title">Sample Prescription</h2>
+      <div class="prescription-guide__image-wrapper">
+        <svg class="prescription-guide__sample-image" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background -->
+          <rect width="800" height="500" fill="#f8f8f8" stroke="#e8e8e8" stroke-width="2"/>
+          
+          <!-- Title -->
+          <text x="400" y="35" font-size="28" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+            PRESCRIPTION EXAMPLE
+          </text>
+          
+          <!-- Left eye section -->
+          <g>
+            <!-- OD Label -->
+            <text x="100" y="80" font-size="16" font-weight="bold" fill="#6ba3be">OD (Right Eye)</text>
+            
+            <!-- Prescription values -->
+            <line x1="80" y1="100" x2="280" y2="100" stroke="#e8e8e8" stroke-width="1"/>
+            <text x="100" y="125" font-size="14" fill="#1a1a1a">SPH: -2.00</text>
+            <text x="100" y="155" font-size="14" fill="#1a1a1a">CYL: -0.75</text>
+            <text x="100" y="185" font-size="14" fill="#1a1a1a">AXIS: 180</text>
+            <text x="100" y="215" font-size="14" fill="#1a1a1a">ADD: +2.00</text>
+            
+            <!-- Explanation -->
+            <text x="100" y="260" font-size="12" fill="#666666">Moderate nearsightedness</text>
+            <text x="100" y="280" font-size="12" fill="#666666">with slight astigmatism</text>
+            <text x="100" y="300" font-size="12" fill="#666666">and presbyopia (age-related)</text>
+          </g>
+          
+          <!-- Right eye section -->
+          <g>
+            <!-- OS Label -->
+            <text x="520" y="80" font-size="16" font-weight="bold" fill="#6ba3be">OS (Left Eye)</text>
+            
+            <!-- Prescription values -->
+            <line x1="500" y1="100" x2="700" y2="100" stroke="#e8e8e8" stroke-width="1"/>
+            <text x="520" y="125" font-size="14" fill="#1a1a1a">SPH: -1.75</text>
+            <text x="520" y="155" font-size="14" fill="#1a1a1a">CYL: -0.50</text>
+            <text x="520" y="185" font-size="14" fill="#1a1a1a">AXIS: 175</text>
+            <text x="520" y="215" font-size="14" fill="#1a1a1a">ADD: +2.00</text>
+            
+            <!-- Explanation -->
+            <text x="520" y="260" font-size="12" fill="#666666">Moderate nearsightedness</text>
+            <text x="520" y="280" font-size="12" fill="#666666">with mild astigmatism</text>
+            <text x="520" y="300" font-size="12" fill="#666666">and presbyopia (age-related)</text>
+          </g>
+          
+          <!-- PD note -->
+          <g>
+            <line x1="80" y1="370" x2="720" y2="370" stroke="#e8e8e8" stroke-width="1"/>
+            <text x="400" y="400" font-size="14" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+              PD: 62mm
+            </text>
+            <text x="400" y="425" font-size="12" text-anchor="middle" fill="#666666">
+              Pupillary Distance - Distance between pupil centers
+            </text>
+          </g>
+        </svg>
+      </div>
+      <p class="prescription-guide__sample-text">
+        Each prescription is unique to your eyes. Make sure all values are entered correctly when ordering glasses to ensure optimal vision correction.
+      </p>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="prescription-guide__section prescription-guide__faq">
+      <h2 class="prescription-guide__section-title">Frequently Asked Questions</h2>
+      
+      <div class="prescription-faq">
+        <!-- FAQ Item 1 -->
+        <div class="prescription-faq__item">
+          <button class="prescription-faq__trigger" aria-expanded="false">
+            <span class="prescription-faq__question">What if I have a sphere number but no cylinder?</span>
+            <svg class="prescription-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="prescription-faq__content" hidden>
+            <p>
+              If you have a Sphere (SPH) value but no Cylinder (CYL) value, it means you don't have astigmatism. Your prescription only corrects for nearsightedness or farsightedness. This is completely normal and very common.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="prescription-faq__item">
+          <button class="prescription-faq__trigger" aria-expanded="false">
+            <span class="prescription-faq__question">My prescription is expired. Do I still need a new one?</span>
+            <svg class="prescription-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="prescription-faq__content" hidden>
+            <p>
+              Yes, we recommend using a current prescription from the last 1-2 years. Your eyes can change over time, and using an expired prescription may result in vision that doesn't feel as sharp. We can only dispense glasses based on a valid current prescription for your safety and comfort.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="prescription-faq__item">
+          <button class="prescription-faq__trigger" aria-expanded="false">
+            <span class="prescription-faq__question">What is the difference between SPH and ADD?</span>
+            <svg class="prescription-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="prescription-faq__content" hidden>
+            <p>
+              <strong>SPH (Sphere)</strong> corrects your primary vision error (nearsightedness or farsightedness) for all distances. <strong>ADD (Addition)</strong> is extra magnification added to the bottom of the lens for reading (in progressive or bifocal lenses). SPH is always present; ADD only appears if you need reading assistance, typically after age 40.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="prescription-faq__item">
+          <button class="prescription-faq__trigger" aria-expanded="false">
+            <span class="prescription-faq__question">Why is PD so important for my glasses order?</span>
+            <svg class="prescription-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="prescription-faq__content" hidden>
+            <p>
+              Your Pupillary Distance (PD) ensures that the optical center of each lens aligns precisely with your pupils. If the PD is off, your lenses may cause eye strain, headaches, or distorted vision even if the rest of your prescription is correct. We use your PD to position the lens correctly in the frame.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="prescription-faq__item">
+          <button class="prescription-faq__trigger" aria-expanded="false">
+            <span class="prescription-faq__question">Can I wear contact lens prescription glasses?</span>
+            <svg class="prescription-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="prescription-faq__content" hidden>
+            <p>
+              No. Contact lens prescriptions and eyeglass prescriptions are different. They account for the different distances of correction from your eyes. You need a separate eyeglass prescription from your eye care professional. If you only have a contact lens prescription, ask your optometrist to provide an eyeglass prescription instead.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const triggers = document.querySelectorAll('.prescription-faq__trigger');
+    
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        const content = this.nextElementSibling;
+        
+        // Close all other items
+        triggers.forEach(otherTrigger => {
+          if (otherTrigger !== this) {
+            otherTrigger.setAttribute('aria-expanded', 'false');
+            otherTrigger.nextElementSibling.hidden = true;
+          }
+        });
+        
+        // Toggle current item
+        this.setAttribute('aria-expanded', !isExpanded);
+        content.hidden = isExpanded;
+      });
+    });
+  });
+</script>

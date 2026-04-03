@@ -1,0 +1,211 @@
+{% comment %}
+  Size Guide Section
+  Displays information about frame sizing, face shapes, and measurement tips
+{% endcomment %}
+
+{{ 'page-size-guide.css' | asset_url | stylesheet_tag }}
+
+<div class="size-guide">
+  <div class="size-guide__container">
+    <header class="size-guide__header">
+      <h1 class="size-guide__title">{{ page.title }}</h1>
+      <p class="size-guide__intro">
+        Finding the right frame size ensures comfort, proper fit, and optical accuracy. Learn how to read frame sizes and find your perfect fit.
+      </p>
+    </header>
+
+    <!-- Frame Size Breakdown -->
+    <section class="size-guide__section">
+      <h2 class="size-guide__section-title">Understanding Frame Sizes</h2>
+      <p class="size-guide__section-intro">
+        Every frame is marked with three measurements. Here's what they mean:
+      </p>
+
+      <div class="size-guide__breakdown">
+        <div class="size-guide__breakdown-item">
+          <div class="size-guide__breakdown-number">1</div>
+          <h3 class="size-guide__breakdown-title">Lens Width</h3>
+          <p class="size-guide__breakdown-text">
+            The horizontal width of the lens in millimeters. Typical range: 48-58mm. Larger numbers mean wider lenses.
+          </p>
+          <p class="size-guide__breakdown-example">Example: <strong>52</strong></p>
+        </div>
+
+        <div class="size-guide__breakdown-item">
+          <div class="size-guide__breakdown-number">2</div>
+          <h3 class="size-guide__breakdown-title">Bridge Width</h3>
+          <p class="size-guide__breakdown-text">
+            The distance between the two lenses at the bridge of the nose. Typical range: 14-24mm. A wider bridge fits larger noses.
+          </p>
+          <p class="size-guide__breakdown-example">Example: <strong>18</strong></p>
+        </div>
+
+        <div class="size-guide__breakdown-item">
+          <div class="size-guide__breakdown-number">3</div>
+          <h3 class="size-guide__breakdown-title">Temple Length</h3>
+          <p class="size-guide__breakdown-text">
+            The length of the arm that goes over your ear in millimeters. Typical range: 135-150mm. Longer arms accommodate larger heads.
+          </p>
+          <p class="size-guide__breakdown-example">Example: <strong>140</strong></p>
+        </div>
+      </div>
+
+      <div class="size-guide__size-example">
+        <p class="size-guide__size-example-label">Full Frame Size Example:</p>
+        <div class="size-guide__size-example-value">52-18-140</div>
+        <p class="size-guide__size-example-text">
+          This means: 52mm lens width, 18mm bridge width, 140mm temple length
+        </p>
+      </div>
+    </section>
+
+    <!-- Size Categories Table -->
+    <section class="size-guide__section">
+      <h2 class="size-guide__section-title">Size Categories & Measurements</h2>
+      <p class="size-guide__section-intro">
+        Frame sizes are often categorized by typical measurements:
+      </p>
+
+      <div class="size-guide__table-wrapper">
+        <table class="size-guide__table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Lens Width</th>
+              <th>Bridge Width</th>
+              <th>Temple Length</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Category"><strong>Small/Petite</strong></td>
+              <td data-label="Lens Width">48-50mm</td>
+              <td data-label="Bridge Width">14-16mm</td>
+              <td data-label="Temple Length">135-140mm</td>
+              <td data-label="Best For">Smaller faces, children, narrow faces</td>
+            </tr>
+            <tr>
+              <td data-label="Category"><strong>Medium</strong></td>
+              <td data-label="Lens Width">51-54mm</td>
+              <td data-label="Bridge Width">17-20mm</td>
+              <td data-label="Temple Length">140-145mm</td>
+              <td data-label="Best For">Average-sized faces, most adults</td>
+            </tr>
+            <tr>
+              <td data-label="Category"><strong>Large/Wide</strong></td>
+              <td data-label="Lens Width">55-58mm</td>
+              <td data-label="Bridge Width">20-24mm</td>
+              <td data-label="Temple Length">145-150mm</td>
+              <td data-label="Best For">Larger faces, wide faces, tall individuals</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Face Shape Guide -->
+    <section class="size-guide__section">
+      <h2 class="size-guide__section-title">Face Shape Guide</h2>
+      <p class="size-guide__section-intro">
+        Your face shape can help determine which frame styles suit you best:
+      </p>
+
+      <div class="size-guide__face-shapes">
+        <div class="size-guide__face-shape-card">
+          <h3 class="size-guide__face-shape-title">Round Face</h3>
+          <p class="size-guide__face-shape-text">
+            Characterized by equal width and height with soft curves. Best frame shapes: Angular frames (square, rectangular, cat-eye) add definition and balance proportions.
+          </p>
+        </div>
+
+        <div class="size-guide__face-shape-card">
+          <h3 class="size-guide__face-shape-title">Oval Face</h3>
+          <p class="size-guide__face-shape-text">
+            Well-balanced face with a slightly longer length than width. Best frame shapes: Nearly all styles work! Try oversized, cat-eye, or geometric frames for a modern look.
+          </p>
+        </div>
+
+        <div class="size-guide__face-shape-card">
+          <h3 class="size-guide__face-shape-title">Square Face</h3>
+          <p class="size-guide__face-shape-text">
+            Strong jawline with equal width at forehead, cheekbones, and jaw. Best frame shapes: Round, oval, or cat-eye frames soften angular features.
+          </p>
+        </div>
+
+        <div class="size-guide__face-shape-card">
+          <h3 class="size-guide__face-shape-title">Heart Face</h3>
+          <p class="size-guide__face-shape-text">
+            Wider forehead with a narrower chin. Best frame shapes: Bottom-heavy frames (aviator, clubmaster) or cat-eye styles balance proportions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Measuring Tips -->
+    <section class="size-guide__section">
+      <h2 class="size-guide__section-title">Tips for Measuring Your Face</h2>
+      
+      <div class="size-guide__tips">
+        <div class="size-guide__tip">
+          <div class="size-guide__tip-number">1</div>
+          <h3 class="size-guide__tip-title">Find a Mirror</h3>
+          <p class="size-guide__tip-text">
+            You'll need a good mirror and a ruler or flexible measuring tape to measure accurately.
+          </p>
+        </div>
+
+        <div class="size-guide__tip">
+          <div class="size-guide__tip-number">2</div>
+          <h3 class="size-guide__tip-title">Measure Horizontally</h3>
+          <p class="size-guide__tip-text">
+            Place the ruler horizontally across your face from the far left of your left eye to the far right of your right eye. This is your face width.
+          </p>
+        </div>
+
+        <div class="size-guide__tip">
+          <div class="size-guide__tip-number">3</div>
+          <h3 class="size-guide__tip-title">Use Reference Glasses</h3>
+          <p class="size-guide__tip-text">
+            If you already wear glasses, check the size printed on the inside of one arm. This is a good reference point.
+          </p>
+        </div>
+
+        <div class="size-guide__tip">
+          <div class="size-guide__tip-number">4</div>
+          <h3 class="size-guide__tip-title">Measure Multiple Times</h3>
+          <p class="size-guide__tip-text">
+            Take several measurements to ensure accuracy. Repeat until you get consistent results.
+          </p>
+        </div>
+
+        <div class="size-guide__tip">
+          <div class="size-guide__tip-number">5</div>
+          <h3 class="size-guide__tip-title">Visit a Professional</h3>
+          <p class="size-guide__tip-text">
+            For the most accurate fit, visit an optician or eye care professional who can measure your face precisely.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="size-guide__cta">
+      <p>Know your size? Find your perfect frames!</p>
+      <a href="/collections/all" class="size-guide__button">Browse by Size</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Size Guide",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "How to Find Your Frame Size"
+    }
+  ]
+}
+{% endschema %}

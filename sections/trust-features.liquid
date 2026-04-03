@@ -1,0 +1,212 @@
+{{ 'section-trust-features.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  /* Why Choose Us / Trust Features Section */
+  
+  .trust-features-section {
+    background-color: #F5F5F5;
+    padding: 60px 2rem;
+  }
+
+  .trust-features-section__title {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 3.5rem 0;
+    letter-spacing: -0.01em;
+  }
+
+  .trust-features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .trust-feature-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trust-feature-card__icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .trust-feature-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.4;
+  }
+
+  .trust-feature-card__description {
+    font-size: 0.875rem;
+    color: #666666;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Tablet Responsive (2x2 grid) */
+  @media screen and (max-width: 989px) and (min-width: 750px) {
+    .trust-features-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .trust-features-section {
+      padding: 50px 1.5rem;
+    }
+
+    .trust-features-section__title {
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .trust-feature-card {
+      padding: 2rem 1.25rem;
+    }
+  }
+
+  /* Mobile Responsive (1 column) */
+  @media screen and (max-width: 749px) {
+    .trust-features-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .trust-features-section {
+      padding: 40px 1rem;
+    }
+
+    .trust-features-section__title {
+      font-size: 1.375rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .trust-feature-card {
+      padding: 1.75rem 1.25rem;
+    }
+
+    .trust-feature-card__icon {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .trust-feature-card__title {
+      font-size: 0.9375rem;
+    }
+
+    .trust-feature-card__description {
+      font-size: 0.8125rem;
+    }
+  }
+{%- endstyle -%}
+
+<div class="trust-features-section">
+  <h2 class="trust-features-section__title">{{ section.settings.section_title }}</h2>
+
+  <div class="trust-features-grid">
+    {%- for block in section.blocks -%}
+      <div class="trust-feature-card" {{ block.shopify_attributes }}>
+        {%- if block.settings.icon -%}
+          <span class="trust-feature-card__icon">{{ block.settings.icon }}</span>
+        {%- endif -%}
+        <h3 class="trust-feature-card__title">{{ block.settings.title }}</h3>
+        <p class="trust-feature-card__description">{{ block.settings.description }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Why Choose Us",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Why Choose Zaman Optics?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Trust Feature Card",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "🔬"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Feature description goes here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Choose Us",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "🔬",
+            "title": "Prescription Guaranteed",
+            "description": "Every pair made to your exact prescription by certified opticians"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "🚚",
+            "title": "Fast Delivery Across Pakistan",
+            "description": "Delivered to your door in 3–5 business days. Free above Rs 3,000"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "💳",
+            "title": "Easy Payment",
+            "description": "Cash on Delivery, EasyPaisa & JazzCash accepted"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "🔄",
+            "title": "Hassle-Free Returns",
+            "description": "7-day return policy. Not satisfied? We'll fix it"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

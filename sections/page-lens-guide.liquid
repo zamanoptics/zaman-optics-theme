@@ -1,0 +1,130 @@
+{% comment %}
+  Lens Guide Section
+  Displays information about different lens types with card layout
+{% endcomment %}
+
+{{ 'page-lens-guide.css' | asset_url | stylesheet_tag }}
+
+<div class="lens-guide">
+  <div class="lens-guide__container">
+    <header class="lens-guide__header">
+      <h1 class="lens-guide__title">{{ page.title }}</h1>
+      {% if page.content %}
+        <div class="lens-guide__intro">
+          {{ page.content }}
+        </div>
+      {% endif %}
+    </header>
+
+    <div class="lens-guide__cards">
+      <!-- Single Vision -->
+      <div class="lens-guide__card">
+        <div class="lens-guide__card-header">
+          <h2 class="lens-guide__card-title">Single Vision</h2>
+        </div>
+        
+        <div class="lens-guide__card-content">
+          <p class="lens-guide__description">
+            Single vision lenses have the same optical power throughout the entire lens. They're designed to correct vision at one distance—whether for near, far, or intermediate vision.
+          </p>
+
+          <div class="lens-guide__section">
+            <h3 class="lens-guide__section-title">Who It's For</h3>
+            <ul class="lens-guide__list">
+              <li>People who need correction for one distance</li>
+              <li>First-time eyeglass wearers</li>
+              <li>Those under 40 without presbyopia</li>
+              <li>Athletes and active wearers</li>
+            </ul>
+          </div>
+
+          <div class="lens-guide__section">
+            <h3 class="lens-guide__section-title">Price Range</h3>
+            <p class="lens-guide__price-note">
+              Starting from <strong>$99</strong> depending on prescription and materials
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progressive -->
+      <div class="lens-guide__card">
+        <div class="lens-guide__card-header">
+          <h2 class="lens-guide__card-title">Progressive</h2>
+        </div>
+        
+        <div class="lens-guide__card-content">
+          <p class="lens-guide__description">
+            Progressive lenses offer seamless vision at all distances—near, intermediate, and far. They're essentially three prescriptions in one lens with no visible lines.
+          </p>
+
+          <div class="lens-guide__section">
+            <h3 class="lens-guide__section-title">Who It's For</h3>
+            <ul class="lens-guide__list">
+              <li>People over 40 with presbyopia</li>
+              <li>Those needing vision correction at multiple distances</li>
+              <li>Computer users who look at screens frequently</li>
+              <li>Professionals who need clear vision at all distances</li>
+            </ul>
+          </div>
+
+          <div class="lens-guide__section">
+            <h3 class="lens-guide__section-title">Price Range</h3>
+            <p class="lens-guide__price-note">
+              Starting from <strong>$199</strong> for standard progressives; premium options available up to $400+
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blue Light -->
+      <div class="lens-guide__card">
+        <div class="lens-guide__card-header">
+          <h2 class="lens-guide__card-title">Blue Light</h2>
+        </div>
+        
+        <div class="lens-guide__card-content">
+          <p class="lens-guide__description">
+            Blue light lenses filter out a portion of blue light emitted by digital screens. They reduce eye strain and may improve sleep quality for frequent screen users.
+          </p>
+
+          <div class="lens-guide__section">
+            <h3 class="lens-guide__section-title">Who It's For</h3>
+            <ul class="lens-guide__list">
+              <li>Digital professionals (programmers, designers)</li>
+              <li>Students spending hours on computers</li>
+              <li>Remote workers and office professionals</li>
+              <li>Anyone experiencing digital eye strain</li>
+            </ul>
+          </div>
+
+          <div class="lens-guide__section">
+            <h3 class="lens-guide__section-title">Price Range</h3>
+            <p class="lens-guide__price-note">
+              Starting from <strong>$129</strong> as an add-on or base lens option
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lens-guide__cta">
+      <p>Ready to find the perfect lenses for your needs?</p>
+      <a href="/collections/all" class="lens-guide__button">Browse Our Collection</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lens Guide",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Lens Guide"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,801 @@
+/* Enhanced Collection Filter System - Zaman Optics */
+/* Desktop: Left Sidebar + 3-Column Grid | Mobile: Filter Drawer */
+
+:root {
+  --filter-blue: #6BA3BE;
+  --filter-blue-hover: #4A7A94;
+  --filter-border: #E8E8E8;
+  --filter-bg: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #666666;
+}
+
+/* ============================================
+   GENERAL FILTER CONTAINER STRUCTURE
+   ============================================ */
+
+.facets-vertical {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+  padding-top: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .facets-vertical {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .facets-vertical {
+    display: block;
+  }
+}
+
+/* ============================================
+   DESKTOP SIDEBAR STYLING
+   ============================================ */
+
+.facets-wrapper {
+  background-color: var(--filter-bg);
+  border-right: 1px solid var(--filter-border);
+  padding: 2rem 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.facets-wrapper--no-filters {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .facets-wrapper {
+    border-right: none;
+    border-bottom: 1px solid var(--filter-border);
+    position: relative;
+    top: auto;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .facets-wrapper {
+    display: none;
+  }
+
+  .facets-wrapper.mobile-open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background: white;
+    border: none;
+    padding: 3.5rem 1.5rem 1.5rem;
+    overflow-y: auto;
+  }
+}
+
+/* ============================================
+   FILTER HEADER (MOBILE TOGGLE BUTTON)
+   ============================================ */
+
+.filters-header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 0 1.5rem 0;
+  border-bottom: 1px solid var(--filter-border);
+}
+
+@media screen and (max-width: 750px) {
+  .filters-header {
+    display: flex;
+  }
+}
+
+.filters-header__title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.filters-header__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.filters-header__close:hover {
+  color: var(--filter-blue);
+}
+
+/* ============================================
+   MOBILE FILTER & SORT BUTTON
+   ============================================ */
+
+.mobile-filter-sort-button {
+  display: none;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: var(--filter-bg);
+  border: 1px solid var(--filter-border);
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+@media screen and (max-width: 750px) {
+  .mobile-filter-sort-button {
+    display: flex;
+  }
+}
+
+.mobile-filter-sort-button:hover {
+  background-color: #f5f5f5;
+  border-color: var(--filter-blue);
+}
+
+.mobile-filter-sort-button:active {
+  background-color: #ebebeb;
+}
+
+.filter-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: var(--filter-blue);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.mobile-filter-sort-button .filter-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* ============================================
+   ACTIVE FILTERS DISPLAY (TAGS)
+   ============================================ */
+
+.active-facets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .active-facets {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .active-facets {
+    display: none;
+  }
+
+  .active-facets-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.active-facets-desktop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.active-facets__button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.active-facets__button-remove {
+  display: inline-block;
+  padding: 0.5rem 0;
+  color: var(--filter-blue);
+  text-decoration: underline;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.active-facets__button-remove:hover {
+  color: var(--filter-blue-hover);
+}
+
+.active-facets__button {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.active-facets__button-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #f5f5f5;
+  border: 1px solid var(--filter-border);
+  border-radius: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.active-facets__button:hover .active-facets__button-inner {
+  background-color: #ebebeb;
+  border-color: var(--filter-blue);
+}
+
+.active-facets__button .svg-wrapper {
+  width: 1rem;
+  height: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   CLEAR ALL FILTERS BUTTON
+   ============================================ */
+
+.clear-all-filters {
+  display: inline-block;
+  padding: 0.5rem 0;
+  color: var(--filter-blue);
+  text-decoration: underline;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.clear-all-filters:hover {
+  color: var(--filter-blue-hover);
+}
+
+/* ============================================
+   FILTER GROUP STYLING
+   ============================================ */
+
+.facets-container {
+  display: block;
+}
+
+.facets__form-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.facets__heading--vertical {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.facets__disclosure-vertical {
+  border-top: 1px solid var(--filter-border);
+  padding: 1rem 0;
+}
+
+.facets__disclosure-vertical:last-child {
+  border-bottom: 1px solid var(--filter-border);
+}
+
+.facets__disclosure-vertical[open] {
+  background-color: transparent;
+}
+
+.facets__summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  position: relative;
+  width: 100%;
+}
+
+.facets__summary:hover {
+  color: var(--filter-blue);
+}
+
+.facets__summary::after {
+  content: '';
+  position: static;
+}
+
+.facets__summary .svg-wrapper {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.facets__disclosure-vertical[open] .facets__summary .svg-wrapper {
+  transform: rotate(180deg);
+}
+
+.facets__summary-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.facets__selected {
+  color: var(--filter-blue);
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+.facets__selected.hidden {
+  display: none;
+}
+
+/* ============================================
+   FILTER OPTIONS LIST
+   ============================================ */
+
+.facets__display-vertical {
+  display: none;
+  padding: 1rem 0;
+}
+
+.facets__disclosure-vertical[open] .facets__display-vertical {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+
+.facets-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.facets-wrap-vertical {
+  gap: 0.75rem;
+}
+
+.facets__list--vertical {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.facets__item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.facets__item.show-more-item.hidden {
+  display: none;
+}
+
+/* ============================================
+   CHECKBOX STYLING
+   ============================================ */
+
+.facet-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.facet-checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  min-width: 1.2rem;
+  min-height: 1.2rem;
+  border: 1.5px solid #999;
+  border-radius: 0.25rem;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.15rem;
+}
+
+.facet-checkbox input[type="checkbox"]:hover {
+  border-color: var(--filter-blue);
+}
+
+.facet-checkbox input[type="checkbox"]:checked {
+  background-color: var(--filter-blue);
+  border-color: var(--filter-blue);
+}
+
+.facet-checkbox input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.15rem;
+}
+
+.facet-checkbox input[type="checkbox"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.facet-checkbox.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.facet-checkbox.disabled input[type="checkbox"] {
+  cursor: not-allowed;
+}
+
+/* ============================================
+   CHECKBOX LABEL STYLING
+   ============================================ */
+
+.facet-checkbox__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.facet-checkbox__text-label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.facet-checkbox__text {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.facet-checkbox:hover .facet-checkbox__text-label {
+  color: var(--filter-blue);
+}
+
+.facet-checkbox.active .facet-checkbox__text-label {
+  color: var(--filter-blue);
+  font-weight: 600;
+}
+
+/* ============================================
+   PRICE RANGE FILTER
+   ============================================ */
+
+.facets__price-range {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.price-range-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.price-range-inputs input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--filter-border);
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.price-range-inputs input:focus {
+  outline: none;
+  border-color: var(--filter-blue);
+  box-shadow: 0 0 0 2px rgba(107, 163, 190, 0.1);
+}
+
+.price-range-separator {
+  text-align: center;
+  color: var(--text-secondary);
+  font-weight: 600;
+  align-self: center;
+}
+
+/* ============================================
+   SHOW MORE / SHOW LESS BUTTON
+   ============================================ */
+
+.button-show-more {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--filter-blue);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.button-show-more:hover {
+  color: var(--filter-blue-hover);
+}
+
+.label-show-more,
+.label-show-less {
+  display: block;
+}
+
+.label-show-more.hidden {
+  display: none;
+}
+
+.label-show-less.hidden {
+  display: none;
+}
+
+/* ============================================
+   PRODUCT GRID CONTAINER
+   ============================================ */
+
+.product-grid-container {
+  flex: 1;
+}
+
+.product-grid-container.scroll-trigger {
+  animation: none;
+}
+
+/* ============================================
+   PRODUCT COUNT DISPLAY
+   ============================================ */
+
+.product-count-vertical {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .product-count-vertical {
+    padding: 0;
+  }
+}
+
+.product-count__text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ============================================
+   SORT DROPDOWN
+   ============================================ */
+
+.facets-vertical-sort {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--filter-border);
+  margin-bottom: 1.5rem;
+}
+
+.facet-filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.facet-filters__label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.select {
+  position: relative;
+  flex: 1;
+}
+
+.select__select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--filter-border);
+  border-radius: 0.4rem;
+  background-color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.5rem;
+}
+
+.select__select:hover {
+  border-color: var(--filter-blue);
+}
+
+.select__select:focus {
+  outline: none;
+  border-color: var(--filter-blue);
+  box-shadow: 0 0 0 2px rgba(107, 163, 190, 0.1);
+}
+
+.select .svg-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+
+.facets__disclosure-vertical.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media screen and (max-width: 750px) {
+  .facets-wrapper {
+    border: none;
+    padding: 0;
+  }
+
+  .facets__disclosure-vertical {
+    border-top: 1px solid var(--filter-border);
+    padding: 1rem 0;
+  }
+
+  .facets-vertical-sort {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .facet-filters {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .facet-filters__label {
+    width: 100%;
+  }
+
+  .select__select {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.visually-hidden {
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--filter-blue);
+  outline-offset: 2px;
+}
+
+.facets__summary:focus-visible {
+  outline: 2px solid var(--filter-blue);
+  outline-offset: -2px;
+}
+
+.mobile-filter-sort-button:focus-visible {
+  outline: 2px solid var(--filter-blue);
+  outline-offset: -2px;
+}
+
+/* ============================================
+   ANIMATION UTILITIES
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

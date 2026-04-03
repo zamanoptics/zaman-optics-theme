@@ -1,6 +1,7 @@
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'collection-filters-enhanced.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -21,6 +22,8 @@
   <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
+
+<script src="{{ 'collection-filters-enhanced.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -97,6 +100,19 @@
       </facet-filters-form>
     {%- endif -%}
 
+    <!-- Mobile Filter & Sort Button -->
+    {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+      <div class="page-width mobile-filter-sort-container">
+        <button type="button" class="mobile-filter-sort-button">
+          <svg class="filter-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 6H21M5 12H19M8 18H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>{{ 'products.facets.filter_by_label' | t }}</span>
+          <span class="filter-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    {%- endif -%}
+
     <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
@@ -107,6 +123,16 @@
           id="main-collection-filters"
           data-id="{{ section.id }}"
         >
+          <!-- Mobile Filter Header -->
+          <div class="filters-header">
+            <h2 class="filters-header__title">{{ 'products.facets.filter_by_label' | t }}</h2>
+            <button type="button" class="filters-header__close" aria-label="{{ 'Close' | t }}">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
           {% render 'facets',
             results: collection,
             enable_filtering: section.settings.enable_filtering,

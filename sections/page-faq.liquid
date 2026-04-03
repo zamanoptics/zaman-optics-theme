@@ -1,0 +1,265 @@
+{% comment %}
+  FAQ Page Section
+  Displays frequently asked questions with accordion functionality
+{% endcomment %}
+
+{{ 'page-faq.css' | asset_url | stylesheet_tag }}
+{{ 'page-faq.js' | asset_url | script_tag }}
+
+<div class="faq-page">
+  <div class="faq-page__container">
+    <header class="faq-page__header">
+      <h1 class="faq-page__title">{{ page.title }}</h1>
+      {% if page.content %}
+        <div class="faq-page__intro">
+          {{ page.content }}
+        </div>
+      {% endif %}
+    </header>
+
+    <!-- Delivery & Shipping -->
+    <section class="faq-page__section">
+      <h2 class="faq-page__section-title">Delivery & Shipping</h2>
+      
+      <div class="faq-accordion">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">How long does shipping take?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              We offer standard shipping within 5-7 business days and express shipping within 2-3 business days. Once your order is processed and your glasses are crafted, you'll receive a tracking number via email so you can monitor your delivery.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">Do you ship internationally?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              Yes! We ship to most countries worldwide. International shipping typically takes 10-15 business days. Customs and import duties may apply depending on your location. You'll be able to see all shipping options and costs during checkout before completing your purchase.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">Can I upgrade to faster shipping?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              Absolutely! We offer multiple shipping options at checkout. You can choose from standard, express, or overnight shipping depending on how quickly you need your glasses. Faster shipping options are available for most locations and will be calculated at checkout.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prescription & Fit -->
+    <section class="faq-page__section">
+      <h2 class="faq-page__section-title">Prescription & Fit</h2>
+      
+      <div class="faq-accordion">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">What information do I need from my prescription?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              You'll need the following from your eyeglass prescription: OD/OS (right and left eye values), SPH (sphere), CYL (cylinder), AXIS, and PD (pupillary distance). These ensure we craft your glasses to your exact vision needs. Check our Prescription Guide page for detailed explanations of each value.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">How do I know what frame size fits me?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              Frame sizes are indicated by three measurements: lens width, bridge width, and temple length (e.g., 52-18-140). You can find your correct size by checking your current glasses, looking at your prescription card (which may have sizing info), or visiting our Size Guide page for detailed fitting instructions and face shape recommendations.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">Can I try on frames virtually?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              Yes! Our virtual try-on tool lets you preview how frames look on your face using your device's camera. You can compare different styles and sizes to find the perfect fit before ordering. This helps ensure you're completely happy with your selection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Returns & Warranty -->
+    <section class="faq-page__section">
+      <h2 class="faq-page__section-title">Returns & Warranty</h2>
+      
+      <div class="faq-accordion">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">What is your return policy?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              We offer a 30-day return policy. If you're not completely satisfied with your glasses, you can return them within 30 days of delivery for a full refund or exchange. Items must be unworn and in original condition. Simply contact our customer service team to initiate a return.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">Do your glasses come with a warranty?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              Yes! All our glasses come with a 1-year manufacturer's warranty covering defects in materials and craftsmanship. This includes lens coatings, frames, and hinges. Damage from accidents, misuse, or normal wear and tear are not covered. We also offer affordable repair and replacement services.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">What if I'm unhappy with my prescription?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              If your vision doesn't feel right with your new glasses, we recommend visiting your eye care professional to verify the prescription. If there's an error on our end, we'll replace your glasses at no charge. If your prescription from your doctor needs adjustment, you'll need a new prescription to reorder.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment & Discounts -->
+    <section class="faq-page__section">
+      <h2 class="faq-page__section-title">Payment & Promotions</h2>
+      
+      <div class="faq-accordion">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">What payment methods do you accept?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              We accept all major credit cards (Visa, Mastercard, American Express), digital wallets (Apple Pay, Google Pay), and PayPal. All transactions are secure and encrypted. We also offer financing options for larger purchases to make quality eyewear more accessible.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">Do you offer discounts for first-time buyers?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              Yes! New customers receive 15% off their first order when they sign up for our newsletter. We also regularly run promotions and seasonal sales. Check our homepage and follow us on social media to stay updated on the latest deals and exclusive offers.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">Can I use a discount code with other promotions?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              In most cases, discount codes cannot be combined with other active promotions or sales. However, some codes may be stackable—check the terms of your specific code at checkout. Our customer service team can help clarify any questions about combining discounts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lens Types & Features -->
+    <section class="faq-page__section">
+      <h2 class="faq-page__section-title">Lens Types & Features</h2>
+      
+      <div class="faq-accordion">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">What's the difference between single vision and progressive lenses?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              <strong>Single Vision</strong> lenses have one power throughout and correct vision at one distance. <strong>Progressive</strong> lenses have multiple powers in one lens (distance, intermediate, and reading) and are ideal for presbyopia (age-related vision changes). Progressive lenses offer seamless vision at all distances without visible lines.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">Should I choose blue light blocking lenses?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              Blue light blocking lenses reduce glare and filter blue light from digital screens, which can help reduce eye strain during extended screen time. They're great if you spend many hours on computers or phones. While not essential, many people notice improved comfort with blue light protection, especially in the evening.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false">
+            <span class="faq-accordion__question">What lens coating options are available?</span>
+            <svg class="faq-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-accordion__content" hidden>
+            <p>
+              We offer several premium coating options: anti-reflective coating (reduces glare), blue light filter, UV protection, scratch-resistant coating, and photochromic coating (darkens in sunlight). You can combine multiple coatings to customize your lenses. Visit our Lens Guide page for detailed information about each option.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

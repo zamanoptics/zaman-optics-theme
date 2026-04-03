@@ -1,0 +1,348 @@
+/* ============================================
+   CUSTOM FOOTER STYLES
+   ============================================ */
+
+.footer-custom {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-top: 1px solid #333333;
+  padding: 3rem 0;
+}
+
+.footer-custom__content {
+  padding: 3rem 2rem;
+}
+
+.footer-custom__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Column Styling */
+.footer-custom__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-custom__column--brand {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Brand Column */
+.footer-custom__brand-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.footer-custom__tagline {
+  font-size: 0.95rem;
+  color: #999999;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.footer-custom__address {
+  font-size: 0.9rem;
+  color: #999999;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+/* Social Icons */
+.footer-custom__socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.footer-custom__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #333333;
+  border-radius: 50%;
+  color: #999999;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-custom__social-link:hover {
+  background-color: #6ba3be;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.footer-custom__social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Column Titles */
+.footer-custom__column-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #6ba3be;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0.5px;
+}
+
+/* Link Lists */
+.footer-custom__link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-custom__link-list li {
+  margin: 0;
+}
+
+.footer-custom__link-list a {
+  color: #999999;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  line-height: 1.5;
+}
+
+.footer-custom__link-list a:hover {
+  color: #ffffff;
+}
+
+.footer-custom__link-list a:focus-visible {
+  outline: 2px solid #6ba3be;
+  outline-offset: 2px;
+}
+
+/* Contact Column */
+.footer-custom__contact-item {
+  font-size: 0.95rem;
+  color: #999999;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.footer-custom__contact-item strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-custom__contact-item a {
+  color: #6ba3be;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-custom__contact-item a:hover {
+  color: #ffffff;
+}
+
+.footer-custom__contact-item a:focus-visible {
+  outline: 2px solid #6ba3be;
+  outline-offset: 2px;
+}
+
+/* Bottom Bar */
+.footer-custom__bottom {
+  border-top: 1px solid #333333;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.footer-custom__bottom-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-custom__copyright {
+  font-size: 0.85rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* Payment Methods */
+.footer-custom__payment-methods {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-custom__payment-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: #333333;
+  color: #999999;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border: 1px solid #444444;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .footer-custom__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-custom__bottom-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 750px) {
+  .footer-custom {
+    padding: 2rem 0;
+  }
+
+  .footer-custom__content {
+    padding: 2rem 1rem;
+  }
+
+  .footer-custom__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-custom__brand-name {
+    font-size: 18px;
+  }
+
+  .footer-custom__bottom-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+  }
+
+  .footer-custom__payment-methods {
+    width: 100%;
+  }
+
+  .footer-custom__column-title {
+    margin-top: 1rem;
+  }
+
+  .footer-custom__socials {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-custom__content {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-custom__container {
+    gap: 1.5rem;
+  }
+
+  .footer-custom__brand-name {
+    font-size: 16px;
+  }
+
+  .footer-custom__column-title {
+    font-size: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-custom__link-list {
+    gap: 0.6rem;
+  }
+
+  .footer-custom__link-list a {
+    font-size: 0.9rem;
+  }
+
+  .footer-custom__contact-item {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-custom__bottom-content {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .footer-custom__copyright {
+    font-size: 0.8rem;
+  }
+
+  .footer-custom__payment-methods {
+    gap: 0.5rem;
+  }
+
+  .footer-custom__payment-badge {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-custom__social-link {
+    transition: none;
+  }
+
+  .footer-custom__link-list a {
+    transition: none;
+  }
+
+  .footer-custom__contact-item a {
+    transition: none;
+  }
+}
+
+/* Focus visible states */
+.footer-custom__link-list a:focus,
+.footer-custom__contact-item a:focus {
+  outline: 2px solid #6ba3be;
+  outline-offset: 2px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .footer-custom {
+    background-color: #1a1a1a;
+  }
+}
+
+/* Print styles */
+@media print {
+  .footer-custom__social-link {
+    display: none;
+  }
+
+  .footer-custom__socials {
+    display: none;
+  }
+}
