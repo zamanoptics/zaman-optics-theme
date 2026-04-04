@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
     <meta charset="utf-8">
@@ -308,26 +308,10 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {{ 'announcement-bar-custom.css' | asset_url | stylesheet_tag }}
-
-    <!-- Custom Announcement Bar -->
-    <div class="announcement-bar-custom" id="announcementBar">
-      <p class="announcement-bar-custom__text">
-        Free Shipping on orders above Rs 3,000 | Cash on Delivery Available
-      </p>
-      <button class="announcement-bar-custom__close" onclick="document.getElementById('announcementBar').classList.add('hidden'); localStorage.setItem('announcementBarDismissed', 'true');" aria-label="Dismiss announcement">
-        ✕
-      </button>
-    </div>
-
-    <script>
-      if (localStorage.getItem('announcementBarDismissed') === 'true') {
-        document.getElementById('announcementBar').classList.add('hidden');
-      }
-    </script>
+    
 
     {% sections 'header-group' %}
-    {% section 'category-nav' %}
+    {% render 'category-nav' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
@@ -394,3 +378,5 @@
     {%- endif -%}
   </body>
 </html>
+
+

@@ -17,7 +17,7 @@
   - Simple add-to-cart workflow
 {%- endcomment -%}
 
-{%- assign product_mode = product.metafields.custom.product_mode.value | default: 'standard' -%}
+{%- assign product_mode = product.metafields.custom.product_mode.value -%}
 
 {%- if product_mode == blank -%}
   {%- assign prescription_collections = 'Prescription Products,Eyeglasses,Blue Light,Kids' | split: ',' -%}
@@ -26,6 +26,12 @@
       {%- assign product_mode = 'prescription' -%}
       {%- break -%}
     {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if product_mode == blank -%}
+  {%- assign product_mode = 'standard' -%}
+{%- endif -%}
   {%- endfor -%}
 {%- endif -%}
 

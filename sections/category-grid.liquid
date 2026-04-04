@@ -1,307 +1,148 @@
-{{ 'section-category-grid.css' | asset_url | stylesheet_tag }}
-
-{%- style -%}
-  /* Shop by Category Section */
-  
-  .category-grid-section {
-    padding: 4rem 2rem;
-    background-color: #FFFFFF;
-  }
-
-  .category-grid-section__title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1A1A1A;
-    margin: 0 0 3rem 0;
-    letter-spacing: -0.01em;
-  }
-
-  .category-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto 3rem;
-  }
-
-  .category-card {
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid transparent;
-  }
-
-  .category-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border-color: #6BA3BE;
-  }
-
-  .category-card__image-wrapper {
-    width: 100%;
-    height: 200px;
-    background-color: #F5F5F5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .category-card__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .category-card__image-placeholder {
-    color: #999999;
-    font-size: 0.875rem;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-  }
-
-  .category-card__content {
-    padding: 1.5rem;
-    text-align: center;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .category-card__name {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #1A1A1A;
-    margin: 0 0 0.5rem 0;
-    line-height: 1.4;
-  }
-
-  .category-card__subtitle {
-    font-size: 0.8125rem;
-    color: #666666;
-    margin: 0;
-    line-height: 1.4;
-  }
-
-  .category-grid-section__footer {
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .category-grid-section__link {
-    color: #6BA3BE;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    display: inline-block;
-  }
-
-  .category-grid-section__link:hover {
-    color: #4A7A94;
-    text-decoration: underline;
-  }
-
-  /* Tablet Responsive */
-  @media screen and (max-width: 989px) and (min-width: 750px) {
-    .category-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .category-grid-section__title {
-      font-size: 1.75rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .category-grid-section {
-      padding: 3rem 1.5rem;
-    }
-  }
-
-  /* Mobile Responsive */
-  @media screen and (max-width: 749px) {
-    .category-grid {
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-    }
-
-    .category-grid-section__title {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .category-grid-section {
-      padding: 2rem 1rem;
-    }
-
-    .category-card__image-wrapper {
-      height: 180px;
-    }
-
-    .category-card__content {
-      padding: 1.25rem;
-    }
-
-    .category-card__name {
-      font-size: 0.9375rem;
-    }
-
-    .category-card__subtitle {
-      font-size: 0.75rem;
-    }
-  }
-{%- endstyle -%}
+﻿{{ 'section-category-grid.css' | asset_url | stylesheet_tag }}
 
 <div class="category-grid-section">
-  {%- if section.settings.section_title -%}
-    <h2 class="category-grid-section__title">{{ section.settings.section_title }}</h2>
-  {%- endif -%}
-
+  <h2 class="category-grid-title">Shop by Category</h2>
   <div class="category-grid">
-    {%- for block in section.blocks -%}
-      <a href="{{ block.settings.category_link }}" class="category-card" {{ block.shopify_attributes }}>
-        <div class="category-card__image-wrapper">
-          {%- if block.settings.category_image != blank -%}
-            {{
-              block.settings.category_image
-              | image_url: width: 500
-              | image_tag:
-                width: 500,
-                height: 500,
-                class: 'category-card__image',
-                sizes: '(min-width: 1000px) 300px, (min-width: 750px) calc(50vw - 20px), 100vw',
-                alt: block.settings.category_name
-            }}
-          {%- else -%}
-            <div class="category-card__image-placeholder">{{ block.settings.category_name }}</div>
-          {%- endif -%}
-        </div>
-        <div class="category-card__content">
-          <h3 class="category-card__name">{{ block.settings.category_name }}</h3>
-          <p class="category-card__subtitle">{{ block.settings.category_subtitle }}</p>
-        </div>
-      </a>
-    {%- endfor -%}
-  </div>
+    
+    <a href="/collections/eyeglasses" class="cat-card">
+      <div class="cat-card-image">
+        {% if section.settings.eyeglasses_image %}
+          <img src="{{ section.settings.eyeglasses_image | img_url: '400x400' }}" 
+               alt="Eyeglasses">
+        {% else %}
+          <div class="cat-card-placeholder">👓</div>
+        {% endif %}
+      </div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-title">Eyeglasses</h3>
+        <p class="cat-card-sub">Prescription Frames</p>
+        <span class="cat-card-link">Shop Now →</span>
+      </div>
+    </a>
 
-  <div class="category-grid-section__footer">
-    <a href="/collections/all" class="category-grid-section__link">View All Collections →</a>
+    <a href="/collections/sunglasses" class="cat-card">
+      <div class="cat-card-image">
+        {% if section.settings.sunglasses_image %}
+          <img src="{{ section.settings.sunglasses_image | img_url: '400x400' }}" 
+               alt="Sunglasses">
+        {% else %}
+          <div class="cat-card-placeholder">🕶️</div>
+        {% endif %}
+      </div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-title">Sunglasses</h3>
+        <p class="cat-card-sub">UV Protection</p>
+        <span class="cat-card-link">Shop Now →</span>
+      </div>
+    </a>
+
+    <a href="/collections/blue-light-glasses" class="cat-card">
+      <div class="cat-card-image">
+        {% if section.settings.bluelight_image %}
+          <img src="{{ section.settings.bluelight_image | img_url: '400x400' }}" 
+               alt="Blue Light Glasses">
+        {% else %}
+          <div class="cat-card-placeholder">💻</div>
+        {% endif %}
+      </div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-title">Blue Light Glasses</h3>
+        <p class="cat-card-sub">Screen Protection</p>
+        <span class="cat-card-link">Shop Now →</span>
+      </div>
+    </a>
+
+    <a href="/collections/kids-glasses" class="cat-card">
+      <div class="cat-card-image">
+        {% if section.settings.kids_image %}
+          <img src="{{ section.settings.kids_image | img_url: '400x400' }}" 
+               alt="Kids Glasses">
+        {% else %}
+          <div class="cat-card-placeholder">👦</div>
+        {% endif %}
+      </div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-title">Kids Glasses</h3>
+        <p class="cat-card-sub">For Ages 4–16</p>
+        <span class="cat-card-link">Shop Now →</span>
+      </div>
+    </a>
+
+    <a href="/collections/all?sort_by=created-descending" class="cat-card">
+      <div class="cat-card-image">
+        {% if section.settings.new_image %}
+          <img src="{{ section.settings.new_image | img_url: '400x400' }}" 
+               alt="New Arrivals">
+        {% else %}
+          <div class="cat-card-placeholder">✨</div>
+        {% endif %}
+      </div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-title">New Arrivals</h3>
+        <p class="cat-card-sub">Just Landed</p>
+        <span class="cat-card-link">Shop Now →</span>
+      </div>
+    </a>
+
+    <a href="/collections/all?sort_by=best-selling" class="cat-card">
+      <div class="cat-card-image">
+        {% if section.settings.bestsellers_image %}
+          <img src="{{ section.settings.bestsellers_image | img_url: '400x400' }}" 
+               alt="Best Sellers">
+        {% else %}
+          <div class="cat-card-placeholder">🔥</div>
+        {% endif %}
+      </div>
+      <div class="cat-card-body">
+        <h3 class="cat-card-title">Best Sellers</h3>
+        <p class="cat-card-sub">Most Popular</p>
+        <span class="cat-card-link">Shop Now →</span>
+      </div>
+    </a>
+
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Shop by Category",
+  "name": "Category Grid",
   "tag": "section",
   "class": "section",
   "settings": [
     {
-      "type": "text",
-      "id": "section_title",
-      "label": "Section Title",
-      "default": "Shop by Category"
-    }
-  ],
-  "blocks": [
+      "type": "image_picker",
+      "id": "eyeglasses_image",
+      "label": "Eyeglasses Image"
+    },
     {
-      "type": "category",
-      "name": "Category Card",
-      "limit": 6,
-      "settings": [
-        {
-          "type": "text",
-          "id": "category_name",
-          "label": "Category Name",
-          "default": "Category"
-        },
-        {
-          "type": "text",
-          "id": "category_subtitle",
-          "label": "Category Subtitle",
-          "default": "Subtitle"
-        },
-        {
-          "type": "url",
-          "id": "category_link",
-          "label": "Category Link"
-        },
-        {
-          "type": "image_picker",
-          "id": "category_image",
-          "label": "Category Image"
-        }
-      ]
+      "type": "image_picker",
+      "id": "sunglasses_image",
+      "label": "Sunglasses Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bluelight_image",
+      "label": "Blue Light Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "kids_image",
+      "label": "Kids Glasses Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "new_image",
+      "label": "New Arrivals Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bestsellers_image",
+      "label": "Best Sellers Image"
     }
   ],
   "presets": [
     {
-      "name": "Shop by Category",
-      "blocks": [
-        {
-          "type": "category",
-          "settings": {
-            "category_name": "Eyeglasses",
-            "category_subtitle": "Prescription Frames",
-            "category_link": "/collections/eyeglasses"
-          }
-        },
-        {
-          "type": "category",
-          "settings": {
-            "category_name": "Sunglasses",
-            "category_subtitle": "UV Protection",
-            "category_link": "/collections/sunglasses"
-          }
-        },
-        {
-          "type": "category",
-          "settings": {
-            "category_name": "Blue Light Glasses",
-            "category_subtitle": "Screen Protection",
-            "category_link": "/collections/blue-light-glasses"
-          }
-        },
-        {
-          "type": "category",
-          "settings": {
-            "category_name": "Kids Glasses",
-            "category_subtitle": "For Ages 4–16",
-            "category_link": "/collections/kids-glasses"
-          }
-        },
-        {
-          "type": "category",
-          "settings": {
-            "category_name": "New Arrivals",
-            "category_subtitle": "Just Landed",
-            "category_link": "/collections/all?sort_by=created-descending"
-          }
-        },
-        {
-          "type": "category",
-          "settings": {
-            "category_name": "Best Sellers",
-            "category_subtitle": "Most Popular",
-            "category_link": "/collections/all?sort_by=best-selling"
-          }
-        }
-      ]
+      "name": "Shop by Category"
     }
   ]
 }
