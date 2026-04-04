@@ -1,3 +1,20 @@
+<!-- 
+FILTER SETUP REQUIRED IN SHOPIFY ADMIN:
+To enable custom filters, go to:
+Shopify Admin ? Search & Discovery app ? Filters
+Add these filters:
+1. Product metafield: custom.frame_shape (Label: "Frame Shape")
+2. Product metafield: custom.material (Label: "Material") 
+3. Product metafield: custom.gender (Label: "Gender")
+4. Product metafield: custom.size (Label: "Size")
+
+Also go to Settings ? Custom data ? Products and create 
+these metafields:
+- custom.frame_shape (type: Single line text)
+- custom.material (type: Single line text)
+- custom.gender (type: Single line text)  
+- custom.size (type: Single line text)
+-->
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}

@@ -1,99 +1,80 @@
-{%- style -%}
-  .category-nav {
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #E8E8E8;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+﻿{%- style -%}
+.category-nav-wrapper {
+  background: #FFFFFF;
+  border-top: 1px solid #E8E8E8;
+  border-bottom: 1px solid #E8E8E8;
+  padding: 12px 40px;
+  position: sticky;
+  top: 64px;
+  z-index: 100;
+}
 
-  .category-nav::-webkit-scrollbar {
-    display: none;
-  }
+.category-nav-inner {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex-wrap: nowrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.category-nav-inner::-webkit-scrollbar { display: none; }
 
-  .category-nav {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+.cat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 9px 20px;
+  border-radius: 50px;
+  border: 2px solid #AFDCEC;
+  background: #FFFFFF;
+  color: #1A1A1A;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  line-height: 1;
+}
 
-  .category-nav__container {
-    display: flex;
-    gap: 0.75rem;
-    padding: 1rem 1.5rem;
-    max-width: var(--page-width, 1200px);
-    margin: 0 auto;
-    min-width: min-content;
-  }
-
-  .category-nav__link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1.25rem;
-    border: 1.5px solid #AFDCEC;
-    border-radius: 20px;
-    background-color: #FFFFFF;
-    color: #1A1A1A;
-    text-decoration: none;
-    font-size: 0.8125rem;
-    font-weight: 500;
-    line-height: 1.4;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    cursor: pointer;
-  }
-
-  .category-nav__link:hover {
-    background-color: #AFDCEC;
-    color: #1A1A1A;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(175, 220, 236, 0.4);
-  }
-
-  .category-nav__link.active {
-    background-color: #AFDCEC;
-    color: #1A1A1A;
-    border-color: #AFDCEC;
-    font-weight: 600;
-  }
-
-  @media screen and (max-width: 749px) {
-    .category-nav__container {
-      padding: 0.75rem 1rem;
-      gap: 0.5rem;
-    }
-
-    .category-nav__link {
-      padding: 0.4rem 1rem;
-      font-size: 0.75rem;
-      border-radius: 18px;
-    }
-  }
+.cat-btn:hover,
+.cat-btn.active {
+  background: #AFDCEC;
+  color: #1A1A1A;
+  border-color: #AFDCEC;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(175, 220, 236, 0.45);
+  text-decoration: none;
+}
 {%- endstyle -%}
 
-<nav class="category-nav" role="navigation" aria-label="Category Navigation">
-  <div class="category-nav__container">
-    <a href="/collections/eyeglasses?filter.p.m.custom.gender=Men" class="category-nav__link{% if collection.handle == 'eyeglasses' and request.query_string contains 'Men' %} active{% endif %}">
+<nav class="category-nav-wrapper" role="navigation" aria-label="Category Navigation">
+  <div class="category-nav-inner">
+    <a href="/collections/eyeglasses" class="cat-btn{% if collection.handle == 'eyeglasses' and request.query_string contains 'Men' %} active{% endif %}">
       Men Glasses
     </a>
-    <a href="/collections/eyeglasses?filter.p.m.custom.gender=Women" class="category-nav__link{% if collection.handle == 'eyeglasses' and request.query_string contains 'Women' %} active{% endif %}">
+    <a href="/collections/eyeglasses" class="cat-btn{% if collection.handle == 'eyeglasses' and request.query_string contains 'Women' %} active{% endif %}">
       Women Glasses
     </a>
-    <a href="/collections/blue-light-glasses" class="category-nav__link{% if collection.handle == 'blue-light-glasses' %} active{% endif %}">
+    <a href="/collections/blue-light-glasses" class="cat-btn{% if collection.handle == 'blue-light-glasses' %} active{% endif %}">
       Blue Light Glasses
     </a>
-    <a href="/collections/kids-glasses" class="category-nav__link{% if collection.handle == 'kids-glasses' %} active{% endif %}">
+    <a href="/collections/kids-glasses" class="cat-btn{% if collection.handle == 'kids-glasses' %} active{% endif %}">
       Kids Glasses
     </a>
-    <a href="/collections/sunglasses" class="category-nav__link{% if collection.handle == 'sunglasses' %} active{% endif %}">
+    <a href="/collections/sunglasses" class="cat-btn{% if collection.handle == 'sunglasses' %} active{% endif %}">
       Sunglasses
     </a>
-    <a href="/collections/contact-lenses" class="category-nav__link{% if collection.handle == 'contact-lenses' %} active{% endif %}">
+    <a href="/collections/contact-lenses" class="cat-btn{% if collection.handle == 'contact-lenses' %} active{% endif %}">
       Contact Lenses
     </a>
-    <a href="/collections/all?sort_by=created-descending" class="category-nav__link{% if collection.handle == 'all' and request.query_string contains 'created-descending' %} active{% endif %}">
+    <a href="/collections/all?sort_by=created-descending" class="cat-btn{% if collection.handle == 'all' and request.query_string contains 'created-descending' %} active{% endif %}">
       New Arrivals
     </a>
-    <a href="/collections/all?sort_by=best-selling" class="category-nav__link{% if collection.handle == 'all' and request.query_string contains 'best-selling' %} active{% endif %}">
+    <a href="/collections/all?sort_by=best-selling" class="cat-btn{% if collection.handle == 'all' and request.query_string contains 'best-selling' %} active{% endif %}">
       Best Sellers
     </a>
   </div>
