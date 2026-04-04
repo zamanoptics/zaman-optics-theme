@@ -593,3 +593,14 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
+
+/* Custom Product Card Styles */
+.card-wrapper .card--card {
+  border: 1px solid #E8E8E8;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-wrapper:hover .card--card {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: #AFDCEC;
+}
