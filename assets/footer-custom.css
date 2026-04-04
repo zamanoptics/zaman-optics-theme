@@ -78,8 +78,8 @@
 }
 
 .footer-custom__social-link:hover {
-  background-color: #6ba3be;
-  color: #ffffff;
+  background-color: #AFDCEC;
+  color: #1A1A1A;
   transform: translateY(-2px);
 }
 
@@ -93,7 +93,7 @@
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #6ba3be;
+  color: #AFDCEC;
   margin: 0 0 1.5rem 0;
   letter-spacing: 0.5px;
 }
@@ -125,7 +125,7 @@
 }
 
 .footer-custom__link-list a:focus-visible {
-  outline: 2px solid #6ba3be;
+  outline: 2px solid #AFDCEC;
   outline-offset: 2px;
 }
 
@@ -143,17 +143,17 @@
 }
 
 .footer-custom__contact-item a {
-  color: #6ba3be;
+  color: #AFDCEC;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-custom__contact-item a:hover {
-  color: #ffffff;
+  color: #E8F6FB;
 }
 
 .footer-custom__contact-item a:focus-visible {
-  outline: 2px solid #6ba3be;
+  outline: 2px solid #AFDCEC;
   outline-offset: 2px;
 }
 
@@ -325,7 +325,7 @@
 /* Focus visible states */
 .footer-custom__link-list a:focus,
 .footer-custom__contact-item a:focus {
-  outline: 2px solid #6ba3be;
+  outline: 2px solid #AFDCEC;
   outline-offset: 2px;
 }
 

@@ -38,7 +38,7 @@
 .category-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  border-color: #6BA3BE;
+  border-color: #AFDCEC;
 }
 
 .category-card__image-wrapper {
@@ -101,7 +101,7 @@
 }
 
 .category-grid-section__link {
-  color: #6BA3BE;
+  color: #AFDCEC;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -110,7 +110,7 @@
 }
 
 .category-grid-section__link:hover {
-  color: #4A7A94;
+  color: #7FB8CC;
   text-decoration: underline;
 }
 

@@ -1,9 +1,8 @@
 /* Enhanced Collection Filter System - Zaman Optics */
 /* Desktop: Left Sidebar + 3-Column Grid | Mobile: Filter Drawer */
 
-:root {
-  --filter-blue: #6BA3BE;
-  --filter-blue-hover: #4A7A94;
+:root {  --filter-blue: #AFDCEC;
+  --filter-blue-hover: #7FB8CC;
   --filter-border: #E8E8E8;
   --filter-bg: #FFFFFF;
   --text-primary: #1A1A1A;

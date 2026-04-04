@@ -1,6 +1,6 @@
 /* ========== PREMIUM & MINIMALIST DESIGN SYSTEM ========== */
 /* Zaman Optics Brand Design */
-/* Primary Color: #6BA3BE (Ivory Blue) */
+/* Primary Color: #AFDCEC (Light Blue) */
 /* Text Color: #1A1A1A (Dark) */
 /* Background: #FFFFFF (White) */
 /* Surface: #F5F5F5 (Light Gray) */
@@ -8,9 +8,9 @@
 
 :root {
   /* Brand Colors */
-  --color-brand-primary: #6BA3BE;        /* Ivory Blue - Primary CTAs */
-  --color-brand-primary-dark: #4A7A94;   /* Darker blue for hover states */
-  --color-brand-primary-light: #E8F4F8;  /* Very light blue for backgrounds */
+  --color-brand-primary: #AFDCEC;        /* Light Blue - Primary CTAs */
+  --color-brand-primary-dark: #7FB8CC;   /* Darker blue for hover states */
+  --color-brand-primary-light: #E8F6FB;  /* Very light blue for backgrounds */
   --color-text: #1A1A1A;
   --color-background: #FFFFFF;
   --color-surface: #F5F5F5;
@@ -82,15 +82,15 @@ button,
 .button--primary,
 .button:not(.button--secondary):not(.button--tertiary) {
   background-color: var(--color-brand-primary);
-  color: white;
-  box-shadow: 0 4px 12px rgba(107, 163, 190, 0.15);
+  color: #1A1A1A;
+  box-shadow: 0 4px 12px rgba(175, 220, 236, 0.15);
   border: none;
 }
 
 .button--primary:hover,
 .button:not(.button--secondary):not(.button--tertiary):hover {
   background-color: var(--color-brand-primary-dark);
-  box-shadow: 0 8px 20px rgba(107, 163, 190, 0.25);
+  box-shadow: 0 8px 20px rgba(175, 220, 236, 0.25);
   transform: translateY(-2px);
 }
 
@@ -192,7 +192,7 @@ textarea::placeholder {
 /* Badge styling with brand color */
 .badge {
   background-color: var(--color-brand-primary);
-  color: white;
+  color: #1A1A1A;
   border-radius: 20px;
   padding: 0.4rem 1rem;
   font-size: 0.75rem;

@@ -90,7 +90,7 @@
   padding: 1.5rem;
   background-color: #F8F9FA;
   border-radius: 0.5rem;
-  border-left: 4px solid #6BA3BE;
+  border-left: 4px solid #AFDCEC;
 }
 
 .size-guide__breakdown-number {
@@ -99,8 +99,8 @@
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  background-color: #6BA3BE;
-  color: #FFFFFF;
+  background-color: #AFDCEC;
+  color: #1A1A1A;
   border-radius: 50%;
   font-weight: 600;
   font-size: 1.1rem;
@@ -123,7 +123,7 @@
 
 .size-guide__breakdown-example {
   font-size: 0.9rem;
-  color: #6BA3BE;
+  color: #AFDCEC;
   margin: 0;
   font-weight: 500;
 }
@@ -131,7 +131,7 @@
 /* Size Example Box */
 .size-guide__size-example {
   background-color: #F0F4F8;
-  border: 2px solid #6BA3BE;
+  border: 2px solid #AFDCEC;
   border-radius: 0.5rem;
   padding: 2rem;
   text-align: center;
@@ -150,7 +150,7 @@
 .size-guide__size-example-value {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #6BA3BE;
+  color: #AFDCEC;
   margin: 0 0 0.75rem 0;
   font-family: 'Courier New', monospace;
   letter-spacing: 0.1em;
@@ -177,7 +177,7 @@
 
 .size-guide__table thead {
   background-color: #F8F9FA;
-  border-bottom: 2px solid #6BA3BE;
+  border-bottom: 2px solid #AFDCEC;
 }
 
 .size-guide__table th {
@@ -254,7 +254,7 @@
     position: absolute;
     left: 0;
     font-weight: 600;
-    color: #6BA3BE;
+    color: #AFDCEC;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -289,14 +289,14 @@
 }
 
 .size-guide__face-shape-card:hover {
-  border-color: #6BA3BE;
+  border-color: #AFDCEC;
   background-color: #F0F4F8;
 }
 
 .size-guide__face-shape-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #6BA3BE;
+  color: #AFDCEC;
   margin: 0 0 0.75rem 0;
 }
 
@@ -321,7 +321,7 @@
   padding: 1.5rem;
   background-color: #F8F9FA;
   border-radius: 0.5rem;
-  border-left: 4px solid #6BA3BE;
+  border-left: 4px solid #AFDCEC;
 }
 
 .size-guide__tip-number {
@@ -330,8 +330,8 @@
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  background-color: #6BA3BE;
-  color: #FFFFFF;
+  background-color: #AFDCEC;
+  color: #1A1A1A;
   border-radius: 50%;
   font-weight: 600;
   font-size: 1.1rem;
@@ -372,19 +372,19 @@
 .size-guide__button {
   display: inline-block;
   padding: 1rem 2.5rem;
-  background-color: #6BA3BE;
-  color: #FFFFFF;
+  background-color: #AFDCEC;
+  color: #1A1A1A;
   text-decoration: none;
   border-radius: 0.4rem;
   font-weight: 600;
   transition: all 0.3s ease;
   font-size: 1rem;
-  border: 2px solid #6BA3BE;
+  border: 2px solid #AFDCEC;
 }
 
 .size-guide__button:hover {
-  background-color: #4A7A94;
-  border-color: #4A7A94;
+  background-color: #7FB8CC;
+  border-color: #7FB8CC;
   transform: translateY(-2px);
 }
 
@@ -401,6 +401,6 @@
 }
 
 .size-guide__button:focus-visible {
-  outline: 2px solid #6BA3BE;
+  outline: 2px solid #AFDCEC;
   outline-offset: 2px;
 }

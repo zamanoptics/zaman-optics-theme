@@ -23,16 +23,15 @@
     margin: 0 auto;
     min-width: min-content;
   }
-
   .category-nav__link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.5rem 1.25rem;
-    border: 1px solid #6BA3BE;
+    border: 1.5px solid #AFDCEC;
     border-radius: 20px;
     background-color: #FFFFFF;
-    color: #6BA3BE;
+    color: #1A1A1A;
     text-decoration: none;
     font-size: 0.8125rem;
     font-weight: 500;
@@ -43,14 +42,17 @@
   }
 
   .category-nav__link:hover {
-    background-color: #6BA3BE;
-    color: #FFFFFF;
+    background-color: #AFDCEC;
+    color: #1A1A1A;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(175, 220, 236, 0.4);
   }
 
   .category-nav__link.active {
-    background-color: #6BA3BE;
-    color: #FFFFFF;
-    border-color: #6BA3BE;
+    background-color: #AFDCEC;
+    color: #1A1A1A;
+    font-weight: 600;
+    border-color: #AFDCEC;
   }
 
   @media screen and (max-width: 749px) {

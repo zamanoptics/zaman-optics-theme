@@ -1,8 +1,8 @@
 :root {
   /* Brand Colors */
-  --color-brand-primary: #6BA3BE;        /* Ivory Blue - Primary CTAs */
-  --color-brand-primary-dark: #4A7A94;   /* Darker blue for hover states */
-  --color-brand-primary-light: #E8F4F8;  /* Very light blue for backgrounds */
+  --color-brand-primary: #AFDCEC;        /* Light Blue - Primary CTAs */
+  --color-brand-primary-dark: #7FB8CC;   /* Darker blue for hover states */
+  --color-brand-primary-light: #E8F6FB;  /* Very light blue for backgrounds */
   --color-text: #1A1A1A;
   --color-background-primary: #FFFFFF;
   --color-surface: #F5F5F5;
@@ -203,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Button styling with brand primary color */
 .button--primary {
   background-color: var(--color-brand-primary);
-  color: white;
+  color: #1A1A1A;
 }
 
 .button--primary:hover {

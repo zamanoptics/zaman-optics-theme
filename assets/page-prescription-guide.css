@@ -66,15 +66,15 @@
 }
 
 .prescription-definitions__card:hover {
-  border-color: #6ba3be;
+  border-color: #AFDCEC;
   background: #f0f5f9;
-  box-shadow: 0 2px 8px rgba(107, 163, 190, 0.1);
+  box-shadow: 0 2px 8px rgba(175, 220, 236, 0.1);
 }
 
 .prescription-definitions__label {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #6ba3be;
+  color: #AFDCEC;
   margin-bottom: 0.75rem;
   display: block;
   text-transform: uppercase;
@@ -99,7 +99,7 @@
   color: #666666;
   background: #ffffff;
   padding: 0.75rem;
-  border-left: 3px solid #6ba3be;
+  border-left: 3px solid #AFDCEC;
   margin: 0;
 }
 
@@ -154,8 +154,8 @@
 }
 
 .prescription-faq__item:hover {
-  box-shadow: 0 2px 8px rgba(107, 163, 190, 0.1);
-  border-color: #6ba3be;
+  box-shadow: 0 2px 8px rgba(175, 220, 236, 0.1);
+  border-color: #AFDCEC;
 }
 
 .prescription-faq__trigger {
@@ -194,7 +194,7 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: #6ba3be;
+  color: #AFDCEC;
   transition: transform 0.3s ease;
 }
 
@@ -236,7 +236,7 @@
 
 /* Focus States */
 .prescription-faq__trigger:focus-visible {
-  outline: 2px solid #6ba3be;
+  outline: 2px solid #AFDCEC;
   outline-offset: -1px;
 }
 
@@ -328,18 +328,18 @@
 
 /* Light theme enhancements */
 .prescription-guide a {
-  color: #6ba3be;
+  color: #AFDCEC;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .prescription-guide a:hover {
-  color: #4a7a94;
+  color: #7FB8CC;
   text-decoration: underline;
 }
 
 .prescription-guide a:focus-visible {
-  outline: 2px solid #6ba3be;
+  outline: 2px solid #AFDCEC;
   outline-offset: 2px;
 }
 
