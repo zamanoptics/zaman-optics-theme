@@ -21,7 +21,7 @@
 }
 
 .featured-products-link {
-  color: #AFDCEC;
+  color: #FF8C00;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -30,7 +30,7 @@
 }
 
 .featured-products-link:hover {
-  color: #7FB8CC;
+  color: #E07800;
 }
 
 .featured-products-grid {
@@ -106,8 +106,8 @@
 
 .add-to-cart-btn {
   background-color: transparent;
-  border: 1px solid #AFDCEC;
-  color: #AFDCEC;
+  border: 1px solid #FF8C00;
+  color: #FF8C00;
   padding: 0.75rem 1rem;
   border-radius: 6px;
   font-size: 0.875rem;
@@ -121,7 +121,7 @@
 }
 
 .add-to-cart-btn:hover {
-  background-color: #AFDCEC;
+  background-color: #FF8C00;
   color: #1A1A1A;
 }
 

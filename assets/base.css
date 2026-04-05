@@ -1,8 +1,8 @@
 :root {
   /* Brand Colors */
-  --color-brand-primary: #AFDCEC;        /* Light Blue - Primary CTAs */
-  --color-brand-primary-dark: #7FB8CC;   /* Darker blue for hover states */
-  --color-brand-primary-light: #E8F6FB;  /* Very light blue for backgrounds */
+  --color-brand-primary: #FF8C00;        /* Orange - Primary CTAs */
+  --color-brand-primary-dark: #E07800;   /* Darker orange for hover states */
+  --color-brand-primary-light: #FFF3E0;  /* Very light orange for backgrounds */
   --color-text: #1A1A1A;
   --color-background-primary: #FFFFFF;
   --color-surface: #F5F5F5;
@@ -169,7 +169,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 /* Link color update - use brand primary */
 a {
-  color: var(--color-brand-primary);
+  color: #FFFFFF;
 }
 
 a:hover {
@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Button styling with brand primary color */
 .button--primary {
-  background-color: var(--color-brand-primary);
+  background-color: #FFFFFF;
   color: #1A1A1A;
 }
 
@@ -241,7 +241,7 @@ input[type="password"]:focus,
 input[type="tel"]:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--color-brand-primary);
+  border-color: #FFFFFF;
   box-shadow: 0 0 0 3px rgba(107, 163, 190, 0.1);
 }
 
@@ -1428,7 +1428,7 @@ button.shopify-payment-button__button--unbranded {
 
 .button--primary,
 .button:not(.button--secondary):not(.button--tertiary) {
-  background-color: var(--color-brand-primary);
+  background-color: #FFFFFF;
   color: white;
   box-shadow: 0 4px 12px rgba(107, 163, 190, 0.15);
 }
@@ -1448,18 +1448,18 @@ button.shopify-payment-button__button--unbranded {
 
 .button--secondary:hover {
   background-color: #EFEFEF;
-  border-color: var(--color-brand-primary);
+  border-color: #FFFFFF;
 }
 
 .button--tertiary {
-  color: var(--color-brand-primary);
+  color: #FFFFFF;
   background-color: transparent;
   border: 1px solid transparent;
 }
 
 .button--tertiary:hover {
   background-color: var(--color-brand-primary-light);
-  border-color: var(--color-brand-primary);
+  border-color: #FFFFFF;
 }
 
 /* Shopify Accelerated Checkout */
