@@ -1,41 +1,200 @@
 
-<link rel="stylesheet" href="{{ 'section-header.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'zaman-header.css' | asset_url }}">
 
-<header class="farmart-header">
-  <div class="page-width">
-    <div class="farmart-header__top">
-      <div class="header__logo">
-        {% if section.settings.logo != blank %}
-          <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ shop.name }}" width="150">
-        {% else %}
-          <h2>{{ shop.name }}</h2>
+<div class="zaman-announcement">
+  Welcome to Zaman Optics — Pakistan's Premium Eyewear Store
+</div>
+
+<header class="zaman-header">
+  <div class="zaman-header-inner">
+
+    <a href="/" class="zaman-logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" 
+           fill="none">
+        <circle cx="9" cy="15" r="6.5" 
+                stroke="#FF8C00" stroke-width="2.2" 
+                fill="none"/>
+        <circle cx="21" cy="15" r="6.5" 
+                stroke="#FF8C00" stroke-width="2.2" 
+                fill="none"/>
+        <line x1="15" y1="11" x2="15" y2="19" 
+              stroke="#FF8C00" stroke-width="2.2" 
+              stroke-linecap="round"/>
+      </svg>
+      <span class="zaman-logo-name">Zaman Optics</span>
+    </a>
+
+    <form action="/search" method="get" 
+          class="zaman-search">
+      <input type="search" 
+             name="q"
+             placeholder="Search glasses, frames, lenses..."
+             class="zaman-search-input"
+             autocomplete="off">
+      <button type="submit" class="zaman-search-btn">
+        <svg width="17" height="17" fill="none" 
+             viewBox="0 0 24 24" stroke="#FFFFFF" 
+             stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35" 
+                stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+
+    <div class="zaman-header-icons">
+      <a href="/account" class="zaman-icon-btn" 
+         title="Account">
+        <svg width="22" height="22" fill="none" 
+             viewBox="0 0 24 24" stroke="#1A1A1A" 
+             stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 
+                   0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+      <a href="/cart" class="zaman-cart-btn" 
+         title="Cart">
+        <svg width="22" height="22" fill="none" 
+             viewBox="0 0 24 24" stroke="#1A1A1A" 
+             stroke-width="2">
+          <path d="M9 22c.55 0 1-.45 1-1s-.45-1-1-1
+                   -1 .45-1 1 .45 1 1 1zm11 0c.55 0 
+                   1-.45 1-1s-.45-1-1-1-1 .45-1 1 
+                   .45 1 1 1zM1 1h4l2.68 13.39a2 2 
+                   0 0 0 2 1.61h9.72a2 2 0 0 0 
+                   2-1.61L23 6H6"/>
+        </svg>
+        {% if cart.item_count > 0 %}
+        <span class="zaman-cart-count">
+          {{ cart.item_count }}
+        </span>
         {% endif %}
-      </div>
-      
-      <div class="header__search">
-        <form action="/search" method="get" role="search">
-          <input type="search" name="q" placeholder="Search for products...">
-          <button type="submit">Search</button>
-        </form>
-      </div>
-      
-      <div class="header__icons">
-        <a href="/account">{% render 'icon-account' %}</a>
-        <a href="/cart">{% render 'icon-cart' %}</a>
-      </div>
+      </a>
     </div>
-  </div>
 
-  <div class="farmart-header__bottom">
-    <div class="page-width">
-      <nav>
-        {% for link in linklists[section.settings.menu].links %}
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        {% endfor %}
-      </nav>
-    </div>
   </div>
 </header>
+
+<nav class="zaman-nav">
+  <div class="zaman-nav-inner">
+    <a href="/" class="zaman-nav-link">Home</a>
+    <a href="/collections/eyeglasses" 
+       class="zaman-nav-link">Eyeglasses</a>
+    <a href="/collections/sunglasses" 
+       class="zaman-nav-link">Sunglasses</a>
+    <a href="/collections/blue-light-glasses" 
+       class="zaman-nav-link">Blue Light Glasses</a>
+    <a href="/collections/kids-glasses" 
+       class="zaman-nav-link">Kids Glasses</a>
+    <a href="/collections/contact-lenses" 
+       class="zaman-nav-link">Contact Lenses</a>
+    <a href="/pages/lens-guide" 
+       class="zaman-nav-link">Lens Guide</a>
+    <a href="/pages/contact" 
+       class="zaman-nav-link">Contact</a>
+  </div>
+</nav>
+
+<!-- MOBILE HEADER -->
+<header class="zaman-mobile-header">
+  <button class="zaman-burger" 
+          id="zamanBurger"
+          aria-label="Menu">
+    <svg width="24" height="24" fill="none" 
+         viewBox="0 0 24 24" stroke="#1A1A1A" 
+         stroke-width="2.5">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <a href="/" class="zaman-mobile-logo">Zaman Optics</a>
+  <a href="/cart" class="zaman-mobile-cart">
+    <svg width="24" height="24" fill="none" 
+         viewBox="0 0 24 24" stroke="#1A1A1A" 
+         stroke-width="2">
+      <path d="M9 22c.55 0 1-.45 1-1s-.45-1-1-1
+               -1 .45-1 1 .45 1 1 1zm11 0c.55 0 
+               1-.45 1-1s-.45-1-1-1-1 .45-1 1 
+               .45 1 1 1zM1 1h4l2.68 13.39a2 2 
+               0 0 0 2 1.61h9.72a2 2 0 0 0 
+               2-1.61L23 6H6"/>
+    </svg>
+    {% if cart.item_count > 0 %}
+    <span class="zaman-cart-count">
+      {{ cart.item_count }}
+    </span>
+    {% endif %}
+  </a>
+</header>
+
+<div class="zaman-overlay" id="zamanOverlay"></div>
+<div class="zaman-drawer" id="zamanDrawer">
+  <div class="zaman-drawer-top">
+    <span>Menu</span>
+    <button id="zamanClose">✕</button>
+  </div>
+  <a href="/collections/eyeglasses" 
+     class="zaman-drawer-link">👓 Eyeglasses</a>
+  <a href="/collections/sunglasses" 
+     class="zaman-drawer-link">🕶️ Sunglasses</a>
+  <a href="/collections/blue-light-glasses" 
+     class="zaman-drawer-link">💻 Blue Light Glasses</a>
+  <a href="/collections/kids-glasses" 
+     class="zaman-drawer-link">👦 Kids Glasses</a>
+  <a href="/collections/contact-lenses" 
+     class="zaman-drawer-link">👁️ Contact Lenses</a>
+  <hr class="zaman-drawer-hr">
+  <a href="/" class="zaman-drawer-link">🏠 Home</a>
+  <a href="/pages/lens-guide" 
+     class="zaman-drawer-link">🔬 Lens Guide</a>
+  <a href="/pages/faq" 
+     class="zaman-drawer-link">❓ FAQ</a>
+  <a href="/pages/contact" 
+     class="zaman-drawer-link">📞 Contact</a>
+  <hr class="zaman-drawer-hr">
+  <a href="/account" 
+     class="zaman-drawer-link">👤 My Account</a>
+  <a href="/cart" class="zaman-drawer-link">
+    🛒 Cart ({{ cart.item_count }})
+  </a>
+</div>
+
+<script>
+(function() {
+  var burger = document.getElementById('zamanBurger');
+  var close  = document.getElementById('zamanClose');
+  var drawer = document.getElementById('zamanDrawer');
+  var overlay = document.getElementById('zamanOverlay');
+
+  function openMenu() {
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (burger) burger.addEventListener('click', openMenu);
+  if (close)  close.addEventListener('click', closeMenu);
+  if (overlay) overlay.addEventListener('click', closeMenu);
+
+  // Active nav link
+  var path = window.location.pathname;
+  document.querySelectorAll('.zaman-nav-link')
+    .forEach(function(link) {
+      var href = link.getAttribute('href');
+      if (href === path || 
+          (href !== '/' && path.indexOf(href) === 0)) {
+        link.classList.add('active');
+      }
+    });
+})();
+</script>
 
 {% schema %}
 {

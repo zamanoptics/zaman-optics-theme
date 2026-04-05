@@ -1,0 +1,344 @@
+/* ==============================
+   ZAMAN OPTICS HEADER STYLES
+   ============================== */
+
+/* Announcement Bar */
+.zaman-announcement {
+  background: #FF8C00;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* Main Header */
+.zaman-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid #EEEEEE;
+  padding: 0 40px;
+  height: 68px;
+}
+.zaman-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.zaman-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.zaman-logo-name {
+  font-size: 19px;
+  font-weight: 800;
+  color: #1A1A1A;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+/* Search */
+.zaman-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 2px solid #E8E8E8;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  height: 44px;
+}
+.zaman-search:focus-within {
+  border-color: #FF8C00;
+  box-shadow: 0 0 0 3px rgba(255,140,0,0.08);
+}
+.zaman-search-input {
+  flex: 1;
+  height: 100%;
+  padding: 0 16px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #1A1A1A;
+  background: #FFFFFF;
+  min-width: 0;
+}
+.zaman-search-input::placeholder { 
+  color: #AAAAAA; 
+}
+.zaman-search-btn {
+  height: 100%;
+  padding: 0 18px;
+  background: #FF8C00;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.zaman-search-btn:hover { 
+  background: #E07800; 
+}
+
+/* Header Icons */
+.zaman-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.zaman-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.zaman-icon-btn:hover { 
+  background: #FFF3E0; 
+}
+.zaman-cart-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 2px solid #E8E8E8;
+  text-decoration: none;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.zaman-cart-btn:hover {
+  border-color: #FF8C00;
+  background: #FFF3E0;
+}
+.zaman-cart-count {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  background: #FF8C00;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 2px solid #FFFFFF;
+}
+
+/* Orange Nav Bar */
+.zaman-nav {
+  background: #FF8C00;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.zaman-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 0;
+}
+.zaman-nav-inner::-webkit-scrollbar { 
+  display: none; 
+}
+.zaman-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  position: relative;
+  transition: background 0.15s;
+}
+.zaman-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 18px;
+  right: 18px;
+  height: 3px;
+  background: #FFFFFF;
+  opacity: 0;
+  border-radius: 3px 3px 0 0;
+  transition: opacity 0.15s;
+}
+.zaman-nav-link:hover {
+  background: rgba(0,0,0,0.1);
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+.zaman-nav-link:hover::after,
+.zaman-nav-link.active::after { 
+  opacity: 1; 
+}
+.zaman-nav-link.active {
+  background: rgba(0,0,0,0.12);
+  color: #FFFFFF !important;
+  font-weight: 700;
+}
+
+/* Hide mobile on desktop */
+.zaman-mobile-header,
+.zaman-overlay,
+.zaman-drawer { 
+  display: none; 
+}
+
+/* ==============================
+   MOBILE HEADER
+   ============================== */
+@media (max-width: 768px) {
+  .zaman-announcement,
+  .zaman-header,
+  .zaman-nav { 
+    display: none; 
+  }
+
+  .zaman-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 58px;
+    background: #FFFFFF;
+    border-bottom: 3px solid #FF8C00;
+    position: sticky;
+    top: 0;
+    z-index: 300;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .zaman-burger {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+  }
+  .zaman-burger:hover { 
+    background: #FFF3E0; 
+  }
+  .zaman-mobile-logo {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1A1A1A;
+    text-decoration: none;
+  }
+  .zaman-mobile-cart {
+    position: relative;
+    padding: 8px;
+    display: flex;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  .zaman-mobile-cart:hover { 
+    background: #FFF3E0; 
+  }
+
+  .zaman-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 400;
+  }
+  .zaman-overlay.open { 
+    display: block; 
+  }
+
+  .zaman-drawer {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 285px;
+    height: 100vh;
+    background: #FFFFFF;
+    z-index: 500;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+  }
+  .zaman-drawer.open { 
+    transform: translateX(0); 
+  }
+  .zaman-drawer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 58px;
+    background: #FF8C00;
+  }
+  .zaman-drawer-top span {
+    font-size: 17px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+  .zaman-drawer-top button {
+    background: rgba(255,255,255,0.25);
+    border: none;
+    color: #FFFFFF;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .zaman-drawer-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1A1A1A;
+    text-decoration: none;
+    border-bottom: 1px solid #F5F5F5;
+    transition: all 0.15s;
+  }
+  .zaman-drawer-link:hover {
+    background: #FFF3E0;
+    color: #FF8C00;
+    padding-left: 26px;
+    text-decoration: none;
+  }
+  .zaman-drawer-hr {
+    border: none;
+    border-top: 8px solid #F5F5F5;
+    margin: 4px 0;
+  }
+}
