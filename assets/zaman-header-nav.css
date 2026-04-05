@@ -1,0 +1,32 @@
+/* Header Navigation Links */
+.zaman-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.zaman-header-navlink {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1A1A1A;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.zaman-header-navlink:hover {
+  color: #FF8C00;
+  background: #FFF3E0;
+  text-decoration: none;
+}
+.zaman-header-navlink.active {
+  color: #FF8C00;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .zaman-header-nav { 
+    display: none; 
+  }
+}
