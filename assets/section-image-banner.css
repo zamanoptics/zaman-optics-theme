@@ -62,22 +62,24 @@
   text-decoration: none;
 }
 .btn-secondary {
+  display: inline-block;
   padding: 15px 32px;
   background: transparent;
-  color: #1A1A1A;
+  color: #1A1A1A !important;
   border: 2px solid #1A1A1A;
   border-radius: 10px;
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.2s ease;
-  display: inline-block;
+  cursor: pointer;
 }
 .btn-secondary:hover {
   border-color: #FF8C00;
-  color: #E07800;
-  transform: translateY(-2px);
+  color: #FF8C00 !important;
+  background: transparent;
   text-decoration: none;
+  transform: translateY(-2px);
 }
 .hero-trust {
   display: flex;

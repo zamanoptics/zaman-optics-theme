@@ -1,14 +1,13 @@
 
 <link rel="stylesheet" href="{{ 'zaman-header.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'zaman-header-nav.css' | asset_url }}">
 
 <div class="zaman-announcement">
-  Welcome to Zaman Optics — Pakistan's Premium Eyewear Store
+  🚚 Free Shipping on orders above Rs 3,000 | 💳 Cash on Delivery Available | 📞 WhatsApp: +92 300 8888888
 </div>
 
 <header class="zaman-header">
-  <div class="zaman-header-inner">
-
-    <a href="/" class="zaman-logo">
+  <div class="zaman-header-inner">    <a href="/" class="zaman-logo">
       <svg width="30" height="30" viewBox="0 0 30 30" 
            fill="none">
         <circle cx="9" cy="15" r="6.5" 
@@ -23,6 +22,14 @@
       </svg>
       <span class="zaman-logo-name">Zaman Optics</span>
     </a>
+
+    <nav class="zaman-header-nav">
+      <a href="/" class="zaman-header-navlink">Home</a>
+      <a href="/collections/all" 
+         class="zaman-header-navlink">Collections</a>
+      <a href="/pages/contact" 
+         class="zaman-header-navlink">Contact</a>
+    </nav>
 
     <form action="/search" method="get" 
           class="zaman-search">
@@ -182,14 +189,16 @@
   if (burger) burger.addEventListener('click', openMenu);
   if (close)  close.addEventListener('click', closeMenu);
   if (overlay) overlay.addEventListener('click', closeMenu);
-
   // Active nav link
   var path = window.location.pathname;
   document.querySelectorAll('.zaman-nav-link')
     .forEach(function(link) {
       var href = link.getAttribute('href');
-      if (href === path || 
-          (href !== '/' && path.indexOf(href) === 0)) {
+      if (!href) return;
+      if (href === '/' && path === '/') {
+        link.classList.add('active');
+      } else if (href !== '/' && 
+                 path.indexOf(href) === 0) {
         link.classList.add('active');
       }
     });
