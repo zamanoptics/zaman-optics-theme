@@ -64,8 +64,8 @@
 }
 
 .faq-accordion__item:hover {
-  box-shadow: 0 2px 8px rgba(175, 220, 236, 0.1);
-  border-color: #AFDCEC;
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.1);
+  border-color: #FF8C00;
 }
 
 .faq-accordion__trigger {
@@ -87,7 +87,7 @@
 
 .faq-accordion__trigger:hover {
   background: #f8f8f8;
-  color: #AFDCEC;
+  color: #FF8C00;
 }
 
 .faq-accordion__trigger[aria-expanded="true"] {
@@ -95,7 +95,7 @@
 }
 
 .faq-accordion__trigger:focus-visible {
-  outline: 2px solid #AFDCEC;
+  outline: 2px solid #FF8C00;
   outline-offset: -1px;
 }
 
@@ -110,7 +110,7 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: #AFDCEC;
+  color: #FF8C00;
   transition: transform 0.3s ease;
 }
 
@@ -279,24 +279,24 @@
     border-bottom: 1px solid #e8e8e8;
   }
   .faq-accordion__trigger[aria-expanded="true"] {
-    border-bottom-color: #AFDCEC;
+    border-bottom-color: #FF8C00;
   }
 }
 
 /* Links in FAQ content */
 .faq-accordion__content a {
-  color: #AFDCEC;
+  color: #FF8C00;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .faq-accordion__content a:hover {
-  color: #7FB8CC;
+  color: #E07800;
   text-decoration: underline;
 }
 
 .faq-accordion__content a:focus-visible {
-  outline: 2px solid #AFDCEC;
+  outline: 2px solid #FF8C00;
   outline-offset: 2px;
 }
 

@@ -1,6 +1,6 @@
 /* ========== PREMIUM & MINIMALIST DESIGN SYSTEM ========== */
 /* Zaman Optics Brand Design */
-/* Primary Color: #AFDCEC (Light Blue) */
+/* Primary Color: #FF8C00 (Light Blue) */
 /* Text Color: #1A1A1A (Dark) */
 /* Background: #FFFFFF (White) */
 /* Surface: #F5F5F5 (Light Gray) */
@@ -8,9 +8,9 @@
 
 :root {
   /* Brand Colors */
-  --color-brand-primary: #AFDCEC;        /* Light Blue - Primary CTAs */
-  --color-brand-primary-dark: #7FB8CC;   /* Darker blue for hover states */
-  --color-brand-primary-light: #E8F6FB;  /* Very light blue for backgrounds */
+  --color-brand-primary: #FF8C00;        /* Orange - Primary CTAs */
+  --color-brand-primary-dark: #E07800;   /* Darker orange for hover states */
+  --color-brand-primary-light: #FFF3E0;  /* Very light orange for backgrounds */
   --color-text: #1A1A1A;
   --color-background: #FFFFFF;
   --color-surface: #F5F5F5;
@@ -57,7 +57,7 @@ p {
 
 /* Primary accent color for links */
 a:not(.button):not(.link-with-icon) {
-  color: var(--color-brand-primary);
+  color: #FFFFFF;
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -81,16 +81,16 @@ button,
 
 .button--primary,
 .button:not(.button--secondary):not(.button--tertiary) {
-  background-color: var(--color-brand-primary);
+  background-color: #FFFFFF;
   color: #1A1A1A;
-  box-shadow: 0 4px 12px rgba(175, 220, 236, 0.15);
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15);
   border: none;
 }
 
 .button--primary:hover,
 .button:not(.button--secondary):not(.button--tertiary):hover {
   background-color: var(--color-brand-primary-dark);
-  box-shadow: 0 8px 20px rgba(175, 220, 236, 0.25);
+  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.25);
   transform: translateY(-2px);
 }
 
@@ -102,19 +102,19 @@ button,
 
 .button--secondary:hover {
   background-color: #EFEFEF;
-  border-color: var(--color-brand-primary);
+  border-color: #FFFFFF;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .button--tertiary {
-  color: var(--color-brand-primary);
+  color: #FFFFFF;
   background-color: transparent;
   border: 1px solid transparent;
 }
 
 .button--tertiary:hover {
   background-color: var(--color-brand-primary-light);
-  border-color: var(--color-brand-primary);
+  border-color: #FFFFFF;
 }
 
 /* Form inputs with premium styling */
@@ -142,7 +142,7 @@ input[type="tel"]:focus,
 input[type="number"]:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--color-brand-primary);
+  border-color: #FFFFFF;
   box-shadow: 0 0 0 3px rgba(107, 163, 190, 0.1);
   outline: none;
 }
@@ -191,7 +191,7 @@ textarea::placeholder {
 
 /* Badge styling with brand color */
 .badge {
-  background-color: var(--color-brand-primary);
+  background-color: #FFFFFF;
   color: #1A1A1A;
   border-radius: 20px;
   padding: 0.4rem 1rem;
@@ -210,7 +210,7 @@ textarea::placeholder {
 
 .price-item {
   font-size: 1.4rem;
-  color: var(--color-brand-primary);
+  color: #FFFFFF;
   font-weight: 600;
 }
 

@@ -79,10 +79,10 @@
 
 /* Active step styling */
 .prescription-steps__item.is-current .prescription-steps__number {
-  background: var(--color-brand-primary, #AFDCEC);
-  border-color: var(--color-brand-primary, #AFDCEC);
+  background: var(--color-brand-primary, #FF8C00);
+  border-color: var(--color-brand-primary, #FF8C00);
   color: #1A1A1A;
-  box-shadow: 0 4px 12px rgba(175, 220, 236, 0.2);
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
 }
 
 .prescription-steps__item.is-current .prescription-steps__label {
@@ -92,8 +92,8 @@
 
 /* Completed step styling */
 .prescription-steps__item.is-completed .prescription-steps__number {
-  background: var(--color-brand-primary, #AFDCEC);
-  border-color: var(--color-brand-primary, #AFDCEC);
+  background: var(--color-brand-primary, #FF8C00);
+  border-color: var(--color-brand-primary, #FF8C00);
   color: #1A1A1A;
 }
 
@@ -252,9 +252,9 @@
 .prescription-form__input:focus,
 .prescription-form__select:focus {
   outline: none;
-  border-color: var(--color-brand-primary, #AFDCEC);
+  border-color: var(--color-brand-primary, #FF8C00);
   background: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(175, 220, 236, 0.1);
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
 }
 
 .prescription-form__input::placeholder {
@@ -302,7 +302,7 @@
   height: 1.25rem;
   margin-right: 0.75rem;
   cursor: pointer;
-  accent-color: var(--color-brand-primary, #AFDCEC);
+  accent-color: var(--color-brand-primary, #FF8C00);
 }
 
 .prescription-form__checkbox-text {
@@ -424,15 +424,15 @@
 
 /* Primary Button (Next/Submit) */
 .button--primary {
-  background: var(--color-brand-primary, #AFDCEC);
+  background: var(--color-brand-primary, #FF8C00);
   color: #1A1A1A;
-  border: 2px solid var(--color-brand-primary, #AFDCEC);
+  border: 2px solid var(--color-brand-primary, #FF8C00);
 }
 
 .button--primary:hover:not(:disabled) {
-  background: #7FB8CC;
-  border-color: #7FB8CC;
-  box-shadow: 0 8px 20px rgba(175, 220, 236, 0.25);
+  background: #E07800;
+  border-color: #E07800;
+  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.25);
   transform: translateY(-2px);
 }
 
@@ -454,8 +454,8 @@
 
 .button--secondary:hover:not(:disabled) {
   background: #EFEFEF;
-  border-color: var(--color-brand-primary, #AFDCEC);
-  color: var(--color-brand-primary, #AFDCEC);
+  border-color: var(--color-brand-primary, #FF8C00);
+  color: var(--color-brand-primary, #FF8C00);
 }
 
 .button--secondary:active:not(:disabled) {
@@ -586,7 +586,7 @@
 .prescription-form__select:focus-visible,
 .prescription-form__checkbox:focus-visible,
 .prescription-form__button:focus-visible {
-  outline: 2px solid var(--color-brand-primary, #AFDCEC);
+  outline: 2px solid var(--color-brand-primary, #FF8C00);
   outline-offset: 2px;
 }
 

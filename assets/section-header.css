@@ -1,0 +1,29 @@
+.farmart-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+.farmart-header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.farmart-header__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand-primary, #FF8C00);
+}
+.farmart-header__bottom nav {
+  display: flex;
+  gap: 20px;
+}
+.farmart-header__bottom a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: 600;
+}
+.farmart-header__bottom a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
