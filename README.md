@@ -3,109 +3,119 @@
 ## 📋 Project Overview
 
 **Project Name:** Zaman Optics Shopify Theme Transformation  
-**Objective:** Transform the theme with premium minimalist design and product page modes  
+**Objective:** Premium minimalist optical retail store with multi-step prescription workflows and advanced filtering  
 **Start Date:** March 2026  
-**Current Status:** ✅ Phase 2 COMPLETE (50% overall)  
-**Version:** 1.0 Production Ready
+**Current Status:** ✅ Phase 3 COMPLETE (75% overall)  
+**Last Updated:** April 6, 2026  
+**Version:** 2.0 Production Ready
 
 ---
 
-## 🎯 Project Goals
+## 🎯 Phase Completion Summary
 
-Transform the Zaman Optics Shopify theme with:
+### ✅ Phase 1: Core Design System (COMPLETE)
+- Premium minimalist design with brand colors
+- CSS color variables and typography
+- Button variants and form styling
 
-1. ✅ **CSS Brand Update** - Premium, minimalist design with brand colors
-2. ✅ **Premium Hero Section** - Enhanced with orange CTA and clean spacing
-3. ✅ **Product Page Modes** - Two modes for different product types
-   - Prescription Mode (Eyeglasses, Blue Light, Kids)
-   - Standard Mode (Sunglasses, default)
+### ✅ Phase 2: Product Pages (COMPLETE)
+- Two-mode product pages (Prescription & Standard)
+- 4-step prescription workflow
+- Smart metafield-based mode detection
+
+### ✅ Phase 3: Header & Collection Pages (COMPLETE - LATEST)
+1. **Header Redesign**
+   - 3-row layout: Announcement bar, main header, orange navigation
+   - Mobile drawer menu (hidden on desktop, visible at 768px)
+   - Search bar, account & cart icons
+   - Active link detection with JavaScript
+   
+2. **Collection Page Improvements**
+   - Bigger, bolder product cards (240px images, 2px borders)
+   - Enhanced hover effects with smooth animations
+   - 3-column grid (desktop) → 2-column (tablet) → responsive mobile
+   - Card-style filter sidebar with sticky positioning
+   
+3. **Custom Filter System**
+   - Frame Shape (Round, Square, Rectangle, Aviator, Cat Eye)
+   - Material (Metal, Acetate, Plastic)
+   - Gender (Men, Women, Unisex, Kids)
+   - Size (Medium, Wide)
+   - Fallback filter implementation for guaranteed visibility
+   
+4. **Project Cleanup**
+   - Removed 63 redundant documentation files
+   - Cleaned up temporary Python scripts and corrupted files
+   - Kept 5 essential reference docs
+   - Reduced documentation bloat by 23,497 lines
 
 ---
 
-## 📦 What's Included
+## 📦 Current Implementation Status
 
-### Code Implementation (5 files)
+### Header Section (Phase 3)
+| File | Type | Status | Purpose |
+|------|------|--------|----------|
+| `sections/header.liquid` | NEW | ✅ | 3-row header + mobile drawer (219 lines) |
+| `assets/zaman-header.css` | NEW | ✅ | Header styling + animations (345 lines) |
+| `assets/zaman-header-nav.css` | NEW | ✅ | Nav link styles (26 lines) |
+
+### Collection Pages (Phase 3)
+| File | Type | Status | Purpose |
+|------|------|--------|----------|
+| `sections/main-collection-product-grid.liquid` | Modified | ✅ | Added custom filters fallback |
+| `assets/component-card.css` | Enhanced | ✅ | Product card styling (365 lines) |
+| `assets/collection-grid-enhanced.css` | NEW | ✅ | Grid layout (156 lines) |
+| `assets/collection-filters-sidebar.css` | NEW | ✅ | Filter sidebar card (138 lines) |
+| `assets/collection-custom-filters.css` | NEW | ✅ | Custom filters (75 lines) |
+
+### Product Pages (Phase 2)
 | File | Type | Status | Lines |
 |------|------|--------|-------|
 | `sections/main-product.liquid` | Modified | ✅ | 2305+ |
-| `snippets/buy-buttons.liquid` | Modified | ✅ | 170+ |
 | `snippets/prescription-workflow.liquid` | NEW | ✅ | 450+ |
 | `assets/section-prescription.css` | NEW | ✅ | 700+ |
 | `assets/product-mode.js` | NEW | ✅ | 350+ |
 
-### Design System (1 file + modifications)
+### Design System (Phase 1)
 | File | Type | Status | Lines |
 |------|------|--------|-------|
+| `assets/base.css` | Modified | ✅ | Enhanced with custom filters (2500+) |
 | `assets/premium-design.css` | NEW | ✅ | 250+ |
-| `assets/base.css` | Modified | ✅ | +40 |
 
-### Hero Section (2 files)
-| File | Type | Status | Lines |
-|------|------|--------|-------|
-| `sections/image-banner.liquid` | Modified | ✅ | +82 |
-| `assets/section-image-banner.css` | Modified | ✅ | +92 |
+### Documentation (Essential Only)
+| Document | Purpose |
+|----------|----------|
+| `CLAUDE.md` | Technical reference (design tokens, commands) |
+| `website-prd.md` | Product requirements & specs |
+| `README.md` | Main documentation (this file) |
+| `STYLE_GUIDE.md` | CSS color palette & standards |
+| `PR_DESCRIPTION.md` | PR submission template |
 
-### Documentation (12 files)
-| Document | Purpose | Audience | Lines |
-|----------|---------|----------|-------|
-| PRODUCT_PAGE_SETUP_GUIDE.md | Merchant setup | Merchants | 400+ |
-| PRODUCT_PAGE_TECHNICAL_GUIDE.md | Developer reference | Developers | 600+ |
-| PRODUCT_PAGE_MODES_ANALYSIS.md | Architecture | All | 250+ |
-| PRODUCT_MODES_IMPLEMENTATION_CHECKLIST.md | Testing | QA | 300+ |
-| PRODUCT_PAGE_IMPLEMENTATION_SUMMARY.md | Project summary | All | 400+ |
-| PROJECT_FILE_INVENTORY.md | File listing | All | 350+ |
-| STYLE_GUIDE.md | CSS reference | Developers | 400+ |
-| QUICK_REFERENCE.md | Quick lookup | All | 300+ |
-| BRAND_DESIGN_UPDATES.md | Changelog | All | 200+ |
-| IMPLEMENTATION_CHECKLIST.md | CSS checklist | QA | 150+ |
-| HERO_SECTION_GUIDE.md | Hero details | Developers | 350+ |
-| HERO_SECTION_IMPLEMENTATION.md | Hero implementation | All | 150+ |
-
-**Total:** 2,875+ lines of code, 2,450+ lines of documentation
+**Code Total:** 3,000+ lines (Phase 1-3 combined)  
+**Documentation:** 5 essential files (cleaned from 68)
 
 ---
 
 ## 🚀 Getting Started
 
-### I'm a Merchant (Shop Owner)
+### Quick Links
 
-👉 **Read:** `PRODUCT_PAGE_SETUP_GUIDE.md`
+**Merchants (Shop Owners):**
+- Setup product modes: See `website-prd.md` (Product Page Logic section)
+- Brand guidelines: See `STYLE_GUIDE.md`
 
-Quick steps:
-1. Go to Products in Shopify Admin
-2. Add metafield: `custom.product_mode` = `"prescription"` (for prescription products)
-3. That's it! The form automatically appears for prescription products
+**Developers:**
+- Header implementation: See `sections/header.liquid` + `assets/zaman-header*.css`
+- Collection filters: See `sections/main-collection-product-grid.liquid`
+- Product pages: See `sections/main-product.liquid` + prescription workflow
+- Design tokens: See `CLAUDE.md` (Critical Design Tokens section)
 
-### I'm a Developer
-
-👉 **Read:** `PRODUCT_PAGE_TECHNICAL_GUIDE.md`
-
-Quick steps:
-1. Review `sections/main-product.liquid` (lines 1-37) for mode detection
-2. Review `snippets/buy-buttons.liquid` for conditional rendering
-3. Study `snippets/prescription-workflow.liquid` for form structure
-4. Review `assets/section-prescription.css` for styling
-5. Review `assets/product-mode.js` for logic
-
-### I Want a Quick Overview
-
-👉 **Read:** `PRODUCT_PAGE_IMPLEMENTATION_SUMMARY.md`
-
-Covers:
-- What was built
-- How it works
-- File structure
-- Features and specs
-
-### I Need the File List
-
-👉 **Read:** `PROJECT_FILE_INVENTORY.md`
-
-Lists:
-- All files created
-- All files modified
-- File organization
-- Code statistics
+**QA/Testing:**
+- Header: Desktop 3-row layout, mobile drawer at 768px breakpoint
+- Collections: 3-column grid, filter sidebar, custom filters (Frame Shape, Material, Gender, Size)
+- Cards: 240px images, hover effects, active states
+- Colors: Test #FF8C00 orange on CTAs, #1A1A1A text, #F5F5F5 backgrounds
 
 ---
 
@@ -135,87 +145,86 @@ Lists:
 
 ---
 
-## 📱 Features
+## 📱 Features by Phase
 
-### ✅ Completed Features
-
-#### 1. CSS Brand System
-- Premium minimalist design
-- Brand color variables
+### ✅ Phase 1: Core Design System
+- Premium minimalist design with soft shadows
+- Brand color variables (#FF8C00 orange, #1A1A1A text, #F5F5F5 surfaces)
 - Card elevation and hover effects
 - Button variants (primary, secondary, tertiary)
 - Form input styling with focus states
 - Typography rules and spacing utilities
+- Border radius consistency (10px)
 
-#### 2. Premium Hero Section
-- Large headline with -0.02em letter spacing
-- Subheadline/tagline support
-- Orange (#FF8C00) CTA button
-- Clean minimalist spacing
-- Responsive design (mobile to desktop)
-- Smooth transitions and hover effects
-
-#### 3. Product Page Modes
-- **Smart Detection:** Metafield → Collections → Default
-- **Two Modes:**
-  - **Prescription Mode:** 4-step form for eyeglasses
-  - **Standard Mode:** Normal variant picker (default)
-
-#### 4. Prescription Form (4 Steps)
-- **Step 1:** Prescription data (OD/OS, SPH/CYL/AXIS, PD)
-- **Step 2:** Lens type and material selection
-- **Step 3:** Coatings and treatments (checkboxes)
-- **Step 4:** Review and confirmation
-
-#### 5. Form Features
-- Step progress indicator with visual feedback
-- Form validation (per-step)
-- Required field checking
-- Error message display
+### ✅ Phase 2: Product Pages
+- **Smart Mode Detection:** Metafield → Collections → Default
+- **Prescription Mode:** 4-step workflow for eyeglasses, blue light, kids glasses
+  - Step 1: Prescription data (SPH, CYL, AXIS, OD/OS, PD)
+  - Step 2: Lens type and material selection
+  - Step 3: Coatings and treatments
+  - Step 4: Review and confirmation
+- **Standard Mode:** Normal variant picker (default for sunglasses)
+- Form validation per-step
+- Error message display with field highlighting
 - Review section auto-population
 - Mobile responsive layout
 - Full accessibility support
 
+### ✅ Phase 3: Header & Collection Pages (NEW)
+#### Header Features
+- **3-Row Layout:**
+  - Row 1: Orange announcement bar (#FF8C00) with shipping/contact info
+  - Row 2: White main header with logo, search, account & cart icons
+  - Row 3: Orange navigation bar with collection links
+- **Mobile Drawer:** Hamburger menu (hidden on desktop, visible at 768px breakpoint)
+- **Active Link Detection:** JavaScript highlights current collection
+- **Responsive Design:** Smooth transitions, optimized spacing
+
+#### Collection Page Features
+- **Product Cards:** 240px images, 2px borders, 16px border-radius
+- **Card Hover Effects:**
+  - Border changes to #FF8C00
+  - Shadow elevation (0 8px 28px rgba)
+  - Lift animation (-4px translateY)
+  - Image zoom (1.06x scale)
+- **Grid Layouts:**
+  - Desktop (1100px+): 3 columns
+  - Tablet (600px-1099px): 2 columns  
+  - Mobile (0-599px): 2 columns with smaller gaps
+- **Typography:**
+  - Product title: 15px, bold (700), 2-line clamp
+  - Price: 17px, extra bold (800)
+  - Button text: 14px, bold (700)
+
+#### Filter System
+- **Sidebar Card Design:** White background, 2px border, 16px radius, sticky positioning
+- **Custom Filters (Fallback):**
+  - Frame Shape: Round, Square, Rectangle, Aviator, Cat Eye
+  - Material: Metal, Acetate, Plastic
+  - Gender: Men, Women, Unisex, Kids
+  - Size: Medium, Wide
+- **Filter Styling:**
+  - Uppercase labels with letter-spacing
+  - Custom checkboxes with #FF8C00 accent color
+  - Hover background: #FFF3E0
+  - Active filter pills with remove buttons
+- **Auto-Submit:** Checkboxes trigger form submission on change
+- **Guaranteed Visibility:** Fallback filters show before Shopify filters
+
 ---
 
-## 🔧 Technical Details
+## 🔧 Technical Stack
 
-### Architecture
+### Frontend
+- **HTML/Liquid:** Shopify template language
+- **CSS:** Custom brand system (no Tailwind)
+- **JavaScript:** Vanilla JS (no dependencies)
 
-```
-Product Page Load
-    ↓
-Mode Detection (main-product.liquid)
-    ├─ Check: metafield custom.product_mode
-    ├─ Check: collections (Prescription Products, Eyeglasses, etc.)
-    └─ Default: "standard"
-    ↓
-Conditional Rendering (buy-buttons.liquid)
-    ├─ If "prescription" → prescription-workflow.liquid
-    └─ If "standard" → standard form
-```
-
-### Data Flow
-
-```
-Form Filled (prescription-workflow.liquid)
-    ↓
-Validation (product-mode.js)
-    ├─ Step 1: Required fields (SPH, PD)
-    ├─ Step 2: Required selections (Lens Type, Material)
-    ├─ Step 3: Any combination OK
-    └─ Step 4: Review and submit
-    ↓
-Form Submission
-    ├─ Uses Shopify attributes[...] naming
-    ├─ Posts to /cart/add endpoint
-    └─ Creates line item properties
-    ↓
-Cart Display
-    ├─ Shows in customer's cart/checkout
-    ├─ Shows in order confirmation email
-    └─ Shows in Shopify admin orders
-```
+### Build/Deploy
+- **Version Control:** Git (GitHub)
+- **Dev Server:** Shopify CLI (`shopify theme dev`)
+- **Push Command:** `shopify theme push`
+- **Branch:** `feature/part-5-collection-filters`
 
 ### Browser Support
 - Chrome/Edge 67+
@@ -225,29 +234,86 @@ Cart Display
 - Android Chrome 67+
 
 ### Performance
-- CSS: ~2KB (minified+gzip)
-- JavaScript: ~4KB (minified+gzip)
-- Load: Deferred (non-blocking)
-- Runtime: Event-driven (no polling)
+- **CSS Size:** ~8KB (minified+gzip total across all files)
+- **JavaScript Size:** ~5KB (minified+gzip total)
+- **Load:** Deferred (non-blocking)
+- **Runtime:** Event-driven (no polling)
 
 ---
 
-## 📚 Documentation Guide
+## 📊 Project Stats
 
-### By Role
+| Metric | Count |
+|--------|-------|
+| **Total Code Files** | 15 modified/new |
+| **Lines of Code** | 3,000+ |
+| **CSS Files** | 8 (enhanced + new) |
+| **JavaScript Files** | 1 |
+| **Liquid Files** | 4 |
+| **Documentation Files** | 5 (essential only) |
+| **Git Commits** | 2 (Phase 3) |
 
-**Merchants (Shop Owners):**
-1. Start: `PRODUCT_PAGE_SETUP_GUIDE.md`
-2. Reference: `STYLE_GUIDE.md` (optional, for branding context)
+### Phase 3 Additions
+- 5 new CSS files for header & collections
+- 1 modified Liquid file (collection grid)
+- 2 Git commits (header redesign + collection UI improvements + cleanup)
 
-**Developers:**
-1. Start: `PRODUCT_PAGE_TECHNICAL_GUIDE.md`
-2. Reference: `PRODUCT_PAGE_MODES_ANALYSIS.md` (architecture)
-3. Reference: `PRODUCT_MODES_IMPLEMENTATION_CHECKLIST.md` (testing)
+---
 
-**QA/Testing:**
-1. Start: `PRODUCT_MODES_IMPLEMENTATION_CHECKLIST.md`
-2. Reference: `PRODUCT_PAGE_TECHNICAL_GUIDE.md` (debugging)
+## 🎯 What's Next (Phase 4)
+
+Potential future enhancements:
+1. **Product Page Module:** Hero section on product pages
+2. **Footer Redesign:** Contact info, links, newsletter signup
+3. **Cart Drawer:** Improved cart experience with quick actions
+4. **Search Enhancement:** Predictive search with autocomplete
+5. **Metafield Setup:** Automated product metafield configuration
+6. **Collection Sorting:** Advanced sortby options with custom ranking
+7. **Analytics Integration:** Conversion tracking and metrics
+
+---
+
+## 🚀 Deployment Checklist
+
+- [x] Phase 1: Design system (colors, typography, spacing)
+- [x] Phase 2: Product page modes (prescription workflow)
+- [x] Phase 3: Header & collection pages (filters, grid layout)
+- [ ] Phase 4: Additional page templates (footer, cart, etc.)
+- [ ] Phase 5: Full theme migration to production
+- [ ] Phase 6: Performance optimization & SEO
+
+#### Current: On Branch `feature/part-5-collection-filters`
+**Next Step:** Create pull request to merge into `main` branch
+
+---
+
+## 🔗 Git Workflow
+
+```bash
+# Start dev server
+shopify theme dev --store zaman-optics.myshopify.com
+
+# View live changes
+# Open URL shown in terminal
+
+# Commit changes
+git add .
+git commit -m "Description of changes"
+
+# Push to feature branch
+git push origin feature/part-5-collection-filters
+
+# Create PR on GitHub to merge into main
+```
+
+---
+
+## 📞 Contact & Support
+
+- **Brand:** Zaman Optics (Optical Retailer)
+- **Location:** Gujar Khan, Pakistan
+- **Store:** https://zaman-optics.myshopify.com
+- **Theme Branch:** `feature/part-5-collection-filters`
 
 **Project Managers:**
 1. Start: `PRODUCT_PAGE_IMPLEMENTATION_SUMMARY.md`
