@@ -1,39 +1,469 @@
+/* ================================================
+   ZAMAN OPTICS — CONTACT PAGE v2
+   ================================================ */
+
+/* ---- HERO SECTION ---- */
+.zcont-hero {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3E0 60%, #FFFFFF 100%);
+  border-bottom: 2px solid #FFE0B2;
+  padding: 60px 40px 48px;
+  text-align: center;
+}
+
+.zcont-hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.zcont-hero-title {
+  font-size: 44px;
+  font-weight: 900;
+  color: #1A1A1A;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+
+.zcont-hero-desc {
+  font-size: 16px;
+  color: #666666;
+  margin: 0 0 28px;
+  line-height: 1.6;
+}
+
+.zcont-hero-badges {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.zcont-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #FFFFFF;
+  border: 1.5px solid #FFE0B2;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FF8C00;
+}
+
+/* ---- MAIN WRAPPER ---- */
+.zcont-wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .zcont-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ---- SIDEBAR INFO CARDS ---- */
+.zcont-info-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.zcont-info-card {
+  background: #FFFFFF;
+  border: 1.5px solid #EEEEEE;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.zcont-info-card:hover {
+  border-color: #FFE0B2;
+  box-shadow: 0 8px 24px rgba(255,140,0,0.12);
+  transform: translateY(-4px);
+}
+
+.zcont-info-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.zcont-info-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1A1A1A;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.zcont-info-text {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.zcont-info-text a {
+  color: #FF8C00;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.zcont-info-text a:hover {
+  color: #E07800;
+  text-decoration: underline;
+}
+
+.zcont-hours {
+  background: linear-gradient(135deg, #FFF8F0 0%, rgba(255,140,0,0.05) 100%);
+  border: 1.5px solid #FFE0B2;
+}
+
+/* ---- FORM CONTAINER ---- */
+.zcont-form-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.zcont-form-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1A1A1A;
+  margin: 0 0 12px;
+  letter-spacing: -0.4px;
+}
+
+.zcont-form {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- SUCCESS & ERROR MESSAGES ---- */
+.zcont-success {
+  background: linear-gradient(135deg, #E8F5E9 0%, rgba(76,175,80,0.05) 100%);
+  border: 1.5px solid #81C784;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.zcont-success svg {
+  width: 48px;
+  height: 48px;
+  color: #4CAF50;
+  margin-bottom: 12px;
+}
+
+.zcont-success h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2E7D32;
+  margin: 0 0 6px;
+}
+
+.zcont-success p {
+  font-size: 14px;
+  color: #558B2F;
+  margin: 0;
+}
+
+.zcont-error-box {
+  background: linear-gradient(135deg, #FFEBEE 0%, rgba(244,67,54,0.05) 100%);
+  border: 1.5px solid #EF5350;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.zcont-error-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.zcont-error-header svg {
+  width: 24px;
+  height: 24px;
+  color: #F44336;
+  flex-shrink: 0;
+}
+
+.zcont-error-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #C62828;
+  margin: 0;
+}
+
+.zcont-error-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.zcont-error-list li {
+  font-size: 14px;
+  color: #D32F2F;
+  margin: 4px 0;
+}
+
+.zcont-error-msg {
+  font-size: 13px;
+  color: #D32F2F;
+  font-weight: 500;
+}
+
+/* ---- FORM LAYOUT ---- */
+.zcont-two-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .zcont-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- FORM FIELDS ---- */
+.zcont-field {
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.zcont-textarea-field {
+  grid-column: 1 / -1;
+}
+
+.zcont-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #AAAAAA;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  background: #FFFFFF;
+  padding: 0 6px;
+}
+
+.zcont-input {
+  width: 100%;
+  padding: 16px 16px 12px 16px;
+  background: #FFFFFF;
+  border: 2px solid #EEEEEE;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #1A1A1A;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.zcont-input:placeholder-shown + .zcont-label {
+  top: 16px;
+  font-size: 15px;
+  color: #888888;
+}
+
+.zcont-input:not(:placeholder-shown) + .zcont-label,
+.zcont-input:focus + .zcont-label {
+  top: 6px;
+  font-size: 12px;
+  color: #FF8C00;
+  font-weight: 700;
+}
+
+.zcont-input:focus {
+  border-color: #FF8C00;
+  box-shadow: 0 0 0 3px rgba(255,140,0,0.1);
+  background: #FAFAFA;
+}
+
+.zcont-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.zcont-field-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #FF8C00;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.zcont-input:focus ~ .zcont-field-line {
+  width: 100%;
+}
+
+.zcont-required {
+  color: #FF8C00;
+  font-weight: 800;
+  margin-left: 2px;
+}
+
+.zcont-field-error {
+  display: block;
+  margin-top: 8px;
+}
+
+/* ---- BUTTON ---- */
+.zcont-button-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.zcont-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #FF8C00 0%, #E07800 100%);
+  color: #FFFFFF !important;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 4px 16px rgba(255,140,0,0.25);
+  text-decoration: none;
+}
+
+.zcont-submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(255,140,0,0.35);
+  background: linear-gradient(135deg, #E07800 0%, #CC6F00 100%);
+  text-decoration: none;
+}
+
+.zcont-submit-btn:active {
+  transform: translateY(-1px);
+}
+
+.zcont-submit-btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.zcont-submit-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+  .zcont-hero {
+    padding: 40px 20px 32px;
+  }
+
+  .zcont-hero-title {
+    font-size: 32px;
+  }
+
+  .zcont-hero-desc {
+    font-size: 14px;
+  }
+
+  .zcont-badge {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .zcont-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .zcont-info-sidebar {
+    grid-column: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .zcont-info-card {
+    flex: 1;
+    min-width: 140px;
+    padding: 16px;
+  }
+
+  .zcont-info-title {
+    font-size: 12px;
+  }
+
+  .zcont-info-text {
+    font-size: 12px;
+  }
+
+  .zcont-form-title {
+    font-size: 24px;
+  }
+
+  .zcont-input {
+    padding: 14px 12px 10px;
+    font-size: 14px;
+  }
+
+  .zcont-label {
+    font-size: 12px;
+    left: 12px;
+    top: 14px;
+  }
+
+  .zcont-input:not(:placeholder-shown) + .zcont-label,
+  .zcont-input:focus + .zcont-label {
+    top: 4px;
+  }
+
+  .zcont-textarea {
+    min-height: 100px;
+  }
+
+  .zcont-submit-btn {
+    padding: 12px 32px;
+    font-size: 13px;
+  }
+}
+
+/* Existing contact styles */
 .contact img {
   max-width: 100%;
 }
 
 .contact .form__message {
   align-items: flex-start;
-}
-
-.contact .icon-success {
-  margin-top: 0.2rem;
-}
-
-.contact .field {
-  margin-bottom: 1.5rem;
-}
-
-@media screen and (min-width: 750px) {
-  .contact .field {
-    margin-bottom: 2rem;
-  }
-}
-
-.contact__button {
-  margin-top: 3rem;
-}
-
-@media screen and (min-width: 750px) {
-  .contact__button {
-    margin-top: 4rem;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .contact__fields {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
-  }
 }
