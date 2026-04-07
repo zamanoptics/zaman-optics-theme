@@ -1,167 +1,243 @@
-{% comment %} Zaman Optics - Collection Page {% endcomment %}
+{%- paginate collection.products by 12 -%}
 
-<!-- Collection Hero Banner -->
-<div class="zaman-collection-hero">
-  <div class="zaman-collection-hero-inner">
-    <div class="zaman-collection-breadcrumb">
+<!-- COLLECTION HERO -->
+<div class="zcoll-hero">
+  <div class="zcoll-hero-inner">
+    <nav class="zcoll-breadcrumb">
       <a href="/">Home</a>
       <span>›</span>
       <span>{{ collection.title }}</span>
-    </div>
-    <h1 class="zaman-collection-title">
+    </nav>
+    <h1 class="zcoll-hero-title">
       {{ collection.title }}
     </h1>
-    <p class="zaman-collection-desc">
-      {% if collection.description != blank %}
-        {{ collection.description }}
-      {% else %}
-        Explore our premium collection of 
-        {{ collection.title | downcase }} — 
-        crafted for style and clarity.
-      {% endif %}
+    {% if collection.description != blank %}
+    <p class="zcoll-hero-desc">
+      {{ collection.description }}
     </p>
-    <div class="zaman-collection-meta">
-      <span class="zaman-product-count">
-        {{ collection.products_count }} Products
-      </span>
-    </div>
+    {% endif %}
+    <span class="zcoll-hero-count">
+      {{ collection.products_count }} Products
+    </span>
   </div>
 </div>
 
-<!-- Main Collection Layout -->
-<div class="zaman-coll-layout">
+<!-- MOBILE FILTER BUTTON BAR -->
+<div class="zcoll-mobile-bar">
+  <button class="zcoll-filter-toggle" 
+          onclick="zamanOpenFilter()">
+    <svg width="16" height="16" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor"
+         stroke-width="2.5">
+      <polygon points="22 3 2 3 10 12.46 
+                       10 19 14 21 14 12.46 22 3"/>
+    </svg>
+    Filters
+  </button>
+  <select class="zcoll-mobile-sort"
+    onchange="window.location.href=
+      '{{ collection.url }}?sort_by='+this.value">
+    <option value="best-selling"
+      {% if collection.sort_by=='best-selling' %}
+        selected{% endif %}>Best Selling</option>
+    <option value="price-ascending"
+      {% if collection.sort_by=='price-ascending' %}
+        selected{% endif %}>Price: Low–High</option>
+    <option value="price-descending"
+      {% if collection.sort_by=='price-descending' %}
+        selected{% endif %}>Price: High–Low</option>
+    <option value="created-descending"
+      {% if collection.sort_by=='created-descending' %}
+        selected{% endif %}>Newest</option>
+  </select>
+</div>
 
-  <!-- LEFT FILTER SIDEBAR -->
-  <aside class="zaman-coll-filters">
-    <form id="ZamanFilterForm"
-          action="{{ collection.url }}"
+<!-- MAIN CONTENT AREA -->
+<div class="zcoll-body">
+
+  <!-- ===== LEFT: FILTER SIDEBAR ===== -->
+  <div class="zcoll-filter-overlay" 
+       id="zamanFilterOverlay"
+       onclick="zamanCloseFilter()">
+  </div>
+
+  <aside class="zcoll-sidebar" id="zamanSidebar">
+    
+    <!-- Mobile close button -->
+    <button class="zcoll-sidebar-close"
+            onclick="zamanCloseFilter()">
+      ✕ Close
+    </button>
+
+    <form id="ZCF" 
+          action="{{ collection.url }}" 
           method="get">
       <input type="hidden" name="sort_by"
              value="{{ collection.sort_by }}">
 
-      <!-- Filter Header -->
-      <div class="zcf-header">
-        <div class="zcf-header-left">
-          <svg width="16" height="16" fill="none"
-               viewBox="0 0 24 24" stroke="#FF8C00"
-               stroke-width="2.5">
-            <polygon points="22 3 2 3 10 12.46 
-                             10 19 14 21 14 12.46 22 3"/>
-          </svg>
-          <span>Filters</span>
-        </div>
+      <!-- Sidebar header -->
+      <div class="zcf-head">
+        <span>🔍 Filters</span>
         <a href="{{ collection.url }}" 
-           class="zcf-clear">Clear</a>
+           class="zcf-reset">Reset</a>
       </div>
 
-      <!-- Frame Shape -->
+      <!-- FRAME SHAPE filter group -->
       <details class="zcf-group" open>
-        <summary class="zcf-group-title">
-          Frame Shape
-          <span class="zcf-arrow">▼</span>
+        <summary class="zcf-title">
+          <span>Frame Shape</span>
+          <svg class="zcf-chevron" width="14" height="14"
+               fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2.5">
+            <path d="M6 9l6 6 6-6" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"/>
+          </svg>
         </summary>
-        <div class="zcf-options">
-          {% for shape in 'Round,Square,Rectangle,Aviator,Cat Eye' | split: ',' %}
-          <label class="zcf-option">
-            <input type="checkbox"
-              name="filter.p.m.custom.frame_shape"
-              value="{{ shape }}"
-              class="zcf-checkbox"
-              {% if current_tags contains shape %}checked{% endif %}
-              onchange="document.getElementById('ZamanFilterForm').submit()">
-            <span class="zcf-box"></span>
-            <span class="zcf-label">{{ shape }}</span>
-          </label>
+        <ul class="zcf-list">
+          {% assign shapes = 'Round,Square,Rectangle,Aviator,Cat Eye' | split: ',' %}
+          {% for s in shapes %}
+          <li class="zcf-item">
+            <label class="zcf-label">
+              <input type="checkbox"
+                class="zcf-cb"
+                name="filter.p.m.custom.frame_shape"
+                value="{{ s }}"
+                {% if current_tags contains s %}checked{% endif %}
+                onchange="document.getElementById('ZCF').submit()">
+              <span class="zcf-custom-cb"></span>
+              <span class="zcf-text">{{ s }}</span>
+            </label>
+          </li>
           {% endfor %}
-        </div>
+        </ul>
       </details>
 
-      <!-- Material -->
+      <!-- MATERIAL filter group -->
       <details class="zcf-group" open>
-        <summary class="zcf-group-title">
-          Material
-          <span class="zcf-arrow">▼</span>
+        <summary class="zcf-title">
+          <span>Material</span>
+          <svg class="zcf-chevron" width="14" height="14"
+               fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2.5">
+            <path d="M6 9l6 6 6-6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
         </summary>
-        <div class="zcf-options">
-          {% for mat in 'Metal,Acetate,Plastic' | split: ',' %}
-          <label class="zcf-option">
-            <input type="checkbox"
-              name="filter.p.m.custom.material"
-              value="{{ mat }}"
-              class="zcf-checkbox"
-              {% if current_tags contains mat %}checked{% endif %}
-              onchange="document.getElementById('ZamanFilterForm').submit()">
-            <span class="zcf-box"></span>
-            <span class="zcf-label">{{ mat }}</span>
-          </label>
+        <ul class="zcf-list">
+          {% assign mats = 'Metal,Acetate,Plastic' | split: ',' %}
+          {% for m in mats %}
+          <li class="zcf-item">
+            <label class="zcf-label">
+              <input type="checkbox"
+                class="zcf-cb"
+                name="filter.p.m.custom.material"
+                value="{{ m }}"
+                {% if current_tags contains m %}checked{% endif %}
+                onchange="document.getElementById('ZCF').submit()">
+              <span class="zcf-custom-cb"></span>
+              <span class="zcf-text">{{ m }}</span>
+            </label>
+          </li>
           {% endfor %}
-        </div>
+        </ul>
       </details>
 
-      <!-- Gender -->
+      <!-- GENDER filter group -->
       <details class="zcf-group" open>
-        <summary class="zcf-group-title">
-          Gender
-          <span class="zcf-arrow">▼</span>
+        <summary class="zcf-title">
+          <span>Gender</span>
+          <svg class="zcf-chevron" width="14" height="14"
+               fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2.5">
+            <path d="M6 9l6 6 6-6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
         </summary>
-        <div class="zcf-options">
-          {% for g in 'Men,Women,Unisex,Kids' | split: ',' %}
-          <label class="zcf-option">
-            <input type="checkbox"
-              name="filter.p.m.custom.gender"
-              value="{{ g }}"
-              class="zcf-checkbox"
-              {% if current_tags contains g %}checked{% endif %}
-              onchange="document.getElementById('ZamanFilterForm').submit()">
-            <span class="zcf-box"></span>
-            <span class="zcf-label">{{ g }}</span>
-          </label>
+        <ul class="zcf-list">
+          {% assign gends = 'Men,Women,Unisex,Kids' | split: ',' %}
+          {% for g in gends %}
+          <li class="zcf-item">
+            <label class="zcf-label">
+              <input type="checkbox"
+                class="zcf-cb"
+                name="filter.p.m.custom.gender"
+                value="{{ g }}"
+                {% if current_tags contains g %}checked{% endif %}
+                onchange="document.getElementById('ZCF').submit()">
+              <span class="zcf-custom-cb"></span>
+              <span class="zcf-text">{{ g }}</span>
+            </label>
+          </li>
           {% endfor %}
-        </div>
+        </ul>
       </details>
 
-      <!-- Size -->
+      <!-- SIZE filter group -->
       <details class="zcf-group">
-        <summary class="zcf-group-title">
-          Size
-          <span class="zcf-arrow">▼</span>
+        <summary class="zcf-title">
+          <span>Size</span>
+          <svg class="zcf-chevron" width="14" height="14"
+               fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2.5">
+            <path d="M6 9l6 6 6-6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
         </summary>
-        <div class="zcf-options">
-          {% for sz in 'Medium,Wide' | split: ',' %}
-          <label class="zcf-option">
-            <input type="checkbox"
-              name="filter.p.m.custom.size"
-              value="{{ sz }}"
-              class="zcf-checkbox"
-              {% if current_tags contains sz %}checked{% endif %}
-              onchange="document.getElementById('ZamanFilterForm').submit()">
-            <span class="zcf-box"></span>
-            <span class="zcf-label">{{ sz }}</span>
-          </label>
+        <ul class="zcf-list">
+          {% assign sizes = 'Medium,Wide' | split: ',' %}
+          {% for sz in sizes %}
+          <li class="zcf-item">
+            <label class="zcf-label">
+              <input type="checkbox"
+                class="zcf-cb"
+                name="filter.p.m.custom.size"
+                value="{{ sz }}"
+                {% if current_tags contains sz %}checked{% endif %}
+                onchange="document.getElementById('ZCF').submit()">
+              <span class="zcf-custom-cb"></span>
+              <span class="zcf-text">{{ sz }}</span>
+            </label>
+          </li>
           {% endfor %}
-        </div>
+        </ul>
       </details>
 
-      <!-- Price -->
+      <!-- PRICE RANGE filter group -->
       <details class="zcf-group">
-        <summary class="zcf-group-title">
-          Price Range
-          <span class="zcf-arrow">▼</span>
+        <summary class="zcf-title">
+          <span>Price Range</span>
+          <svg class="zcf-chevron" width="14" height="14"
+               fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2.5">
+            <path d="M6 9l6 6 6-6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
         </summary>
-        <div class="zcf-options">
-          <div class="zcf-price-row">
-            <input type="number"
-              name="filter.v.price.gte"
-              placeholder="Min Rs"
-              class="zcf-price-in">
-            <span>—</span>
-            <input type="number"
-              name="filter.v.price.lte"
-              placeholder="Max Rs"
-              class="zcf-price-in">
+        <div class="zcf-price-block">
+          <div class="zcf-price-inputs">
+            <div class="zcf-price-field">
+              <label>Min (Rs)</label>
+              <input type="number"
+                name="filter.v.price.gte"
+                placeholder="0"
+                class="zcf-price-input">
+            </div>
+            <span class="zcf-price-dash">—</span>
+            <div class="zcf-price-field">
+              <label>Max (Rs)</label>
+              <input type="number"
+                name="filter.v.price.lte"
+                placeholder="15000"
+                class="zcf-price-input">
+            </div>
           </div>
-          <button type="submit" class="zcf-price-btn">
-            Apply
+          <button type="submit" class="zcf-apply-btn">
+            Apply Price
           </button>
         </div>
       </details>
@@ -169,133 +245,237 @@
     </form>
   </aside>
 
-  <!-- RIGHT PRODUCTS AREA -->
-  <div class="zaman-coll-right">
+  <!-- ===== RIGHT: PRODUCTS AREA ===== -->
+  <div class="zcoll-right">
 
-    <!-- Sort Bar -->
-    <div class="zaman-sort-bar">
-      <span class="zaman-sort-count">
+    <!-- SORT BAR (desktop) -->
+    <div class="zcoll-sort-bar">
+      <p class="zcoll-count">
+        Showing 
         <strong>{{ collection.products_count }}</strong>
-        products
-      </span>
-      <div class="zaman-sort-right">
-        <label>Sort:</label>
-        <select class="zaman-sort-sel"
+        {{ collection.title }} products
+      </p>
+      <div class="zcoll-sort-wrap">
+        <label class="zcoll-sort-label">Sort by:</label>
+        <select class="zcoll-sort-select"
           onchange="window.location.href=
             '{{ collection.url }}?sort_by='+this.value">
           <option value="best-selling"
-            {% if collection.sort_by=='best-selling' %}selected{% endif %}>
-            Best Selling</option>
+            {% if collection.sort_by=='best-selling' %}
+              selected{% endif %}>
+            ⭐ Best Selling</option>
           <option value="price-ascending"
-            {% if collection.sort_by=='price-ascending' %}selected{% endif %}>
-            Price: Low–High</option>
+            {% if collection.sort_by=='price-ascending' %}
+              selected{% endif %}>
+            💰 Price: Low to High</option>
           <option value="price-descending"
-            {% if collection.sort_by=='price-descending' %}selected{% endif %}>
-            Price: High–Low</option>
+            {% if collection.sort_by=='price-descending' %}
+              selected{% endif %}>
+            💎 Price: High to Low</option>
           <option value="created-descending"
-            {% if collection.sort_by=='created-descending' %}selected{% endif %}>
-            Newest</option>
+            {% if collection.sort_by=='created-descending' %}
+              selected{% endif %}>
+            🆕 Newest First</option>
           <option value="title-ascending"
-            {% if collection.sort_by=='title-ascending' %}selected{% endif %}>
-            Name A–Z</option>
+            {% if collection.sort_by=='title-ascending' %}
+              selected{% endif %}>
+            🔤 Name: A–Z</option>
         </select>
       </div>
     </div>
 
-    <!-- Product Grid -->
+    <!-- PRODUCT GRID -->
     {% if collection.products.size > 0 %}
-    <div class="zaman-prod-grid">
-      {% for product in collection.products %}
-      <a href="{{ product.url }}"
-         class="zaman-card">
+    <div class="zcoll-grid">
 
-        <!-- Badge -->
-        <div class="zaman-card-badge
-          {% if product.available == false %}
-            zcb-sold
-          {% elsif product.compare_at_price > product.price %}
-            zcb-sale
-          {% else %}
-            zcb-new
-          {% endif %}">
-          {% if product.available == false %}
+      {% for product in collection.products %}
+
+      {%- assign first_img = product.images[0] -%}
+      {%- assign second_img = product.images[1] -%}
+
+      <a href="{{ product.url }}" 
+         class="zcard"
+         aria-label="{{ product.title }}">
+
+        <!-- TOP BADGE -->
+        <div class="zcard-badge 
+          {%- if product.available == false -%}
+            zcard-badge--sold
+          {%- elsif product.compare_at_price > product.price -%}
+            zcard-badge--sale
+          {%- else -%}
+            zcard-badge--new
+          {%- endif -%}">
+          {%- if product.available == false -%}
             Sold Out
-          {% elsif product.compare_at_price > product.price %}
+          {%- elsif product.compare_at_price > product.price -%}
             Sale
-          {% else %}
+          {%- else -%}
             New
-          {% endif %}
+          {%- endif -%}
         </div>
 
-        <!-- Image area with hover swap -->
-        <div class="zaman-card-img-wrap">
-          {% if product.images.size > 0 %}
-          <img
-            src="{{ product.images[0] | img_url: '600x500', crop: 'center' }}"
+        <!-- IMAGE AREA -->
+        <!-- The image area is a fixed-height box.
+             Primary image shows by default.
+             Secondary image fades in on hover.
+             Images use object-fit: contain so the 
+             full glasses frame is always visible,
+             never cropped, with padding around it. -->
+        <div class="zcard-images">
+          {%- if first_img -%}
+          <img 
+            src="{{ first_img | img_url: '480x360', crop: 'center' }}"
             alt="{{ product.title }}"
-            class="zaman-card-img zaman-img-primary"
+            class="zcard-img zcard-img--primary"
+            width="480"
+            height="360"
             loading="lazy">
-          {% if product.images.size > 1 %}
+          {%- endif -%}
+          {%- if second_img -%}
           <img
-            src="{{ product.images[1] | img_url: '600x500', crop: 'center' }}"
-            alt="{{ product.title }} alternate"
-            class="zaman-card-img zaman-img-secondary"
+            src="{{ second_img | img_url: '480x360', crop: 'center' }}"
+            alt="{{ product.title }} — alternate view"
+            class="zcard-img zcard-img--secondary"
+            width="480"
+            height="360"
             loading="lazy">
-          {% endif %}
-          {% else %}
-          <div class="zaman-card-no-img">
-            <svg width="40" height="40" fill="none"
-                 viewBox="0 0 24 24" stroke="#CCCCCC"
-                 stroke-width="1.5">
+          {%- else -%}
+          <!-- If no second image, show primary again 
+               slightly zoomed on hover -->
+          {%- endif -%}
+          {%- unless first_img -%}
+          <div class="zcard-no-img">
+            <svg width="48" height="48" fill="none"
+                 viewBox="0 0 24 24" stroke="#DDDDDD"
+                 stroke-width="1">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
               <circle cx="8.5" cy="8.5" r="1.5"/>
               <polyline points="21 15 16 10 5 21"/>
             </svg>
             <span>No image</span>
           </div>
-          {% endif %}
+          {%- endunless -%}
         </div>
 
-        <!-- Card Info -->
-        <div class="zaman-card-info">
-          <span class="zaman-card-cat">
+        <!-- CARD INFO SECTION -->
+        <!-- This section sits below the image.
+             It has: category tag, product name, 
+             price row, and a bottom row with 
+             "View Details" text. -->
+        <div class="zcard-info">
+          
+          <span class="zcard-collection-tag">
             {{ collection.title }}
           </span>
-          <h3 class="zaman-card-name">
+
+          <h3 class="zcard-title">
             {{ product.title }}
           </h3>
-          <div class="zaman-card-price-row">
-            <span class="zaman-card-price">
+
+          <div class="zcard-pricing">
+            <span class="zcard-price">
               {{ product.price | money }}
             </span>
-            {% if product.compare_at_price > product.price %}
-            <span class="zaman-card-was">
+            {%- if product.compare_at_price > product.price -%}
+            <span class="zcard-compare-price">
               {{ product.compare_at_price | money }}
             </span>
-            {% endif %}
+            {%- endif -%}
           </div>
-          <div class="zaman-card-footer">
-            <span class="zaman-card-cta">
-              View Details →
-            </span>
-            {% if product.images.size > 1 %}
-            <span class="zaman-card-imgs-hint">
-              +{{ product.images.size }} photos
-            </span>
-            {% endif %}
-          </div>
-        </div>
 
+          <div class="zcard-bottom">
+            <span class="zcard-cta-text">
+              View Details
+              <svg width="12" height="12" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor"
+                   stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+              </svg>
+            </span>
+            {%- if product.images.size > 1 -%}
+            <span class="zcard-photo-count">
+              📷 {{ product.images.size }}
+            </span>
+            {%- endif -%}
+          </div>
+
+        </div>
       </a>
+
       {% endfor %}
     </div>
 
+    <!-- PAGINATION -->
+    {%- if paginate.pages > 1 -%}
+    <div class="zcoll-pagination">
+      {%- if paginate.previous -%}
+      <a href="{{ paginate.previous.url }}"
+         class="zcoll-page-btn">← Previous</a>
+      {%- endif -%}
+      {%- for part in paginate.parts -%}
+        {%- if part.is_link -%}
+        <a href="{{ part.url }}"
+           class="zcoll-page-btn">{{ part.title }}</a>
+        {%- else -%}
+        <span class="zcoll-page-btn zcoll-page-current">
+          {{ part.title }}
+        </span>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if paginate.next -%}
+      <a href="{{ paginate.next.url }}"
+         class="zcoll-page-btn">Next →</a>
+      {%- endif -%}
+    </div>
+    {%- endif -%}
+
     {% else %}
-    <div class="zaman-empty">
-      <p>No products found.</p>
-      <a href="{{ collection.url }}">Clear filters</a>
+    <!-- EMPTY STATE -->
+    <div class="zcoll-empty">
+      <svg width="64" height="64" fill="none"
+           viewBox="0 0 24 24" stroke="#DDDDDD"
+           stroke-width="1">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"
+              stroke-linecap="round"/>
+      </svg>
+      <h3>No products found</h3>
+      <p>Try adjusting your filters</p>
+      <a href="{{ collection.url }}" 
+         class="zcoll-empty-reset">
+        Clear All Filters
+      </a>
     </div>
     {% endif %}
 
   </div>
 </div>
+
+<script>
+function zamanOpenFilter() {
+  document.getElementById('zamanSidebar')
+    .classList.add('zcoll-sidebar--open');
+  document.getElementById('zamanFilterOverlay')
+    .classList.add('zcoll-overlay--open');
+  document.body.style.overflow = 'hidden';
+}
+function zamanCloseFilter() {
+  document.getElementById('zamanSidebar')
+    .classList.remove('zcoll-sidebar--open');
+  document.getElementById('zamanFilterOverlay')
+    .classList.remove('zcoll-overlay--open');
+  document.body.style.overflow = '';
+}
+</script>
+
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Collection Grid",
+  "settings": []
+}
+{% endschema %}
