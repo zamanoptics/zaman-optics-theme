@@ -534,6 +534,206 @@ input[type='radio'] {
   accent-color: var(--zaman-orange);
 }
 
+/* Hero contrast overrides */
+.hero-wrapper .hero-label {
+  color: #ffb45a !important;
+  background: rgba(255, 140, 0, 0.13) !important;
+  border-color: rgba(255, 140, 0, 0.36) !important;
+}
+
+.hero-wrapper .hero-headline {
+  color: var(--zaman-white) !important;
+  font-size: clamp(3.6rem, 5vw, 6.4rem) !important;
+}
+
+.hero-wrapper .hero-subtext {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.hero-wrapper .btn-secondary {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.34) !important;
+  color: var(--zaman-white) !important;
+}
+
+.hero-wrapper .btn-secondary:hover {
+  background: var(--zaman-white) !important;
+  border-color: var(--zaman-white) !important;
+  color: var(--zaman-black) !important;
+}
+
+/* Homepage card polish */
+.cat-card,
+.product-card,
+.zaman-why-card,
+.zaman-faq-item {
+  overflow: hidden;
+}
+
+.cat-card-image,
+.product-image-wrapper {
+  border-bottom: 1px solid var(--zaman-border);
+}
+
+.cat-card-title,
+.product-title,
+.zaman-why-title,
+.zaman-faq-question {
+  color: var(--zaman-black) !important;
+  font-weight: 900 !important;
+}
+
+.cat-card-description,
+.product-card .product-vendor,
+.zaman-why-desc,
+.zaman-faq-answer {
+  color: var(--zaman-muted) !important;
+}
+
+.cat-card:hover .cat-card-link,
+.product-card:hover .featured-products-link {
+  color: var(--zaman-orange-dark) !important;
+}
+
+/* Collection filter and product card polish */
+.zcoll-body {
+  background: var(--zaman-white);
+}
+
+.zcoll-sidebar {
+  border-color: var(--zaman-border) !important;
+  box-shadow: var(--zaman-shadow-sm) !important;
+}
+
+.zcf-head {
+  background: var(--zaman-black) !important;
+  color: var(--zaman-white) !important;
+  border-radius: var(--zaman-radius-large) var(--zaman-radius-large) 0 0;
+}
+
+.zcf-head span {
+  color: var(--zaman-white) !important;
+  font-weight: 900;
+}
+
+.zcf-reset {
+  color: var(--zaman-white) !important;
+  border-color: rgba(255, 255, 255, 0.24) !important;
+}
+
+.zcf-title {
+  color: var(--zaman-black) !important;
+  background: var(--zaman-white) !important;
+}
+
+.zcf-title:hover {
+  background: var(--zaman-surface-warm) !important;
+}
+
+.zcf-label {
+  border-radius: 9px !important;
+}
+
+.zcf-count {
+  margin-left: auto;
+  min-width: 26px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--zaman-surface);
+  color: var(--zaman-muted);
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.zcf-label--disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.zcoll-active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 12px;
+  border: 1px solid var(--zaman-border);
+  border-radius: var(--zaman-radius-large);
+  background: var(--zaman-surface-warm);
+}
+
+.zcoll-filter-chip,
+.zcoll-clear-filters {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none !important;
+}
+
+.zcoll-filter-chip {
+  background: var(--zaman-white);
+  border: 1px solid rgba(255, 140, 0, 0.32);
+  color: var(--zaman-black) !important;
+}
+
+.zcoll-filter-chip span {
+  color: var(--zaman-orange);
+}
+
+.zcoll-clear-filters {
+  margin-left: auto;
+  background: var(--zaman-black);
+  color: var(--zaman-white) !important;
+}
+
+.zcoll-grid-header,
+.zcoll-sort-bar {
+  border: 1px solid var(--zaman-border) !important;
+  border-radius: var(--zaman-radius-large) !important;
+  background: var(--zaman-white) !important;
+  box-shadow: var(--zaman-shadow-sm);
+}
+
+.zcoll-grid-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--zaman-black);
+}
+
+.zcard {
+  border-color: var(--zaman-border) !important;
+  border-radius: var(--zaman-radius-large) !important;
+  box-shadow: var(--zaman-shadow-sm) !important;
+  overflow: hidden;
+}
+
+.zcard:hover {
+  border-color: var(--zaman-border-strong) !important;
+  box-shadow: var(--zaman-shadow-md) !important;
+}
+
+.zcard-images {
+  background:
+    radial-gradient(circle at 50% 16%, rgba(255, 140, 0, 0.09), transparent 34%),
+    var(--zaman-surface) !important;
+}
+
+.zcard-title {
+  font-size: 15px !important;
+  line-height: 1.35 !important;
+}
+
+.zcard-photo-count {
+  color: var(--zaman-muted) !important;
+}
+
 /* Product page and prescription flow */
 .product {
   row-gap: 32px !important;

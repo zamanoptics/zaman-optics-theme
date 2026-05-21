@@ -1,8 +1,9 @@
-﻿<div class="hero-wrapper">
+<section class="hero-wrapper" aria-label="Zaman Optics hero">
   <div class="hero-left">
     <span class="hero-label">{{ section.settings.hero_label }}</span>
     <h1 class="hero-headline">{{ section.settings.hero_headline }}</h1>
     <p class="hero-subtext">{{ section.settings.hero_subtext }}</p>
+
     <div class="hero-buttons">
       <a href="{{ section.settings.btn_primary_url }}" class="btn-primary">
         {{ section.settings.btn_primary_text }}
@@ -11,187 +12,238 @@
         {{ section.settings.btn_secondary_text }}
       </a>
     </div>
+
     <div class="hero-trust">
       <div class="hero-trust-item">
-        <div class="hero-trust-dot"></div>
+        <span class="hero-trust-dot"></span>
         {{ section.settings.trust_1 }}
       </div>
       <div class="hero-trust-item">
-        <div class="hero-trust-dot"></div>
+        <span class="hero-trust-dot"></span>
         {{ section.settings.trust_2 }}
       </div>
       <div class="hero-trust-item">
-        <div class="hero-trust-dot"></div>
+        <span class="hero-trust-dot"></span>
         {{ section.settings.trust_3 }}
       </div>
     </div>
   </div>
+
   <div class="hero-right">
     {% if section.settings.hero_image %}
-      <img src="{{ section.settings.hero_image | img_url: 'master' }}" 
-           alt="Zaman Optics" class="hero-image">
+      <img
+        src="{{ section.settings.hero_image | image_url: width: 1400 }}"
+        alt="Premium eyeglasses and sunglasses at Zaman Optics"
+        class="hero-image"
+        width="1400"
+        height="900"
+        loading="eager">
     {% else %}
-      <div class="hero-placeholder">
-        <span>Upload Hero Image<br>in Theme Editor</span>
-      </div>
+      <img
+        src="{{ 'zaman-hero-eyewear.png' | asset_url }}"
+        alt="Premium eyeglasses and sunglasses at Zaman Optics"
+        class="hero-image"
+        width="1400"
+        height="900"
+        loading="eager">
     {% endif %}
   </div>
-</div>
+</section>
 
 <style>
 .hero-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 520px;
-  background: #FFFFFF;
-  overflow: hidden;
-}
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px 48px 60px 60px;
-  max-width: 580px;
-}
-.hero-label {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #FF8C00;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding: 5px 12px;
-  background: #FFF3E0;
-  border-radius: 50px;
-}
-.hero-headline {
-  font-size: 50px;
-  font-weight: 900;
-  color: #1A1A1A;
-  line-height: 1.08;
-  letter-spacing: -1px;
-  margin: 0 0 20px 0;
-}
-.hero-subtext {
-  font-size: 16px;
-  color: #666666;
-  line-height: 1.75;
-  margin-bottom: 36px;
-  max-width: 420px;
-}
-.hero-buttons {
-  display: flex;
-  gap: 14px;
-  margin-bottom: 36px;
-  flex-wrap: wrap;
-}
-.btn-primary {
-  padding: 15px 32px;
-  background: #FF8C00;
-  color: #FFFFFF !important;
-  border: 2px solid #FF8C00;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.2s;
-  display: inline-block;
-}
-.btn-primary:hover {
-  background: #DF7600;
-  border-color: #DF7600;
-  color: #FFFFFF !important;
-  text-decoration: none;
-  transform: translateY(-2px);
-}
-.btn-secondary {
-  padding: 15px 32px;
-  background: transparent;
-  color: #1A1A1A !important;
-  border: 2px solid #E0E0E0;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.2s;
-  display: inline-block;
-}
-.btn-secondary:hover {
-  border-color: #FF8C00;
-  color: #FF8C00 !important;
-  text-decoration: none;
-}
-.hero-trust {
-  display: flex;
-  gap: 0;
-  flex-wrap: wrap;
-}
-.hero-trust-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12px;
-  color: #666666;
-  font-weight: 500;
-  padding: 6px 14px 6px 0;
-  margin-right: 14px;
-  border-right: 1px solid #E0E0E0;
-}
-.hero-trust-item:last-child {
-  border-right: none;
-}
-.hero-trust-dot {
-  width: 6px;
-  height: 6px;
-  background: #FF8C00;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.hero-right {
-  position: relative;
-  background: #F8F6F3;
-  overflow: hidden;
-}
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 14px 36px rgba(26, 26, 26, 0.1);
-}
-.hero-placeholder {
-  width: 100%;
-  height: 100%;
-  min-height: 480px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: #FF8C00;
-  font-size: 14px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  align-items: stretch;
+  gap: clamp(22px, 4vw, 54px);
+  width: min(1240px, calc(100% - 40px));
+  margin: clamp(18px, 3vw, 34px) auto clamp(28px, 5vw, 54px);
+  min-height: 560px;
+  padding: clamp(24px, 4vw, 44px);
   background:
-    radial-gradient(circle at 24% 18%, rgba(255, 140, 0, 0.16), transparent 34%),
-    #F7F7F5;
+    radial-gradient(circle at 18% 16%, rgba(255, 140, 0, 0.34), transparent 26%),
+    linear-gradient(135deg, #111111 0%, #1a1a1a 46%, #2d2a26 100%);
   border-radius: 24px;
-  border: 1.5px dashed rgba(255, 140, 0, 0.42);
-  box-shadow: 0 14px 36px rgba(26, 26, 26, 0.1);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 22px 60px rgba(26, 26, 26, 0.18);
 }
 
-@media (max-width: 768px) {
+.hero-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: auto -120px -180px 42%;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.22), transparent 62%);
+  pointer-events: none;
+}
+
+.hero-left {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 590px;
+}
+
+.hero-label {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 7px 13px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 140, 0, 0.36);
+  border-radius: 999px;
+  background: rgba(255, 140, 0, 0.13);
+  color: #ffb45a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hero-headline {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.hero-subtext {
+  max-width: 500px;
+  margin: 0 0 32px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons a {
+  min-height: 48px;
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 850;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.hero-buttons .btn-primary {
+  background: #ff8c00;
+  border: 1.5px solid #ff8c00;
+  color: #ffffff !important;
+  box-shadow: 0 14px 30px rgba(255, 140, 0, 0.28);
+}
+
+.hero-buttons .btn-primary:hover {
+  background: #df7600;
+  border-color: #df7600;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.hero-buttons .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.34);
+  color: #ffffff !important;
+}
+
+.hero-buttons .btn-secondary:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #1a1a1a !important;
+  transform: translateY(-2px);
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hero-trust-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff8c00;
+  box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.14);
+  flex: 0 0 auto;
+}
+
+.hero-right {
+  position: relative;
+  z-index: 1;
+  min-height: 460px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f5f5f5;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
   .hero-wrapper {
     grid-template-columns: 1fr;
+    width: min(100% - 28px, 720px);
+    min-height: auto;
   }
-  .hero-right { 
-    height: 280px; 
-    order: -1; 
+
+  .hero-right {
+    min-height: 300px;
+    order: -1;
   }
-  .hero-left { 
-    padding: 36px 20px; 
+
+  .hero-image {
+    min-height: 300px;
   }
-  .hero-headline { 
-    font-size: 32px; 
+}
+
+@media (max-width: 520px) {
+  .hero-wrapper {
+    width: calc(100% - 24px);
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-trust {
+    gap: 8px;
   }
 }
 </style>
@@ -210,13 +262,13 @@
       "type": "textarea",
       "id": "hero_headline",
       "label": "Main Headline",
-      "default": "Find Your Perfect Pair of Glasses"
+      "default": "Premium Eyewear, Prescription Ready"
     },
     {
       "type": "textarea",
       "id": "hero_subtext",
       "label": "Subheadline",
-      "default": "Prescription eyewear, sunglasses & blue light protection — crafted for clarity and delivered across Pakistan."
+      "default": "Shop frames, sunglasses, blue light protection, and custom lenses with clear pricing and delivery across Pakistan."
     },
     {
       "type": "text",
@@ -233,7 +285,7 @@
       "type": "text",
       "id": "btn_secondary_text",
       "label": "Secondary Button Text",
-      "default": "View All Frames"
+      "default": "Explore Sunglasses"
     },
     {
       "type": "url",
@@ -256,7 +308,7 @@
       "type": "text",
       "id": "trust_3",
       "label": "Trust Badge 3",
-      "default": "Prescription Guaranteed"
+      "default": "Lens Guidance Included"
     },
     {
       "type": "image_picker",

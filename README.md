@@ -77,6 +77,7 @@ git push origin main
 | Cart | `sections/main-cart-items.liquid`, `sections/main-cart-footer.liquid` |
 | Static pages | `sections/page-lens-guide.liquid`, `sections/page-size-guide.liquid`, `sections/page-prescription-guide.liquid`, `sections/page-faq.liquid`, `sections/page-about.liquid` |
 | Footer | `sections/footer.liquid`, `assets/footer-custom.css` |
+| Product upload/admin setup | `PRODUCT_UPLOAD_GUIDE.md` |
 
 ## Design Rules
 
@@ -97,3 +98,13 @@ git push origin main
 - Upload real hero, category, and product photography
 - Add real WhatsApp number and live contact details
 - Test a complete live order from product page to Shopify Admin
+
+## Product Upload Rules
+
+Use `PRODUCT_UPLOAD_GUIDE.md` when adding products. At minimum, each product needs a product type, collection, price, two images, fallback tags, and these required metafields:
+
+- `custom.product_mode`
+- `custom.frame_shape`
+- `custom.material`
+- `custom.gender`
+- `custom.size`
