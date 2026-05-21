@@ -298,7 +298,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 /* Link color update - use brand primary */
 a {
-  color: #FFFFFF;
+  color: #1A1A1A;
 }
 
 a:hover {
@@ -331,13 +331,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Button styling with brand primary color */
 .button--primary {
-  background-color: #FFFFFF;
-  color: #1A1A1A;
+  background-color: #FF8C00;
+  color: #FFFFFF;
 }
 
 .button--primary:hover {
   background-color: var(--color-brand-primary-dark);
-  box-shadow: 0 4px 12px rgba(107, 163, 190, 0.15);
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.18);
 }
 
 /* Secondary button with light background */
@@ -370,8 +370,8 @@ input[type="password"]:focus,
 input[type="tel"]:focus,
 textarea:focus,
 select:focus {
-  border-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(107, 163, 190, 0.1);
+  border-color: #FF8C00;
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.12);
 }
 
 /* Section dividers - minimalist style */
@@ -1557,15 +1557,15 @@ button.shopify-payment-button__button--unbranded {
 
 .button--primary,
 .button:not(.button--secondary):not(.button--tertiary) {
-  background-color: #FFFFFF;
-  color: white;
-  box-shadow: 0 4px 12px rgba(107, 163, 190, 0.15);
+  background-color: #FF8C00;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.18);
 }
 
 .button--primary:hover,
 .button:not(.button--secondary):not(.button--tertiary):hover {
   background-color: var(--color-brand-primary-dark);
-  box-shadow: 0 8px 20px rgba(107, 163, 190, 0.25);
+  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.25);
   transform: translateY(-2px);
 }
 

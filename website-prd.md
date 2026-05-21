@@ -1,56 +1,132 @@
-Zaman Optics — Website PRD (v1.0)
-1. Executive Summary
-Zaman Optics is a modern optical retail brand based in Gujar Khan, Punjab, Pakistan. The objective is to build a conversion-focused Shopify store that simplifies the complex process of buying prescription eyewear online through a guided, "Peachmart-style" user interface.
-2. Brand Identity & Design System
-* Primary Palette: White (#FFFFFF) and Orange (#FF8C00) for primary CTA buttons.
-* Secondary Palette: Deep Black (#1A1A1A) for typography and Light Gray (#F5F5F5) for section backgrounds.
-* Visual Style: Minimalist, clean, and professional with a "soft" UI feel.
-* UI Components: Use rounded corners (10px), soft shadows, and generous white space to create a "clinical yet approachable" atmosphere.
-* Typography: Clean, modern Sans-Serif headings with highly legible body text.
-3. Site Structure & Navigation
-Main Collections
-* Eyeglasses: Prescription-ready frames.
-* Sunglasses: Standard fashion eyewear (Non-prescription).
-* Blue Light Glasses: Protective eyewear.
-* Kids Glasses: Durable frames for children.
-Filtering System (Global Sidebar)
-Shapes and colors are handled via filters, not separate collections, to keep the menu clean.
-* Frame Shape: Round, Square, Rectangle, Aviator, Cat Eye.
-* Material: Metal, Acetate, Plastic.
-* Size: Medium, Wide.
-* Gender: Men, Women, Unisex, Kids.
-4. Product Page Logic (Core Feature)
-The store handles two distinct product behaviors based on the category.
-Mode A: Prescription Flow (Eyeglasses, Blue Light, Kids)
-This is a multi-step configuration funnel.
-1. Step 1: Lens Type: [ No Lens ] or [ Prescription Lenses ].
-2. Step 2: Lens Features (Conditional): Triggered if "Prescription" is selected. Options include Blue Light, Transitions, or Intelligent Lenses.
-3. Step 4: Prescription Input:
-o Upload: Image upload for prescription.
-o Manual Entry: Fields for SPH, CYL, Axis (Right/Left Eye) and PD (Pupillary Distance).
-4. Dynamic Pricing: The total price must update in real-time as lens options are toggled.
-Mode B: Standard Flow (Sunglasses)
-* Logic: No lens selection or prescription input allowed.
-* UI: Standard product gallery, price, and "Add to Cart" / "Buy Now" buttons only.
-5. Homepage Sections
-1. Hero Banner: High-resolution lifestyle imagery with a clear "Shop Now" Orange CTA.
-2. Shop by Category: Visual cards for the four main collections.
-3. Best Sellers / New Arrivals: Dynamic product grids.
-4. Trust Bar: Icons for "Quality Guarantee," "Easy Returns," and "Local Support."
-5. Reviews: Customer testimonials for social proof.
-6. Logistics & Checkout (Pakistan Market)
-* Payment Methods:
-o Cash on Delivery (COD): Primary trust-building option.
-o Online Payments: Integration for all major banking cards (Visa, Mastercard).
-o Mobile Wallets: EasyPaisa and JazzCash.
-* Currency: Fixed to PKR (Pakistani Rupee).
-* Shipping: Courier-based delivery within Pakistan.
-7. Mobile Requirements
-* Sticky Add-to-Cart: The price and "Add to Cart" button must stick to the bottom of the screen on mobile devices.
-* Touch Optimization: All buttons and lens selection cards must be a minimum of 48px tall for easy tapping.
-* Swipe Gestures: Product images must support native touch-swiping.
-8. What NOT to Include
-* No Clutter: Avoid aggressive "Sales" pop-ups or countdown timers.
-* No Auto-Play: Do not auto-play videos with sound.
-* No Redundant Menus: Shapes (e.g., "Aviator") must never appear in the main navigation.
+# Zaman Optics Website PRD
 
+## 1. Overview
+
+Zaman Optics is a modern optical retail store based in Gujar Khan, Punjab, Pakistan. The Shopify storefront should make buying eyewear online feel simple, premium, and trustworthy.
+
+The core feature is a product-page prescription workflow where customers can select a frame, choose lens options, enter/upload prescription details, and submit the configuration with the order.
+
+## 2. Brand System
+
+- Primary orange: `#FF8C00`
+- Primary black: `#1A1A1A`
+- Canvas: `#FFFFFF`
+- Surface: `#F5F5F5` / warm premium gray
+- Radius: `10px`
+- Visual tone: minimalist, premium, spacious, soft shadows
+
+## 3. Navigation and Collections
+
+Primary collections:
+- Eyeglasses
+- Sunglasses
+- Blue Light Glasses
+- Kids Glasses
+- Contact Lenses
+
+Filtering dimensions:
+- Frame Shape: Round, Square, Rectangle, Aviator, Cat Eye
+- Material: Metal, Acetate, Plastic
+- Gender: Men, Women, Unisex, Kids
+- Size: Medium, Wide
+- Price range
+
+Search & Discovery should be configured in Shopify Admin for metafield-based filters. The theme also includes a fallback tag-filter UI.
+
+## 4. Product Page Modes
+
+### Prescription Mode
+
+Applies to:
+- Eyeglasses
+- Blue Light Glasses
+- Kids Glasses
+
+Required flow:
+1. Frame Only vs With Prescription
+2. Manual prescription entry or upload file
+3. Lens type: Single Vision, Progressive, Bifocal
+4. Lens material: Standard, UV Protection, Blue Cut, Photochromic
+5. Optional coatings: Anti-Glare, Anti-Scratch, Anti-Fog
+6. Live quoted total
+7. Add to Cart / Buy Now
+
+Captured order data:
+- Order Type
+- Prescription Method
+- Right Eye SPH/CYL/Axis
+- Left Eye SPH/CYL/Axis
+- PD
+- Prescription File
+- Lens Type
+- Lens Material
+- Coatings
+- Quoted Total Rs
+
+### Standard Mode
+
+Applies to:
+- Sunglasses
+
+Required flow:
+- Product gallery
+- Variant selection if applicable
+- Quantity
+- Add to Cart
+- Buy Now / dynamic checkout when enabled
+- No prescription workflow
+
+## 5. Pricing Note
+
+Shopify line item properties store configuration details but do not change checkout price. For automatic lens upgrade charging, implement one of:
+- Lens upgrade variants
+- Add-on products
+- Shopify product options/pricing app
+
+## 6. Homepage
+
+Required sections:
+1. Announcement bar
+2. Header
+3. Hero
+4. Category grid
+5. Best Sellers
+6. Why Choose Us
+7. Customer Reviews
+8. FAQ
+9. Footer
+
+## 7. Pakistan Localization
+
+Required:
+- PKR / Rs pricing
+- Cash on Delivery visibility
+- EasyPaisa and JazzCash visibility
+- Credit/debit card visibility
+- WhatsApp support
+- Delivery across Pakistan
+- Avoid unsupported international shipping or virtual try-on claims
+
+## 8. Static Pages
+
+Built templates:
+- Lens Guide
+- Size Guide
+- Prescription Guide
+- FAQ
+- About
+- Contact
+
+Still needs admin assignment/content confirmation for actual Shopify pages.
+
+## 9. Launch Checklist
+
+- Configure Search & Discovery filters
+- Confirm product metafields
+- Configure Pakistan shipping zones
+- Enable COD
+- Configure EasyPaisa/JazzCash/card payments
+- Upload real product and category images
+- Add real WhatsApp number
+- Test prescription order in Shopify Admin
+- Confirm lens upgrade charging approach

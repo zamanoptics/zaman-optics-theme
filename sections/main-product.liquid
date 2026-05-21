@@ -32,12 +32,6 @@
 {%- if product_mode == blank -%}
   {%- assign product_mode = 'standard' -%}
 {%- endif -%}
-  {%- endfor -%}
-{%- endif -%}
-
-{%- if product_mode == blank -%}
-  {%- assign product_mode = 'standard' -%}
-{%- endif -%}
 
 <product-info
   id="MainProduct-{{ section.id }}"
@@ -249,7 +243,7 @@
                   {%- endif -%}
                 </p>
               {%- when 'description' -%}
-                {# Description now rendered at top-left below media using zaman-product-about #}
+                {%- comment -%}Description renders below the media gallery in the left column.{%- endcomment -%}
               {%- when 'sku' -%}
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"

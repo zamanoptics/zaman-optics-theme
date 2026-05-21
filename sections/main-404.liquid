@@ -1,23 +1,55 @@
+<div class="template-404 page-width">
+  <div class="zaman-404">
+    <span class="zaman-404__code">404</span>
+    <h1 class="title">We could not find that page</h1>
+    <p>
+      The page may have moved, or the link may be old. Browse our eyewear collections or contact us for help finding the right frame.
+    </p>
+    <div class="zaman-404__actions">
+      <a href="{{ routes.all_products_collection_url }}" class="button">Shop All Eyewear</a>
+      <a href="/pages/contact" class="button button--secondary">Contact Support</a>
+    </div>
+  </div>
+</div>
+
 <style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
+  .zaman-404 {
+    max-width: 720px;
+    margin: clamp(48px, 8vw, 96px) auto;
+    padding: clamp(32px, 6vw, 64px);
+    text-align: center;
+    border: 1px solid #e8e2da;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 14px 36px rgba(26, 26, 26, 0.1);
   }
 
-  @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
-    }
+  .zaman-404__code {
+    display: inline-flex;
+    padding: 6px 14px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    background: #fff3e0;
+    color: #ff8c00;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+  }
+
+  .zaman-404 .title {
+    margin: 0 0 14px;
+  }
+
+  .zaman-404 p {
+    max-width: 540px;
+    margin: 0 auto 26px;
+    color: #6f6a63;
+    line-height: 1.7;
+  }
+
+  .zaman-404__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
   }
 </style>
-
-<div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
-</div>

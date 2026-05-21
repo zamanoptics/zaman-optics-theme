@@ -586,6 +586,12 @@
   border-top: 1px solid #E8E8E8;
   margin-top: 8px;
 }
+.zpf-summary-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #777777;
+}
 .zpf-total-num {
   font-size: 24px;
   font-weight: 900;
@@ -642,6 +648,13 @@
   box-shadow: 0 6px 20px rgba(255,140,0,0.35);
   color: #FFFFFF !important;
   text-decoration: none !important;
+}
+.zpf-btn-cart[disabled],
+.zpf-btn-buy[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 /* Mobile */

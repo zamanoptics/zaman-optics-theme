@@ -1,0 +1,210 @@
+<section class="zaman-reviews">
+  <div class="zaman-reviews__inner">
+    <div class="zaman-reviews__header">
+      <span class="zaman-reviews__tag">{{ section.settings.tag_text }}</span>
+      <h2>{{ section.settings.title }}</h2>
+      <p>{{ section.settings.subtitle }}</p>
+    </div>
+
+    <div class="zaman-reviews__grid">
+      {% for block in section.blocks %}
+        <article class="zaman-review" {{ block.shopify_attributes }}>
+          <div class="zaman-review__stars" aria-label="5 star review">★★★★★</div>
+          <p class="zaman-review__quote">{{ block.settings.quote }}</p>
+          <div class="zaman-review__person">
+            <span class="zaman-review__name">{{ block.settings.name }}</span>
+            <span class="zaman-review__meta">{{ block.settings.meta }}</span>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .zaman-reviews {
+    padding: clamp(48px, 7vw, 88px) 24px;
+    background: #ffffff;
+  }
+
+  .zaman-reviews__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .zaman-reviews__header {
+    max-width: 640px;
+    margin: 0 auto 36px;
+    text-align: center;
+  }
+
+  .zaman-reviews__tag {
+    display: inline-flex;
+    padding: 6px 14px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: #fff3e0;
+    border: 1px solid rgba(255, 140, 0, 0.18);
+    color: #ff8c00;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+  }
+
+  .zaman-reviews__header h2 {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.12;
+    font-weight: 900;
+    color: #1a1a1a;
+  }
+
+  .zaman-reviews__header p {
+    margin: 0;
+    color: #6f6a63;
+    line-height: 1.7;
+  }
+
+  .zaman-reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .zaman-review {
+    display: flex;
+    min-height: 260px;
+    flex-direction: column;
+    padding: 26px;
+    border: 1px solid #e8e2da;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(26, 26, 26, 0.06);
+  }
+
+  .zaman-review__stars {
+    color: #ff8c00;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+  }
+
+  .zaman-review__quote {
+    margin: 0;
+    color: #2d2a26;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+
+  .zaman-review__person {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: auto;
+    padding-top: 22px;
+  }
+
+  .zaman-review__name {
+    color: #1a1a1a;
+    font-weight: 900;
+  }
+
+  .zaman-review__meta {
+    color: #777;
+    font-size: 13px;
+  }
+
+  @media (max-width: 900px) {
+    .zaman-reviews__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .zaman-review {
+      min-height: auto;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Customer Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tag_text",
+      "label": "Tag",
+      "default": "Customer Reviews"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Trusted by Local Customers"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Real feedback from customers who ordered frames, sunglasses, and prescription lenses from Zaman Optics."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "The frame quality feels premium and the prescription was made exactly as requested. Delivery was smooth and the team confirmed details on WhatsApp."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer name",
+          "default": "Ayesha K."
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Meta",
+          "default": "Prescription Eyeglasses"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "quote": "The frame quality feels premium and the prescription was made exactly as requested. Delivery was smooth and the team confirmed details on WhatsApp.",
+            "name": "Ayesha K.",
+            "meta": "Prescription Eyeglasses"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "I ordered blue cut lenses for office work. The checkout was simple, COD was available, and the glasses are comfortable for long screen hours.",
+            "name": "Hamza R.",
+            "meta": "Blue Light Glasses"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "Good sunglasses selection and the product photos made it easy to choose. The team helped me pick the right size before shipping.",
+            "name": "Sana M.",
+            "meta": "Sunglasses"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

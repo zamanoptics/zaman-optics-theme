@@ -483,19 +483,18 @@ function updateTagFilters() {
   // Collect all checked tag filter checkboxes
   const checkedTags = Array.from(
     document.querySelectorAll('.zcf-tag-filter:checked')
-  ).map(cb => cb.dataset.tag);
+  ).map(cb => cb.dataset.tag.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
   
-  // Build the URL with tag parameters
+  // Build Shopify collection tag URL: /collections/handle/tag-1+tag-2
   let url = '{{ collection.url }}';
   if (checkedTags.length > 0) {
-    // Join tags with + for multiple tag filtering
-    const tagParam = checkedTags.join('+');
-    url = url + '?tag=' + encodeURIComponent(tagParam);
+    url = url.replace(/\/$/, '') + '/' + checkedTags.map(encodeURIComponent).join('+');
   }
+
   // Preserve sort_by if set
   const sortBy = document.querySelector('input[name="sort_by"]');
   if (sortBy && sortBy.value) {
-    url += (checkedTags.length > 0 ? '&' : '?') + 'sort_by=' + encodeURIComponent(sortBy.value);
+    url += '?sort_by=' + encodeURIComponent(sortBy.value);
   }
   
   window.location.href = url;
