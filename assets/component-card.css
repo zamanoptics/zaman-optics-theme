@@ -42,18 +42,18 @@ ul.grid.product-grid {
 .card-wrapper,
 .product-card-wrapper {
   background: #FFFFFF !important;
-  border: 2px solid #EEEEEE !important;
-  border-radius: 16px !important;
+  border: 1px solid #e8e8ed !important;
+  border-radius: 18px !important;
   overflow: hidden !important;
   transition: all 0.25s ease !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+  box-shadow: none !important;
   cursor: pointer;
 }
 .card-wrapper:hover,
 .product-card-wrapper:hover {
-  border-color: #FF8C00 !important;
-  box-shadow: 0 8px 28px rgba(255,140,0,0.15) !important;
-  transform: translateY(-4px) !important;
+  border-color: #d2d2d7 !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.05) !important;
+  transform: translateY(-2px) !important;
 }
 
 /* Card image container */
@@ -65,12 +65,12 @@ ul.grid.product-grid {
   min-height: 200px !important;
   max-height: 260px !important;
   width: 100% !important;
-  background: #F8F8F8 !important;
+  background: #f5f5f7 !important;
   overflow: hidden !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  border-radius: 14px 14px 0 0 !important;
+  border-radius: 18px 18px 0 0 !important;
 }
 .card__media img,
 .card-wrapper .media img,
@@ -107,7 +107,7 @@ ul.grid.product-grid {
 .card-information .card__heading {
   font-size: 15px !important;
   font-weight: 700 !important;
-  color: #1A1A1A !important;
+  color: #1d1d1f !important;
   line-height: 1.4 !important;
   margin: 0 0 8px 0 !important;
   display: -webkit-box !important;
@@ -118,7 +118,7 @@ ul.grid.product-grid {
   text-decoration: none !important;
 }
 .card__heading a:hover {
-  color: #FF8C00 !important;
+  color: #0071e3 !important;
   text-decoration: none !important;
 }
 
@@ -130,12 +130,12 @@ ul.grid.product-grid {
 .card-information .price {
   font-size: 17px !important;
   font-weight: 800 !important;
-  color: #1A1A1A !important;
+  color: #1d1d1f !important;
   margin: 0 0 12px 0 !important;
 }
 .price__regular,
 .price-item--regular {
-  color: #1A1A1A !important;
+  color: #1d1d1f !important;
 }
 
 /* Add to Cart button on card */
@@ -144,7 +144,7 @@ ul.grid.product-grid {
 .quick-add__submit {
   width: 100% !important;
   padding: 11px !important;
-  background: #FF8C00 !important;
+  background: #0071e3 !important;
   color: #FFFFFF !important;
   border: none !important;
   border-radius: 10px !important;
@@ -157,7 +157,7 @@ ul.grid.product-grid {
 .card__add-to-cart:hover,
 .quick-add:hover,
 .quick-add__submit:hover {
-  background: #E07800 !important;
+  background: #0077ed !important;
 }
 
 /* Collection page title */
@@ -165,7 +165,7 @@ ul.grid.product-grid {
 .collection .title {
   font-size: 36px !important;
   font-weight: 800 !important;
-  color: #1A1A1A !important;
+  color: #1d1d1f !important;
   padding: 32px 40px 0 !important;
   max-width: 1400px !important;
   margin: 0 auto !important;
@@ -178,23 +178,23 @@ ul.grid.product-grid {
   align-items: center !important;
   justify-content: space-between !important;
   padding: 16px 0 !important;
-  border-bottom: 2px solid #F0F0F0 !important;
+  border-bottom: 1px solid #e8e8ed !important;
   margin-bottom: 24px !important;
 }
 .facets-sort select,
 select#SortBy {
   padding: 10px 16px !important;
-  border: 2px solid #E8E8E8 !important;
+  border: 1px solid #d2d2d7 !important;
   border-radius: 10px !important;
   font-size: 14px !important;
   font-weight: 600 !important;
-  color: #1A1A1A !important;
+  color: #1d1d1f !important;
   background: #FFFFFF !important;
   cursor: pointer !important;
 }
 .facets-sort select:focus,
 select#SortBy:focus {
-  border-color: #FF8C00 !important;
+  border-color: #0071e3 !important;
   outline: none !important;
 }
 
@@ -204,7 +204,7 @@ select#SortBy:focus {
 #FacetFiltersForm,
 .facets {
   background: #FFFFFF !important;
-  border: 2px solid #EEEEEE !important;
+  border: 1px solid #e8e8ed !important;
   border-radius: 16px !important;
   padding: 24px !important;
   position: sticky !important;
@@ -220,9 +220,9 @@ select#SortBy:focus {
   display: block;
   font-size: 16px;
   font-weight: 800;
-  color: #1A1A1A;
+  color: #1d1d1f;
   padding-bottom: 16px;
-  border-bottom: 2px solid #F0F0F0;
+  border-bottom: 1px solid #e8e8ed;
   margin-bottom: 20px;
   letter-spacing: -0.2px;
 }
@@ -247,7 +247,7 @@ details.facets__disclosure > summary,
   list-style: none !important;
   font-size: 13px !important;
   font-weight: 700 !important;
-  color: #1A1A1A !important;
+  color: #1d1d1f !important;
   text-transform: uppercase !important;
   letter-spacing: 0.8px !important;
   -webkit-user-select: none !important;
@@ -280,8 +280,8 @@ details > summary::-webkit-details-marker {
 }
 .facets__item label:hover,
 .facets__list .facets__item:hover {
-  background: #FFF3E0 !important;
-  color: #1A1A1A !important;
+  background: #f5f5f7 !important;
+  color: #1d1d1f !important;
 }
 
 /* Checkboxes */
@@ -291,12 +291,12 @@ input[type="checkbox"].facets__checkbox {
   height: 17px !important;
   border: 2px solid #CCCCCC !important;
   border-radius: 5px !important;
-  accent-color: #FF8C00 !important;
+  accent-color: #0071e3 !important;
   cursor: pointer !important;
   flex-shrink: 0 !important;
 }
 input[type="checkbox"]:checked {
-  accent-color: #FF8C00 !important;
+  accent-color: #0071e3 !important;
 }
 
 /* Option label text */
@@ -324,18 +324,18 @@ input[type="checkbox"]:checked {
   align-items: center !important;
   gap: 6px !important;
   padding: 6px 14px !important;
-  background: #FFF3E0 !important;
-  border: 1.5px solid #FF8C00 !important;
+  background: #f5f5f7 !important;
+  border: 1px solid #d2d2d7 !important;
   border-radius: 50px !important;
   font-size: 12px !important;
   font-weight: 600 !important;
-  color: #1A1A1A !important;
+  color: #1d1d1f !important;
   cursor: pointer !important;
   text-decoration: none !important;
 }
 .active-facets__button:hover {
-  background: #FF8C00 !important;
-  color: #FFFFFF !important;
+  background: #ffffff !important;
+  color: #0071e3 !important;
 }
 .active-facets__button-remove {
   font-size: 14px !important;
@@ -353,12 +353,12 @@ input[type="checkbox"]:checked {
 .facets__price input {
   width: 90px !important;
   padding: 9px 12px !important;
-  border: 2px solid #E8E8E8 !important;
+  border: 1px solid #d2d2d7 !important;
   border-radius: 8px !important;
   font-size: 13px !important;
-  color: #1A1A1A !important;
+  color: #1d1d1f !important;
 }
 .facets__price input:focus {
-  border-color: #FF8C00 !important;
+  border-color: #0071e3 !important;
   outline: none !important;
 }

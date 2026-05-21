@@ -4,24 +4,24 @@
    ========================================================= */
 
 :root {
-  --zaman-orange: #ff8c00;
-  --zaman-orange-dark: #df7600;
-  --zaman-orange-soft: #fff3e0;
-  --zaman-black: #1a1a1a;
-  --zaman-charcoal: #2d2a26;
-  --zaman-muted: #6f6a63;
-  --zaman-border: #e8e2da;
-  --zaman-border-strong: #d8d0c6;
-  --zaman-surface: #f7f7f5;
-  --zaman-surface-warm: #fffaf3;
+  --zaman-orange: #0071e3;
+  --zaman-orange-dark: #0077ed;
+  --zaman-orange-soft: #f5f5f7;
+  --zaman-black: #1d1d1f;
+  --zaman-charcoal: #424245;
+  --zaman-muted: #6e6e73;
+  --zaman-border: #e8e8ed;
+  --zaman-border-strong: #d2d2d7;
+  --zaman-surface: #f5f5f7;
+  --zaman-surface-warm: #fbfbfd;
   --zaman-white: #ffffff;
   --zaman-success: #168a45;
   --zaman-error: #c83b2b;
   --zaman-radius: 10px;
   --zaman-radius-large: 16px;
-  --zaman-shadow-sm: 0 4px 14px rgba(26, 26, 26, 0.06);
-  --zaman-shadow-md: 0 14px 36px rgba(26, 26, 26, 0.1);
-  --zaman-shadow-orange: 0 12px 26px rgba(255, 140, 0, 0.24);
+  --zaman-shadow-sm: none;
+  --zaman-shadow-md: 0 10px 28px rgba(0, 0, 0, 0.06);
+  --zaman-shadow-orange: none;
 
   --color-brand-primary: var(--zaman-orange);
   --color-brand-primary-dark: var(--zaman-orange-dark);
@@ -1000,4 +1000,239 @@ hr {
   .featured-products-grid {
     gap: 14px !important;
   }
+}
+
+/* Minimal light storefront refresh */
+main,
+.content-for-layout {
+  background: var(--zaman-white) !important;
+}
+
+.zaman-announcement,
+.zaman-nav,
+.footer-custom,
+.zcf-head,
+.custom-filters-card-header,
+.zcf-header {
+  background: var(--zaman-white) !important;
+  color: var(--zaman-black) !important;
+  border-color: var(--zaman-border) !important;
+  box-shadow: none !important;
+}
+
+.zaman-announcement {
+  background: var(--zaman-surface) !important;
+  border-bottom: 1px solid var(--zaman-border) !important;
+}
+
+.zaman-nav {
+  border-top: 1px solid var(--zaman-border) !important;
+  border-bottom: 1px solid var(--zaman-border) !important;
+}
+
+.zaman-nav-link,
+.zcf-head span,
+.custom-filters-card-header h3,
+.zcf-title {
+  color: var(--zaman-black) !important;
+}
+
+.zaman-nav-link {
+  font-weight: 600 !important;
+}
+
+.zaman-nav-link:hover,
+.zaman-nav-link.active,
+.zaman-header-navlink:hover,
+.zaman-header-navlink.active {
+  background: var(--zaman-surface) !important;
+  color: var(--zaman-orange) !important;
+}
+
+.zcoll-filter-toggle,
+.zcoll-sidebar-close,
+.zcard-badge--new,
+.zcard-badge--sale,
+.zcard-badge--sold {
+  background: var(--zaman-white) !important;
+  color: var(--zaman-black) !important;
+  border: 1px solid var(--zaman-border) !important;
+  box-shadow: none !important;
+}
+
+.button,
+.shopify-challenge__button,
+.customer button,
+.product-form__submit,
+.shopify-payment-button__button--unbranded,
+.quick-add__submit,
+.add-to-cart-btn,
+.btn-primary,
+.zaman-faq-cta-btn {
+  box-shadow: none !important;
+}
+
+.button--secondary:hover,
+.btn-secondary:hover,
+.zpf-btn-cart {
+  background: var(--zaman-surface) !important;
+  border-color: var(--zaman-border-strong) !important;
+  color: var(--zaman-black) !important;
+}
+
+.badge,
+.card__badge .badge,
+.zcoll-count,
+.zaman-product-count,
+.zcoll-clear-filters {
+  background: var(--zaman-surface) !important;
+  color: var(--zaman-black) !important;
+  border: 1px solid var(--zaman-border) !important;
+}
+
+.hero-wrapper {
+  background: var(--zaman-surface) !important;
+  border: 1px solid var(--zaman-border) !important;
+  box-shadow: none !important;
+}
+
+.hero-wrapper .hero-label,
+.hero-trust-item {
+  background: var(--zaman-white) !important;
+  color: var(--zaman-muted) !important;
+  border-color: var(--zaman-border) !important;
+}
+
+.hero-wrapper .hero-headline {
+  color: var(--zaman-black) !important;
+}
+
+.hero-wrapper .hero-subtext {
+  color: var(--zaman-muted) !important;
+}
+
+.hero-wrapper .hero-trust-dot {
+  background: var(--zaman-orange) !important;
+  box-shadow: none !important;
+}
+
+.hero-wrapper .btn-secondary {
+  background: var(--zaman-white) !important;
+  border-color: var(--zaman-border-strong) !important;
+  color: var(--zaman-black) !important;
+}
+
+.hero-right,
+.hero-image,
+.product__info-container,
+.card-wrapper,
+.product-card-wrapper,
+.collection-card-wrapper,
+.article-card-wrapper,
+.product-card,
+.cat-card,
+.zaman-why-card,
+.zaman-faq-item,
+.zpf-panel-block,
+.zpf-summary,
+.zpf-price-summary,
+.zaman-specs-table,
+.zcoll-sidebar,
+.zcoll-grid-header,
+.zcoll-sort-bar {
+  box-shadow: none !important;
+}
+
+.card-wrapper:hover,
+.product-card-wrapper:hover,
+.collection-card-wrapper:hover,
+.article-card-wrapper:hover,
+.product-card:hover,
+.cat-card:hover,
+.zaman-why-card:hover,
+.zcard:hover {
+  border-color: var(--zaman-border-strong) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(-2px) !important;
+}
+
+.card__media,
+.product-image-wrapper,
+.cat-card-image,
+.product-card-wrapper .media,
+.card-wrapper .media,
+.product__media,
+.thumbnail,
+.zcard-images {
+  background: var(--zaman-surface) !important;
+}
+
+.zcard-img {
+  object-fit: contain !important;
+  object-position: center !important;
+  padding: 24px !important;
+}
+
+.zaman-stats-row,
+.zaman-faq-cta,
+.featured-products-section,
+.zaman-why-section,
+.zcoll-hero,
+.zaman-collection-hero,
+.collection-hero {
+  background: var(--zaman-surface) !important;
+  border-color: var(--zaman-border) !important;
+}
+
+.footer-custom__tagline,
+.footer-custom__address,
+.footer-custom__contact-item,
+.footer-custom__link-list a,
+.footer-custom__copyright {
+  color: var(--zaman-muted) !important;
+}
+
+.footer-custom__payment-badge {
+  background: var(--zaman-white) !important;
+  border-color: var(--zaman-border) !important;
+  color: var(--zaman-black) !important;
+}
+
+.related-products .card__inner {
+  display: block !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 10 !important;
+  background: var(--zaman-surface) !important;
+  border-radius: 18px 18px 0 0 !important;
+  overflow: hidden !important;
+}
+
+.related-products .card__inner::before,
+.related-products .card__inner > .card__content {
+  display: none !important;
+  content: none !important;
+}
+
+.related-products .card__media,
+.related-products .media {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+}
+
+.related-products .card__media img,
+.related-products .media img {
+  object-fit: contain !important;
+  object-position: center !important;
+  padding: 22px !important;
+}
+
+.related-products .card > .card__content {
+  display: block !important;
+  flex: 1 1 auto !important;
 }
