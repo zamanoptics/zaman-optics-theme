@@ -4,7 +4,7 @@
   /* Best Sellers / Featured Products Section */
 
   .featured-products-section {
-    background-color: #FFFFFF;
+    background-color: #F7F7F5;
     padding: 60px 2rem;
   }
 
@@ -24,7 +24,7 @@
   }
 
   .featured-products-link {
-    color: #6BA3BE;
+    color: #FF8C00;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -33,7 +33,7 @@
   }
 
   .featured-products-link:hover {
-    color: #4A7A94;
+    color: #DF7600;
   }
 
   .featured-products-grid {
@@ -46,23 +46,28 @@
 
   .product-card {
     background-color: #FFFFFF;
-    border-radius: 10px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    border: 1px solid #E8E2DA;
+    box-shadow: 0 4px 14px rgba(26, 26, 26, 0.06);
   }
 
   .product-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 14px 36px rgba(26, 26, 26, 0.1);
+    border-color: rgba(255, 140, 0, 0.56);
+    transform: translateY(-4px);
   }
 
   .product-image-wrapper {
     position: relative;
     width: 100%;
     padding-bottom: 100%;
-    background-color: #F5F5F5;
+    background:
+      radial-gradient(circle at 24% 18%, rgba(255, 140, 0, 0.08), transparent 34%),
+      #F7F7F5;
     overflow: hidden;
   }
 
@@ -108,11 +113,11 @@
   }
 
   .add-to-cart-btn {
-    background-color: transparent;
-    border: 1px solid #6BA3BE;
-    color: #6BA3BE;
+    background-color: #FF8C00;
+    border: 1px solid #FF8C00;
+    color: #FFFFFF;
     padding: 0.75rem 1rem;
-    border-radius: 6px;
+    border-radius: 10px;
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
@@ -124,7 +129,7 @@
   }
 
   .add-to-cart-btn:hover {
-    background-color: #6BA3BE;
+    background-color: #DF7600;
     color: #FFFFFF;
   }
 

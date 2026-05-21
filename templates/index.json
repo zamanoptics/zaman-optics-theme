@@ -213,6 +213,45 @@
         "stat4_label": "Customer Rating"
       }
     },
+    "reviews": {
+      "type": "reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "quote": "The frame quality feels premium and the prescription was made exactly as requested. Delivery was smooth and the team confirmed details on WhatsApp.",
+            "name": "Ayesha K.",
+            "meta": "Prescription Eyeglasses"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "quote": "I ordered blue cut lenses for office work. The checkout was simple, COD was available, and the glasses are comfortable for long screen hours.",
+            "name": "Hamza R.",
+            "meta": "Blue Light Glasses"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "quote": "Good sunglasses selection and the product photos made it easy to choose. The team helped me pick the right size before shipping.",
+            "name": "Sana M.",
+            "meta": "Sunglasses"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "tag_text": "Customer Reviews",
+        "title": "Trusted by Local Customers",
+        "subtitle": "Real feedback from customers who ordered frames, sunglasses, and prescription lenses from Zaman Optics."
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -280,10 +319,9 @@
   "order": [
     "image_banner",
     "category_grid",
-    "trust_features",
     "featured_products",
-    "featured_collection",
     "why_choose_us",
+    "reviews",
     "faq"
   ]
 }

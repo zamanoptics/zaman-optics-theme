@@ -102,6 +102,12 @@
                     {%- endif -%}
                   {%- endif -%}
                 </small>
+                <div class="zaman-cart-trust" aria-label="Available payment and delivery options">
+                  <span>Cash on Delivery</span>
+                  <span>EasyPaisa</span>
+                  <span>JazzCash</span>
+                  <span>Cards</span>
+                </div>
               </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
@@ -132,6 +138,28 @@
     </div>
   </div>
 </div>
+
+<style>
+  .zaman-cart-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .zaman-cart-trust span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 140, 0, 0.28);
+    border-radius: 999px;
+    background: #fff3e0;
+    color: #1a1a1a;
+    font-size: 12px;
+    font-weight: 800;
+  }
+</style>
 
 {% schema %}
 {

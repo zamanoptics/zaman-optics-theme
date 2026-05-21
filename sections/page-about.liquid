@@ -1,0 +1,135 @@
+<section class="zaman-about-page">
+  <div class="zaman-about-page__inner">
+    <div class="zaman-about-page__hero">
+      <span class="zaman-about-page__tag">About Zaman Optics</span>
+      <h1>{{ page.title | default: 'About Zaman Optics' }}</h1>
+      <p>
+        Zaman Optics is a local optical retailer in Gujar Khan, Punjab, helping customers choose better frames, accurate prescription lenses, and everyday eyewear with personal support.
+      </p>
+    </div>
+
+    <div class="zaman-about-page__grid">
+      <article>
+        <h2>Local Service, Online Convenience</h2>
+        <p>
+          Our goal is to bring the care of an optical store into a simple online buying experience. Customers can select frames, choose lens upgrades, submit prescription details, and confirm their order from home.
+        </p>
+      </article>
+
+      <article>
+        <h2>Built for Pakistan</h2>
+        <p>
+          We prioritize PKR pricing, Cash on Delivery, EasyPaisa, JazzCash, WhatsApp support, and delivery workflows that make sense for customers across Pakistan.
+        </p>
+      </article>
+
+      <article>
+        <h2>Prescription Care</h2>
+        <p>
+          Prescription orders are reviewed before fulfillment so SPH, CYL, Axis, PD, lens type, and coating selections can be checked carefully.
+        </p>
+      </article>
+    </div>
+
+    <div class="zaman-about-page__cta">
+      <div>
+        <h2>Need help choosing frames?</h2>
+        <p>Send us your prescription or current glasses photo and our team can guide you.</p>
+      </div>
+      <a href="/pages/contact" class="button">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .zaman-about-page {
+    padding: clamp(48px, 7vw, 88px) 24px;
+    background: linear-gradient(180deg, #fffaf3 0%, #ffffff 42%);
+  }
+
+  .zaman-about-page__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .zaman-about-page__hero {
+    max-width: 760px;
+    margin-bottom: 36px;
+  }
+
+  .zaman-about-page__tag {
+    display: inline-flex;
+    padding: 6px 14px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: #fff3e0;
+    color: #ff8c00;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+  }
+
+  .zaman-about-page h1 {
+    margin: 0 0 16px;
+    color: #1a1a1a;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.08;
+    font-weight: 900;
+  }
+
+  .zaman-about-page p {
+    margin: 0;
+    color: #6f6a63;
+    line-height: 1.75;
+  }
+
+  .zaman-about-page__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .zaman-about-page__grid article,
+  .zaman-about-page__cta {
+    padding: 26px;
+    border: 1px solid #e8e2da;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(26, 26, 26, 0.06);
+  }
+
+  .zaman-about-page__grid h2,
+  .zaman-about-page__cta h2 {
+    margin: 0 0 10px;
+    color: #1a1a1a;
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .zaman-about-page__cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .zaman-about-page__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .zaman-about-page__cta {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "About Page",
+  "settings": []
+}
+{% endschema %}

@@ -563,7 +563,7 @@
 .price-range-inputs input:focus {
   outline: none;
   border-color: var(--filter-blue);
-  box-shadow: 0 0 0 2px rgba(107, 163, 190, 0.1);
+  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.12);
 }
 
 .price-range-separator {
@@ -698,7 +698,7 @@
 .select__select:focus {
   outline: none;
   border-color: var(--filter-blue);
-  box-shadow: 0 0 0 2px rgba(107, 163, 190, 0.1);
+  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.12);
 }
 
 .select .svg-wrapper {
