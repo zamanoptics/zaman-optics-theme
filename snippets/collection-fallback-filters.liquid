@@ -1,0 +1,103 @@
+{%- assign shapes = 'Round,Square,Rectangle,Aviator,Cat Eye' | split: ',' -%}
+{%- assign materials = 'Metal,Acetate,Plastic' | split: ',' -%}
+{%- assign genders = 'Men,Women,Unisex,Kids' | split: ',' -%}
+{%- assign sizes = 'Small,Medium,Wide' | split: ',' -%}
+
+{%- capture chevron -%}
+  <svg class="zcf-chevron" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+    <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>
+{%- endcapture -%}
+
+<details class="zcf-group" open>
+  <summary class="zcf-title">
+    <span>Frame Shape</span>
+    {{ chevron }}
+  </summary>
+  <ul class="zcf-list">
+    {% for value in shapes %}
+      <li class="zcf-item">
+        <label class="zcf-label">
+          <input type="checkbox" class="zcf-cb zcf-tag-filter" data-tag="{{ value }}" {% if current_tags contains value %}checked{% endif %} onchange="updateTagFilters()">
+          <span class="zcf-custom-cb"></span>
+          <span class="zcf-text">{{ value }}</span>
+        </label>
+      </li>
+    {% endfor %}
+  </ul>
+</details>
+
+<details class="zcf-group" open>
+  <summary class="zcf-title">
+    <span>Material</span>
+    {{ chevron }}
+  </summary>
+  <ul class="zcf-list">
+    {% for value in materials %}
+      <li class="zcf-item">
+        <label class="zcf-label">
+          <input type="checkbox" class="zcf-cb zcf-tag-filter" data-tag="{{ value }}" {% if current_tags contains value %}checked{% endif %} onchange="updateTagFilters()">
+          <span class="zcf-custom-cb"></span>
+          <span class="zcf-text">{{ value }}</span>
+        </label>
+      </li>
+    {% endfor %}
+  </ul>
+</details>
+
+<details class="zcf-group" open>
+  <summary class="zcf-title">
+    <span>Gender</span>
+    {{ chevron }}
+  </summary>
+  <ul class="zcf-list">
+    {% for value in genders %}
+      <li class="zcf-item">
+        <label class="zcf-label">
+          <input type="checkbox" class="zcf-cb zcf-tag-filter" data-tag="{{ value }}" {% if current_tags contains value %}checked{% endif %} onchange="updateTagFilters()">
+          <span class="zcf-custom-cb"></span>
+          <span class="zcf-text">{{ value }}</span>
+        </label>
+      </li>
+    {% endfor %}
+  </ul>
+</details>
+
+<details class="zcf-group">
+  <summary class="zcf-title">
+    <span>Size</span>
+    {{ chevron }}
+  </summary>
+  <ul class="zcf-list">
+    {% for value in sizes %}
+      <li class="zcf-item">
+        <label class="zcf-label">
+          <input type="checkbox" class="zcf-cb zcf-tag-filter" data-tag="{{ value }}" {% if current_tags contains value %}checked{% endif %} onchange="updateTagFilters()">
+          <span class="zcf-custom-cb"></span>
+          <span class="zcf-text">{{ value }}</span>
+        </label>
+      </li>
+    {% endfor %}
+  </ul>
+</details>
+
+<details class="zcf-group">
+  <summary class="zcf-title">
+    <span>Price Range</span>
+    {{ chevron }}
+  </summary>
+  <div class="zcf-price-block">
+    <div class="zcf-price-inputs">
+      <div class="zcf-price-field">
+        <label>Min (Rs)</label>
+        <input type="number" name="filter.v.price.gte" placeholder="0" class="zcf-price-input">
+      </div>
+      <span class="zcf-price-dash">-</span>
+      <div class="zcf-price-field">
+        <label>Max (Rs)</label>
+        <input type="number" name="filter.v.price.lte" placeholder="15000" class="zcf-price-input">
+      </div>
+    </div>
+    <button type="submit" class="zcf-apply-btn">Apply Price</button>
+  </div>
+</details>
