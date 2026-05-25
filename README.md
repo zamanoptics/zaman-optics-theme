@@ -78,6 +78,7 @@ git push origin main
 | Static pages | `sections/page-lens-guide.liquid`, `sections/page-size-guide.liquid`, `sections/page-prescription-guide.liquid`, `sections/page-faq.liquid`, `sections/page-about.liquid` |
 | Footer | `sections/footer.liquid`, `assets/footer-custom.css` |
 | Product upload/admin setup | `PRODUCT_UPLOAD_GUIDE.md` |
+| Store structure guide | `ZAMAN_OPTICS_STORE_GUIDE.md`, `ZAMAN_OPTICS_STORE_GUIDE.pdf` |
 
 ## Design Rules
 

@@ -1,464 +1,172 @@
-
-<link rel="stylesheet" href="{{ 'zaman-header.css' | asset_url }}">
-<link rel="stylesheet" href="{{ 'zaman-header-nav.css' | asset_url }}">
+{{ 'zaman-header.css' | asset_url | stylesheet_tag }}
+{{ 'zaman-header-nav.css' | asset_url | stylesheet_tag }}
 
 <div class="zaman-announcement">
-  🚚 Free Shipping on orders above Rs 3,000 | 💳 Cash on Delivery Available | 📞 WhatsApp: +92 300 8888888
+  <div class="zaman-announcement__inner">
+    <span>Free delivery over Rs 3,000</span>
+    <span>Cash on Delivery</span>
+    <span>WhatsApp: +92 300 8888888</span>
+  </div>
 </div>
 
 <header class="zaman-header">
-  <div class="zaman-header-inner">    <a href="/" class="zaman-logo">
-      <svg width="30" height="30" viewBox="0 0 30 30" 
-           fill="none">
-        <circle cx="9" cy="15" r="6.5" 
-                stroke="#FF8C00" stroke-width="2.2" 
-                fill="none"/>
-        <circle cx="21" cy="15" r="6.5" 
-                stroke="#FF8C00" stroke-width="2.2" 
-                fill="none"/>
-        <line x1="15" y1="11" x2="15" y2="19" 
-              stroke="#FF8C00" stroke-width="2.2" 
-              stroke-linecap="round"/>
+  <div class="zaman-header-inner">
+    <button class="zaman-burger zaman-burger--desktop" type="button" onclick="openMobileMenu()" aria-label="Open menu">
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
+      </svg>
+    </button>
+
+    <a href="/" class="zaman-logo" aria-label="Zaman Optics home">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <circle cx="9" cy="15" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle>
+        <circle cx="21" cy="15" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle>
+        <line x1="15" y1="12" x2="15" y2="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></line>
       </svg>
       <span class="zaman-logo-name">Zaman Optics</span>
     </a>
 
-    <nav class="zaman-header-nav">
-      <a href="/" class="zaman-header-navlink">Home</a>
-      <a href="/collections/all" 
-         class="zaman-header-navlink">Collections</a>
-      <a href="/pages/contact" 
-         class="zaman-header-navlink">Contact</a>
+    <nav class="zaman-header-nav" aria-label="Main">
+      <a href="/collections/eyeglasses" class="zaman-header-navlink">Eyeglasses</a>
+      <a href="/collections/sunglasses" class="zaman-header-navlink">Sunglasses</a>
+      <a href="/collections/blue-light-glasses" class="zaman-header-navlink">Blue Light</a>
+      <a href="/pages/lens-guide" class="zaman-header-navlink">Lens Guide</a>
     </nav>
 
-    <form action="/search" method="get" 
-          class="zaman-search">
-      <input type="search" 
-             name="q"
-             placeholder="Search glasses, frames, lenses..."
-             class="zaman-search-input"
-             autocomplete="off">
-      <button type="submit" class="zaman-search-btn">
-        <svg width="17" height="17" fill="none" 
-             viewBox="0 0 24 24" stroke="#FFFFFF" 
-             stroke-width="2.5">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35" 
-                stroke-linecap="round"/>
+    <form action="/search" method="get" class="zaman-search" role="search">
+      <input
+        type="search"
+        name="q"
+        placeholder="Search frames, lenses, sunglasses"
+        class="zaman-search-input"
+        autocomplete="off">
+      <button type="submit" class="zaman-search-btn" aria-label="Search">
+        <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-3.8-3.8" stroke-linecap="round"></path>
         </svg>
       </button>
     </form>
 
     <div class="zaman-header-icons">
-      <a href="/account" class="zaman-icon-btn" 
-         title="Account">
-        <svg width="22" height="22" fill="none" 
-             viewBox="0 0 24 24" stroke="#1A1A1A" 
-             stroke-width="2">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 
-                   0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
+      <a href="/account" class="zaman-icon-btn" aria-label="Account">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
         </svg>
       </a>
-      <a href="/cart" class="zaman-cart-btn" 
-         title="Cart">
-        <svg width="22" height="22" fill="none" 
-             viewBox="0 0 24 24" stroke="#1A1A1A" 
-             stroke-width="2">
-          <path d="M9 22c.55 0 1-.45 1-1s-.45-1-1-1
-                   -1 .45-1 1 .45 1 1 1zm11 0c.55 0 
-                   1-.45 1-1s-.45-1-1-1-1 .45-1 1 
-                   .45 1 1 1zM1 1h4l2.68 13.39a2 2 
-                   0 0 0 2 1.61h9.72a2 2 0 0 0 
-                   2-1.61L23 6H6"/>
+      <a href="/cart" class="zaman-cart-btn" aria-label="Cart">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M6 6h15l-1.5 9H8L6 3H3"></path>
+          <circle cx="9" cy="20" r="1.5"></circle>
+          <circle cx="18" cy="20" r="1.5"></circle>
         </svg>
         {% if cart.item_count > 0 %}
-        <span class="zaman-cart-count">
-          {{ cart.item_count }}
-        </span>
+          <span class="zaman-cart-count">{{ cart.item_count }}</span>
         {% endif %}
       </a>
     </div>
-
   </div>
 </header>
 
-<nav class="zaman-nav">
+<nav class="zaman-nav" aria-label="Collections">
   <div class="zaman-nav-inner">
     <a href="/" class="zaman-nav-link">Home</a>
-    <a href="/collections/eyeglasses" 
-       class="zaman-nav-link">Eyeglasses</a>
-    <a href="/collections/sunglasses" 
-       class="zaman-nav-link">Sunglasses</a>
-    <a href="/collections/blue-light-glasses" 
-       class="zaman-nav-link">Blue Light Glasses</a>
-    <a href="/collections/kids-glasses" 
-       class="zaman-nav-link">Kids Glasses</a>
-    <a href="/collections/contact-lenses" 
-       class="zaman-nav-link">Contact Lenses</a>
-    <a href="/pages/lens-guide" 
-       class="zaman-nav-link">Lens Guide</a>
-    <a href="/pages/contact" 
-       class="zaman-nav-link">Contact</a>
+    <a href="/collections/eyeglasses" class="zaman-nav-link">Prescription Glasses</a>
+    <a href="/collections/sunglasses" class="zaman-nav-link">Sunglasses</a>
+    <a href="/collections/blue-light-glasses" class="zaman-nav-link">Screen Glasses</a>
+    <a href="/collections/kids-glasses" class="zaman-nav-link">Kids</a>
+    <a href="/collections/contact-lenses" class="zaman-nav-link">Contact Lenses</a>
+    <a href="/pages/size-guide" class="zaman-nav-link">Size Guide</a>
+    <a href="/pages/contact" class="zaman-nav-link">Contact</a>
   </div>
 </nav>
 
-<!-- MOBILE HEADER -->
 <header class="zaman-mobile-header">
-  <button class="zaman-burger" 
-          id="zamanBurger"
-          onclick="openMobileMenu()"
-          aria-label="Menu">
-    <svg width="24" height="24" fill="none" 
-         viewBox="0 0 24 24" stroke="#1A1A1A" 
-         stroke-width="2.5">
-      <line x1="3" y1="6" x2="21" y2="6"/>
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
+  <button class="zaman-burger" id="zamanBurger" type="button" onclick="openMobileMenu()" aria-label="Open menu">
+    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
+      <line x1="4" y1="7" x2="20" y2="7"></line>
+      <line x1="4" y1="12" x2="20" y2="12"></line>
+      <line x1="4" y1="17" x2="20" y2="17"></line>
     </svg>
   </button>
   <a href="/" class="zaman-mobile-logo">Zaman Optics</a>
-  <a href="/cart" class="zaman-mobile-cart">
-    <svg width="24" height="24" fill="none" 
-         viewBox="0 0 24 24" stroke="#1A1A1A" 
-         stroke-width="2">
-      <path d="M9 22c.55 0 1-.45 1-1s-.45-1-1-1
-               -1 .45-1 1 .45 1 1 1zm11 0c.55 0 
-               1-.45 1-1s-.45-1-1-1-1 .45-1 1 
-               .45 1 1 1zM1 1h4l2.68 13.39a2 2 
-               0 0 0 2 1.61h9.72a2 2 0 0 0 
-               2-1.61L23 6H6"/>
+  <a href="/cart" class="zaman-mobile-cart" aria-label="Cart">
+    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path d="M6 6h15l-1.5 9H8L6 3H3"></path>
+      <circle cx="9" cy="20" r="1.5"></circle>
+      <circle cx="18" cy="20" r="1.5"></circle>
     </svg>
     {% if cart.item_count > 0 %}
-    <span class="zaman-cart-count">
-      {{ cart.item_count }}
-    </span>
+      <span class="zaman-cart-count">{{ cart.item_count }}</span>
     {% endif %}
   </a>
 </header>
 
-<div class="zaman-overlay" id="zamanOverlay"
-     onclick="closeMobileMenu()"></div>
+<div class="zaman-overlay" id="zamanOverlay" onclick="closeMobileMenu()"></div>
 
-<div class="zaman-drawer" id="zamanDrawer">
-  
-  <!-- Drawer Header -->
+<aside class="zaman-drawer" id="zamanDrawer" aria-label="Mobile menu">
   <div class="zdrawer-head">
-    <div class="zdrawer-brand">
-      <svg width="28" height="28" viewBox="0 0 30 30"
-           fill="none">
-        <circle cx="9" cy="15" r="6.5"
-                stroke="#FFFFFF" stroke-width="2.2"
-                fill="none"/>
-        <circle cx="21" cy="15" r="6.5"
-                stroke="#FFFFFF" stroke-width="2.2"
-                fill="none"/>
-        <line x1="15" y1="11" x2="15" y2="19"
-              stroke="#FFFFFF" stroke-width="2.2"
-              stroke-linecap="round"/>
-      </svg>
-      <span class="zdrawer-brand-name">
-        Zaman Optics
-      </span>
-    </div>
-    <button class="zdrawer-close"
-            onclick="closeMobileMenu()"
-            aria-label="Close menu">
-      <svg width="18" height="18" fill="none"
-           viewBox="0 0 24 24" stroke="#FFFFFF"
-           stroke-width="2.5">
-        <path d="M18 6 6 18M6 6l12 12"
-              stroke-linecap="round"/>
+    <a href="/" class="zdrawer-brand">
+      <span>Zaman Optics</span>
+    </a>
+    <button class="zdrawer-close" type="button" onclick="closeMobileMenu()" aria-label="Close menu">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
+        <path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"></path>
       </svg>
     </button>
   </div>
 
-  <!-- Search inside drawer -->
   <div class="zdrawer-search-wrap">
-    <form action="/search" method="get"
-          class="zdrawer-search-form">
-      <svg width="16" height="16" fill="none"
-           viewBox="0 0 24 24" stroke="#AAAAAA"
-           stroke-width="2">
-        <circle cx="11" cy="11" r="8"/>
-        <path d="m21 21-4.35-4.35"
-              stroke-linecap="round"/>
-      </svg>
-      <input type="search" name="q"
-             placeholder="Search glasses..."
-             class="zdrawer-search-input">
+    <form action="/search" method="get" class="zdrawer-search-form" role="search">
+      <input type="search" name="q" placeholder="Search frames" class="zdrawer-search-input">
     </form>
   </div>
 
-  <!-- SHOP SECTION -->
-  <div class="zdrawer-section-label">
-    Shop Collections
-  </div>
+  <p class="zdrawer-section-label">Shop</p>
+  <a href="/collections/eyeglasses" class="zdrawer-link"><span>Prescription Glasses</span><small>Frames with lens options</small></a>
+  <a href="/collections/sunglasses" class="zdrawer-link"><span>Sunglasses</span><small>UV protection styles</small></a>
+  <a href="/collections/blue-light-glasses" class="zdrawer-link"><span>Screen Glasses</span><small>Blue cut comfort</small></a>
+  <a href="/collections/kids-glasses" class="zdrawer-link"><span>Kids Glasses</span><small>Lightweight daily frames</small></a>
+  <a href="/collections/contact-lenses" class="zdrawer-link"><span>Contact Lenses</span><small>Daily and monthly options</small></a>
 
-  <a href="/collections/eyeglasses"
-     class="zdrawer-link">
-    <span class="zdrawer-link-icon 
-                 zdrawer-icon-orange">
-      <svg width="16" height="16" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor"
-           stroke-width="2">
-        <circle cx="7" cy="12" r="4"/>
-        <circle cx="17" cy="12" r="4"/>
-        <line x1="11" y1="12" x2="13" y2="12"/>
-      </svg>
-    </span>
-    <span class="zdrawer-link-text">Eyeglasses</span>
-    <span class="zdrawer-link-sub">
-      Prescription frames
-    </span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <a href="/collections/sunglasses"
-     class="zdrawer-link">
-    <span class="zdrawer-link-icon 
-                 zdrawer-icon-dark">
-      <svg width="16" height="16" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor"
-           stroke-width="2">
-        <circle cx="7" cy="12" r="4"/>
-        <circle cx="17" cy="12" r="4"/>
-        <line x1="11" y1="12" x2="13" y2="12"/>
-        <path d="M3 12c0-2 1-3 4-3M21 12
-                 c0-2-1-3-4-3" stroke-linecap="round"/>
-      </svg>
-    </span>
-    <span class="zdrawer-link-text">Sunglasses</span>
-    <span class="zdrawer-link-sub">
-      UV protection
-    </span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <a href="/collections/blue-light-glasses"
-     class="zdrawer-link">
-    <span class="zdrawer-link-icon 
-                 zdrawer-icon-blue">
-      <svg width="16" height="16" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor"
-           stroke-width="2">
-        <rect x="2" y="7" width="20" height="10"
-              rx="2"/>
-        <line x1="8" y1="7" x2="8" y2="17"/>
-        <line x1="16" y1="7" x2="16" y2="17"/>
-      </svg>
-    </span>
-    <span class="zdrawer-link-text">
-      Blue Light Glasses
-    </span>
-    <span class="zdrawer-link-sub">
-      Screen protection
-    </span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <a href="/collections/kids-glasses"
-     class="zdrawer-link">
-    <span class="zdrawer-link-icon 
-                 zdrawer-icon-green">
-      <svg width="16" height="16" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor"
-           stroke-width="2">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10
-                 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-        <path d="M8 14s1.5 2 4 2 4-2 4-2"
-              stroke-linecap="round"/>
-        <line x1="9" y1="9" x2="9.01" y2="9"
-              stroke-width="3" stroke-linecap="round"/>
-        <line x1="15" y1="9" x2="15.01" y2="9"
-              stroke-width="3" stroke-linecap="round"/>
-      </svg>
-    </span>
-    <span class="zdrawer-link-text">Kids Glasses</span>
-    <span class="zdrawer-link-sub">Ages 4–16</span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <a href="/collections/contact-lenses"
-     class="zdrawer-link">
-    <span class="zdrawer-link-icon 
-                 zdrawer-icon-purple">
-      <svg width="16" height="16" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor"
-           stroke-width="2">
-        <circle cx="12" cy="12" r="10"/>
-        <circle cx="12" cy="12" r="4"/>
-      </svg>
-    </span>
-    <span class="zdrawer-link-text">
-      Contact Lenses
-    </span>
-    <span class="zdrawer-link-sub">
-      Daily and monthly
-    </span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <!-- DIVIDER -->
-  <div class="zdrawer-divider"></div>
-
-  <!-- PAGES SECTION -->
-  <div class="zdrawer-section-label">Pages</div>
-
-  <a href="/" class="zdrawer-link zdrawer-link-plain">
-    <span class="zdrawer-link-text">Home</span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <a href="/collections/all"
-     class="zdrawer-link zdrawer-link-plain">
-    <span class="zdrawer-link-text">All Frames</span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <a href="/pages/lens-guide"
-     class="zdrawer-link zdrawer-link-plain">
-    <span class="zdrawer-link-text">Lens Guide</span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <a href="/pages/faq"
-     class="zdrawer-link zdrawer-link-plain">
-    <span class="zdrawer-link-text">FAQ</span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <a href="/pages/contact"
-     class="zdrawer-link zdrawer-link-plain">
-    <span class="zdrawer-link-text">Contact Us</span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <!-- DIVIDER -->
-  <div class="zdrawer-divider"></div>
-
-  <!-- ACCOUNT + CART -->
-  <a href="/account"
-     class="zdrawer-link zdrawer-link-plain">
-    <span class="zdrawer-link-text">My Account</span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <a href="/cart"
-     class="zdrawer-link zdrawer-link-plain">
-    <span class="zdrawer-link-text">
-      Cart ({{ cart.item_count }})
-    </span>
-    <svg class="zdrawer-link-arrow" width="14"
-         height="14" fill="none" viewBox="0 0 24 24"
-         stroke="currentColor" stroke-width="2">
-      <path d="M9 18l6-6-6-6"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <!-- Bottom branding -->
-  <div class="zdrawer-footer">
-    <p>Pakistan's Premium Eyewear Store</p>
-    <div class="zdrawer-footer-links">
-      <a href="/pages/faq">FAQ</a>
-      <span>·</span>
-      <a href="/pages/contact">Contact</a>
-      <span>·</span>
-      <a href="/pages/lens-guide">Lens Guide</a>
-    </div>
-  </div>
-
-</div>
+  <p class="zdrawer-section-label">Help</p>
+  <a href="/pages/lens-guide" class="zdrawer-link zdrawer-link-plain"><span>Lens Guide</span></a>
+  <a href="/pages/size-guide" class="zdrawer-link zdrawer-link-plain"><span>Size Guide</span></a>
+  <a href="/pages/prescription-guide" class="zdrawer-link zdrawer-link-plain"><span>Prescription Guide</span></a>
+  <a href="/pages/contact" class="zdrawer-link zdrawer-link-plain"><span>Contact</span></a>
+  <a href="/account" class="zdrawer-link zdrawer-link-plain"><span>Account</span></a>
+</aside>
 
 <script>
-// Mobile menu functions
 function openMobileMenu() {
   var drawer = document.getElementById('zamanDrawer');
   var overlay = document.getElementById('zamanOverlay');
-  if (drawer) {
-    drawer.classList.add('open');
-  }
-  if (overlay) {
-    overlay.classList.add('open');
-  }
+  if (drawer) drawer.classList.add('open');
+  if (overlay) overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
 function closeMobileMenu() {
   var drawer = document.getElementById('zamanDrawer');
   var overlay = document.getElementById('zamanOverlay');
-  if (drawer) {
-    drawer.classList.remove('open');
-  }
-  if (overlay) {
-    overlay.classList.remove('open');
-  }
+  if (drawer) drawer.classList.remove('open');
+  if (overlay) overlay.classList.remove('open');
   document.body.style.overflow = '';
 }
 
-// Close menu when clicking on drawer links
 document.addEventListener('DOMContentLoaded', function() {
-  var drawerLinks = document.querySelectorAll('.zdrawer-link');
-  drawerLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      closeMobileMenu();
-    });
+  var links = document.querySelectorAll('.zaman-nav-link, .zaman-header-navlink');
+  links.forEach(function(link) {
+    if (link.pathname === window.location.pathname) {
+      link.classList.add('active');
+    }
+  });
+
+  document.querySelectorAll('.zdrawer-link').forEach(function(link) {
+    link.addEventListener('click', closeMobileMenu);
   });
 });
 </script>
@@ -481,5 +189,3 @@ document.addEventListener('DOMContentLoaded', function() {
   ]
 }
 {% endschema %}
-
-

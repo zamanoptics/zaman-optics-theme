@@ -1,0 +1,392 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 2542 >>
+stream
+BT
+/F1 11 Tf
+/F1 18 Tf
+50 760 Td (Zaman Optics Store Structure Guide) Tj
+/F1 11 Tf
+50 727 Td (Last updated: May 25, 2026) Tj
+/F1 11 Tf
+50 701 Td (Peachmart Review Summary) Tj
+/F1 11 Tf
+50 675 Td (Peachmart focuses on simple product-category shopping plus strong educational and trust) Tj
+/F1 11 Tf
+50 658 Td (content.) Tj
+/F1 11 Tf
+50 632 Td (Observed category structure:) Tj
+/F1 11 Tf
+50 606 Td (Area Peachmart Pattern Zaman Optics Recommendation) Tj
+/F1 11 Tf
+50 589 Td (--- --- ---) Tj
+/F1 11 Tf
+50 572 Td (Core shop Screen glasses, sunglasses, blue cut glasses, transition glasses, intelligent) Tj
+/F1 11 Tf
+50 555 Td (glasses Eyeglasses, Sunglasses, Blue Light Glasses, Transition Glasses, Contact Lenses) Tj
+/F1 11 Tf
+50 538 Td (Gender Male glasses, female glasses, unisex products Men, Women, Unisex, Kids filters and) Tj
+/F1 11 Tf
+50 521 Td (optional collections) Tj
+/F1 11 Tf
+50 504 Td (Lens use case Screen protection, transition, prescription/non-prescription Lens type and) Tj
+/F1 11 Tf
+50 487 Td (lens material selection on product page) Tj
+/F1 11 Tf
+50 470 Td (Product attributes Frame material, frame shape, gender, size, trend Required product) Tj
+/F1 11 Tf
+50 453 Td (metafields and Search & Discovery filters) Tj
+/F1 11 Tf
+50 436 Td (Trust content Reviews, delivery policy, money-back promise, COD Reviews, COD, WhatsApp help,) Tj
+/F1 11 Tf
+50 419 Td (Pakistan delivery, prescription support) Tj
+/F1 11 Tf
+50 393 Td (Sources reviewed:) Tj
+/F1 11 Tf
+50 367 Td (- Peachmart homepage indexed content: https://peachmart.pk/) Tj
+/F1 11 Tf
+50 350 Td (- Peachmart blue cut/screen category:) Tj
+/F1 11 Tf
+50 333 Td (https://peachmart.pk/blue-cut-screen-protection-glasses) Tj
+/F1 11 Tf
+50 316 Td (- Peachmart product example with attributes:) Tj
+/F1 11 Tf
+50 299 Td (https://peachmart.pk/product/screen-glasses-1719) Tj
+/F1 11 Tf
+50 273 Td (Collections to Create) Tj
+/F1 11 Tf
+50 247 Td (Primary Navigation Collections) Tj
+/F1 11 Tf
+50 221 Td (Create these first because they are used in header, homepage, and product mode logic:) Tj
+/F1 11 Tf
+50 195 Td (Collection Handle Type Rule) Tj
+/F1 11 Tf
+50 178 Td (--- --- --- ---) Tj
+/F1 11 Tf
+50 161 Td (Eyeglasses eyeglasses Manual or automated Product type = Eyeglasses) Tj
+/F1 11 Tf
+50 144 Td (Sunglasses sunglasses Manual or automated Product type = Sunglasses) Tj
+/F1 11 Tf
+50 127 Td (Blue Light Glasses blue-light-glasses Manual or automated Product type = Blue Light Glasses) Tj
+/F1 11 Tf
+50 110 Td (Kids Glasses kids-glasses Manual or automated Product type = Kids Glasses) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2561 >>
+stream
+BT
+/F1 11 Tf
+/F1 11 Tf
+50 760 Td (Contact Lenses contact-lenses Manual or automated Product type = Contact Lenses) Tj
+/F1 11 Tf
+50 734 Td (Lens/Use-Case Collections) Tj
+/F1 11 Tf
+50 708 Td (These copy Peachmart's strongest discovery patterns without making the store too complex:) Tj
+/F1 11 Tf
+50 682 Td (Collection Handle Rule) Tj
+/F1 11 Tf
+50 665 Td (--- --- ---) Tj
+/F1 11 Tf
+50 648 Td (Transition Glasses transition-glasses Tag or metafield = Photochromic / Transition) Tj
+/F1 11 Tf
+50 631 Td (Screen Glasses screen-glasses Tag or metafield = Blue Cut) Tj
+/F1 11 Tf
+50 614 Td (Power Free Frames power-free-frames Product mode = standard or tag = Power Free) Tj
+/F1 11 Tf
+50 597 Td (Prescription Sunglasses prescription-sunglasses Product type = Sunglasses and) Tj
+/F1 11 Tf
+50 580 Td (prescription_ready = true) Tj
+/F1 11 Tf
+50 563 Td (New Arrivals new-arrivals Created in last 30/60 days or manual) Tj
+/F1 11 Tf
+50 546 Td (Best Sellers best-sellers Manual until real sales data exists) Tj
+/F1 11 Tf
+50 520 Td (Optional Filter Landing Collections) Tj
+/F1 11 Tf
+50 494 Td (Use these later for SEO pages:) Tj
+/F1 11 Tf
+50 468 Td (Collection Handle) Tj
+/F1 11 Tf
+50 451 Td (--- ---) Tj
+/F1 11 Tf
+50 434 Td (Men's Glasses mens-glasses) Tj
+/F1 11 Tf
+50 417 Td (Women's Glasses womens-glasses) Tj
+/F1 11 Tf
+50 400 Td (Round Glasses round-glasses) Tj
+/F1 11 Tf
+50 383 Td (Square Glasses square-glasses) Tj
+/F1 11 Tf
+50 366 Td (Aviator Glasses aviator-glasses) Tj
+/F1 11 Tf
+50 349 Td (Metal Frames metal-frames) Tj
+/F1 11 Tf
+50 332 Td (Acetate Frames acetate-frames) Tj
+/F1 11 Tf
+50 306 Td (Required Product Metafields) Tj
+/F1 11 Tf
+50 280 Td (Create these under Shopify Admin > Settings > Custom data > Products.) Tj
+/F1 11 Tf
+50 254 Td (Name Namespace and key Type Example Values Filter?) Tj
+/F1 11 Tf
+50 237 Td (--- --- --- --- ---) Tj
+/F1 11 Tf
+50 220 Td (Product Mode custom.product_mode Single line text prescription, standard No) Tj
+/F1 11 Tf
+50 203 Td (Frame Shape custom.frame_shape Single line text Round, Square, Rectangle, Aviator, Cat Eye) Tj
+/F1 11 Tf
+50 186 Td (Yes) Tj
+/F1 11 Tf
+50 169 Td (Material custom.material Single line text Metal, Acetate, Plastic, TR90 Yes) Tj
+/F1 11 Tf
+50 152 Td (Gender custom.gender Single line text Men, Women, Unisex, Kids Yes) Tj
+/F1 11 Tf
+50 135 Td (Size custom.size Single line text Narrow, Medium, Wide Yes) Tj
+/F1 11 Tf
+50 118 Td (Lens Use custom.lens_use Single line text Prescription, Screen, Sun, Fashion Yes) Tj
+/F1 11 Tf
+50 101 Td (Prescription Ready custom.prescription_ready True/false true Optional) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 1979 >>
+stream
+BT
+/F1 11 Tf
+/F1 11 Tf
+50 751 Td (Recommended Extra Metafields) Tj
+/F1 11 Tf
+50 725 Td (Name Namespace and key Type) Tj
+/F1 11 Tf
+50 708 Td (--- --- ---) Tj
+/F1 11 Tf
+50 691 Td (Frame Color custom.frame_color Single line text) Tj
+/F1 11 Tf
+50 674 Td (Lens Color custom.lens_color Single line text) Tj
+/F1 11 Tf
+50 657 Td (Lens Width custom.lens_width Number integer) Tj
+/F1 11 Tf
+50 640 Td (Bridge Width custom.bridge_width Number integer) Tj
+/F1 11 Tf
+50 623 Td (Temple Length custom.temple_length Number integer) Tj
+/F1 11 Tf
+50 606 Td (Rim Type custom.rim_type Single line text) Tj
+/F1 11 Tf
+50 589 Td (Trend custom.trend Single line text) Tj
+/F1 11 Tf
+50 563 Td (Product Upload Checklist) Tj
+/F1 11 Tf
+50 537 Td (For each product:) Tj
+/F1 11 Tf
+50 511 Td (1. Add a clear title: Zaman "Visionary" Square.) Tj
+/F1 11 Tf
+50 494 Td (2. Add product type: Eyeglasses, Sunglasses, Blue Light Glasses, Kids Glasses, Contact) Tj
+/F1 11 Tf
+50 477 Td (Lenses.) Tj
+/F1 11 Tf
+50 460 Td (3. Add vendor: Zaman Optics.) Tj
+/F1 11 Tf
+50 443 Td (4. Add collection.) Tj
+/F1 11 Tf
+50 426 Td (5. Add 4-6 images:) Tj
+/F1 11 Tf
+50 409 Td (- front product photo) Tj
+/F1 11 Tf
+50 392 Td (- angle photo) Tj
+/F1 11 Tf
+50 375 Td (- side photo) Tj
+/F1 11 Tf
+50 358 Td (- detail photo) Tj
+/F1 11 Tf
+50 341 Td (- optional lifestyle photo) Tj
+/F1 11 Tf
+50 324 Td (6. Add SKU: example ZO-EYE-SQ-001-BLK.) Tj
+/F1 11 Tf
+50 307 Td (7. Add price in PKR.) Tj
+/F1 11 Tf
+50 290 Td (8. Fill required metafields.) Tj
+/F1 11 Tf
+50 273 Td (9. Add fallback tags matching filter values:) Tj
+/F1 11 Tf
+50 256 Td (- Square) Tj
+/F1 11 Tf
+50 239 Td (- Acetate) Tj
+/F1 11 Tf
+50 222 Td (- Unisex) Tj
+/F1 11 Tf
+50 205 Td (- Medium) Tj
+/F1 11 Tf
+50 188 Td (10. Add SEO title and meta description.) Tj
+/F1 11 Tf
+50 162 Td (How Filters Work) Tj
+/F1 11 Tf
+50 136 Td (The collection template supports two systems:) Tj
+/F1 11 Tf
+50 110 Td (1. Native Shopify filters) Tj
+/F1 11 Tf
+50 93 Td (- Install Shopify Search & Discovery.) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 1980 >>
+stream
+BT
+/F1 11 Tf
+/F1 11 Tf
+50 760 Td (- Enable filters for:) Tj
+/F1 11 Tf
+50 743 Td (- custom.frame_shape) Tj
+/F1 11 Tf
+50 726 Td (- custom.material) Tj
+/F1 11 Tf
+50 709 Td (- custom.gender) Tj
+/F1 11 Tf
+50 692 Td (- custom.size) Tj
+/F1 11 Tf
+50 675 Td (- custom.lens_use) Tj
+/F1 11 Tf
+50 658 Td (- Shopify will output real filter URLs like filter.p.m.custom.frame_shape=Square.) Tj
+/F1 11 Tf
+50 632 Td (2. Fallback tag filters) Tj
+/F1 11 Tf
+50 615 Td (- If Search & Discovery is not configured, the theme still shows filter groups.) Tj
+/F1 11 Tf
+50 598 Td (- These work from product tags.) Tj
+/F1 11 Tf
+50 581 Td (- Tags must match the visible values exactly.) Tj
+/F1 11 Tf
+50 555 Td (Use native filters for launch. Keep tags as a safety fallback.) Tj
+/F1 11 Tf
+50 529 Td (Product Page Logic) Tj
+/F1 11 Tf
+50 503 Td (Product Type custom.product_mode Product Page) Tj
+/F1 11 Tf
+50 486 Td (--- --- ---) Tj
+/F1 11 Tf
+50 469 Td (Eyeglasses prescription Shows prescription lens workflow) Tj
+/F1 11 Tf
+50 452 Td (Blue Light Glasses prescription Shows prescription lens workflow) Tj
+/F1 11 Tf
+50 435 Td (Kids Glasses prescription Shows prescription lens workflow) Tj
+/F1 11 Tf
+50 418 Td (Sunglasses standard Shows normal add to cart) Tj
+/F1 11 Tf
+50 401 Td (Contact Lenses standard Shows normal add to cart) Tj
+/F1 11 Tf
+50 375 Td (Prescription line item properties captured:) Tj
+/F1 11 Tf
+50 349 Td (- Order type) Tj
+/F1 11 Tf
+50 332 Td (- Prescription method) Tj
+/F1 11 Tf
+50 315 Td (- OD SPH, CYL, Axis) Tj
+/F1 11 Tf
+50 298 Td (- OS SPH, CYL, Axis) Tj
+/F1 11 Tf
+50 281 Td (- PD) Tj
+/F1 11 Tf
+50 264 Td (- Lens type) Tj
+/F1 11 Tf
+50 247 Td (- Lens material) Tj
+/F1 11 Tf
+50 230 Td (- Coatings) Tj
+/F1 11 Tf
+50 213 Td (- Quoted total) Tj
+/F1 11 Tf
+50 187 Td (Recommended Homepage Order) Tj
+/F1 11 Tf
+50 161 Td (1. Hero) Tj
+/F1 11 Tf
+50 144 Td (2. Category grid) Tj
+/F1 11 Tf
+50 127 Td (3. Lens options) Tj
+/F1 11 Tf
+50 110 Td (4. How it works) Tj
+/F1 11 Tf
+50 93 Td (5. Best sellers) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 753 >>
+stream
+BT
+/F1 11 Tf
+/F1 11 Tf
+50 760 Td (6. Why choose us) Tj
+/F1 11 Tf
+50 743 Td (7. Reviews) Tj
+/F1 11 Tf
+50 726 Td (8. FAQ) Tj
+/F1 11 Tf
+50 700 Td (Launch Admin Tasks) Tj
+/F1 11 Tf
+50 674 Td (1. Create required collections.) Tj
+/F1 11 Tf
+50 657 Td (2. Create required product metafields.) Tj
+/F1 11 Tf
+50 640 Td (3. Install Search & Discovery.) Tj
+/F1 11 Tf
+50 623 Td (4. Enable metafield filters.) Tj
+/F1 11 Tf
+50 606 Td (5. Upload real product/category photos.) Tj
+/F1 11 Tf
+50 589 Td (6. Add real WhatsApp number.) Tj
+/F1 11 Tf
+50 572 Td (7. Configure COD, EasyPaisa, JazzCash.) Tj
+/F1 11 Tf
+50 555 Td (8. Configure Pakistan shipping zones.) Tj
+/F1 11 Tf
+50 538 Td (9. Place one test order and confirm line item properties appear in Shopify Admin.) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 12 0 R >>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000141 00000 n 
+0000000211 00000 n 
+0000002805 00000 n 
+0000002931 00000 n 
+0000005544 00000 n 
+0000005670 00000 n 
+0000007701 00000 n 
+0000007827 00000 n 
+0000009860 00000 n 
+0000009988 00000 n 
+0000010793 00000 n 
+trailer
+<< /Size 14 /Root 1 0 R >>
+startxref
+10921
+%%EOF

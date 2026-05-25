@@ -157,6 +157,94 @@
         "view_all_link": "/collections/all?sort_by=best-selling"
       }
     },
+    "lens_options": {
+      "type": "lens-options",
+      "blocks": {
+        "single_vision": {
+          "type": "lens",
+          "settings": {
+            "label": "Included",
+            "title": "Single Vision",
+            "text": "For distance, reading, or everyday prescription use.",
+            "link": "/pages/lens-guide"
+          }
+        },
+        "progressive": {
+          "type": "lens",
+          "settings": {
+            "label": "+ Rs 1,200",
+            "title": "Progressive",
+            "text": "Distance, intermediate, and reading support in one lens.",
+            "link": "/pages/lens-guide"
+          }
+        },
+        "blue_cut": {
+          "type": "lens",
+          "settings": {
+            "label": "+ Rs 500",
+            "title": "Blue Cut",
+            "text": "A comfortable option for office work and screen time.",
+            "link": "/collections/blue-light-glasses"
+          }
+        },
+        "photochromic": {
+          "type": "lens",
+          "settings": {
+            "label": "+ Rs 1,500",
+            "title": "Photochromic",
+            "text": "Clear indoors, darker outdoors in sunlight.",
+            "link": "/pages/lens-guide"
+          }
+        }
+      },
+      "block_order": [
+        "single_vision",
+        "progressive",
+        "blue_cut",
+        "photochromic"
+      ],
+      "settings": {
+        "kicker": "Lens options",
+        "title": "Choose the right lens for daily life.",
+        "subtitle": "A clearer lens guide helps customers understand upgrades before they customize on the product page."
+      }
+    },
+    "shop_guide": {
+      "type": "shop-guide",
+      "blocks": {
+        "choose_frame": {
+          "type": "step",
+          "settings": {
+            "title": "Choose a frame",
+            "text": "Browse by shape, material, gender, size, and use case."
+          }
+        },
+        "pick_lenses": {
+          "type": "step",
+          "settings": {
+            "title": "Pick lenses",
+            "text": "Select single vision, progressive, blue cut, UV, or photochromic options."
+          }
+        },
+        "add_prescription": {
+          "type": "step",
+          "settings": {
+            "title": "Add prescription",
+            "text": "Enter SPH, CYL, Axis, and PD or upload a prescription file."
+          }
+        }
+      },
+      "block_order": [
+        "choose_frame",
+        "pick_lenses",
+        "add_prescription"
+      ],
+      "settings": {
+        "kicker": "How it works",
+        "title": "Build your glasses in three simple steps.",
+        "subtitle": "The product page keeps frame, lens, and prescription details together for easier ordering."
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -319,6 +407,8 @@
   "order": [
     "image_banner",
     "category_grid",
+    "lens_options",
+    "shop_guide",
     "featured_products",
     "why_choose_us",
     "reviews",
