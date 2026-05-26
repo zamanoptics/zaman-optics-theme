@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,13 +14,51 @@
       "settings": {
         "title": "Collections",
         "sort": "alphabetical",
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "columns_desktop": 3,
         "columns_mobile": "2"
+      }
+    },
+    "shop_guide_8dBQET": {
+      "type": "shop-guide",
+      "blocks": {
+        "step_Uhg77p": {
+          "type": "step",
+          "settings": {
+            "title": "Choose a frame",
+            "text": "Browse by shape, material, gender, and size."
+          }
+        },
+        "step_VmHchF": {
+          "type": "step",
+          "settings": {
+            "title": "Pick lenses",
+            "text": "Select single vision, progressive, blue cut, or photochromic upgrades."
+          }
+        },
+        "step_bUya3r": {
+          "type": "step",
+          "settings": {
+            "title": "Add prescription",
+            "text": "Enter SPH, CYL, Axis, and PD manually or upload a prescription file."
+          }
+        }
+      },
+      "block_order": [
+        "step_Uhg77p",
+        "step_VmHchF",
+        "step_bUya3r"
+      ],
+      "name": "Shop Guide",
+      "settings": {
+        "kicker": "How it works",
+        "title": "Build your glasses in three simple steps.",
+        "subtitle": "A guided order flow keeps frame, lens, and prescription details together."
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "shop_guide_8dBQET"
   ]
 }
