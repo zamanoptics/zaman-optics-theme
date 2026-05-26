@@ -70,7 +70,7 @@
           "type": "category",
           "settings": {
             "category_name": "Kids Glasses",
-            "category_subtitle": "For Ages 4–16",
+            "category_subtitle": "For Ages 4-16",
             "category_link": "/collections/kids-glasses"
           }
         },
@@ -152,8 +152,11 @@
     "featured_products": {
       "type": "featured-products",
       "settings": {
+        "kicker": "Featured collection",
         "section_title": "Best Sellers",
+        "subtitle": "Popular eyewear picks selected for everyday comfort, clean style, and easy prescription customization.",
         "collection_handle": "all",
+        "products_to_show": 8,
         "view_all_link": "/collections/all?sort_by=best-selling"
       }
     },
@@ -282,7 +285,7 @@
         "f1_title": "Prescription Guaranteed",
         "f1_text": "Every pair made to your exact prescription by certified opticians.",
         "f2_title": "Fast Pakistan Delivery",
-        "f2_text": "Delivered to your door in 3–5 business days. Free above Rs 3,000.",
+        "f2_text": "Delivered to your door in 3-5 business days. Free above Rs 3,000.",
         "f3_title": "Easy Payment Options",
         "f3_text": "Cash on Delivery, EasyPaisa and JazzCash accepted.",
         "f4_title": "Hassle-Free Returns",
@@ -295,9 +298,9 @@
         "stat1_label": "Happy Customers",
         "stat2_num": "200+",
         "stat2_label": "Frame Styles",
-        "stat3_num": "3–5",
+        "stat3_num": "3-5",
         "stat3_label": "Days Delivery",
-        "stat4_num": "5★",
+        "stat4_num": "5 Star",
         "stat4_label": "Customer Rating"
       }
     },
