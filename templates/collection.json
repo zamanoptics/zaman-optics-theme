@@ -1,7 +1,17 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
@@ -10,28 +20,65 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "settings": {}
+    },
+    "lens_options_cEpjwc": {
+      "type": "lens-options",
+      "blocks": {
+        "lens_xA7NDC": {
+          "type": "lens",
+          "settings": {
+            "label": "Included",
+            "title": "Single Vision",
+            "text": "For one prescription power, distance or near.",
+            "link": ""
+          }
+        },
+        "lens_qqF6Kk": {
+          "type": "lens",
+          "settings": {
+            "label": "+ Rs 1,200",
+            "title": "Progressive",
+            "text": "Distance, intermediate, and reading in one lens.",
+            "link": ""
+          }
+        },
+        "lens_FwKTHA": {
+          "type": "lens",
+          "settings": {
+            "label": "+ Rs 500",
+            "title": "Blue Cut",
+            "text": "Comfort for phones, laptops, and long screen hours.",
+            "link": ""
+          }
+        },
+        "lens_8MzBGf": {
+          "type": "lens",
+          "settings": {
+            "label": "+ Rs 1,500",
+            "title": "Photochromic",
+            "text": "Clear indoors and darker outdoors in sunlight.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "lens_xA7NDC",
+        "lens_qqF6Kk",
+        "lens_FwKTHA",
+        "lens_8MzBGf"
+      ],
+      "name": "Lens Options",
       "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_sorting": true,
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "kicker": "Lens options",
+        "title": "Choose the right lens for daily life.",
+        "subtitle": "Help customers understand upgrades before they reach the product page."
       }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "lens_options_cEpjwc"
   ]
 }
-
