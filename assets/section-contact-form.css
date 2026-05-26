@@ -90,9 +90,16 @@
 }
 
 .zcont-info-icon {
-  font-size: 40px;
+  width: 56px;
+  height: 56px;
   margin-bottom: 12px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #0F766E;
+  background: #F0FDFA;
+  border: 1px solid #D9F3EF;
+  border-radius: 18px;
 }
 
 .zcont-info-title {

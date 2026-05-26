@@ -16,37 +16,37 @@
     <div class="zaman-why-grid">
 
       <div class="zaman-why-card">
-        <div class="zaman-why-icon">🔬</div>
+        <div class="zaman-why-icon">{% render 'zaman-premium-icon', icon: 'lens', size: 30 %}</div>
         <h3>{{ section.settings.f1_title }}</h3>
         <p>{{ section.settings.f1_text }}</p>
       </div>
 
       <div class="zaman-why-card">
-        <div class="zaman-why-icon">🚚</div>
+        <div class="zaman-why-icon">{% render 'zaman-premium-icon', icon: 'delivery', size: 30 %}</div>
         <h3>{{ section.settings.f2_title }}</h3>
         <p>{{ section.settings.f2_text }}</p>
       </div>
 
       <div class="zaman-why-card">
-        <div class="zaman-why-icon">💳</div>
+        <div class="zaman-why-icon">{% render 'zaman-premium-icon', icon: 'payment', size: 30 %}</div>
         <h3>{{ section.settings.f3_title }}</h3>
         <p>{{ section.settings.f3_text }}</p>
       </div>
 
       <div class="zaman-why-card">
-        <div class="zaman-why-icon">🔄</div>
+        <div class="zaman-why-icon">{% render 'zaman-premium-icon', icon: 'return', size: 30 %}</div>
         <h3>{{ section.settings.f4_title }}</h3>
         <p>{{ section.settings.f4_text }}</p>
       </div>
 
       <div class="zaman-why-card">
-        <div class="zaman-why-icon">👓</div>
+        <div class="zaman-why-icon">{% render 'zaman-premium-icon', icon: 'glasses', size: 30 %}</div>
         <h3>{{ section.settings.f5_title }}</h3>
         <p>{{ section.settings.f5_text }}</p>
       </div>
 
       <div class="zaman-why-card">
-        <div class="zaman-why-icon">⭐</div>
+        <div class="zaman-why-icon">{% render 'zaman-premium-icon', icon: 'star', size: 30 %}</div>
         <h3>{{ section.settings.f6_title }}</h3>
         <p>{{ section.settings.f6_text }}</p>
       </div>
@@ -154,9 +154,16 @@
   transform: translateY(-4px);
 }
 .zaman-why-icon {
-  font-size: 36px;
+  width: 54px;
+  height: 54px;
   margin-bottom: 18px;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #0F766E;
+  background: #F0FDFA;
+  border: 1px solid #D9F3EF;
+  border-radius: 16px;
 }
 .zaman-why-card h3 {
   font-size: 16px;
@@ -269,7 +276,7 @@
       "type": "textarea",
       "id": "f2_text",
       "label": "Feature 2 Text",
-      "default": "Delivered to your door in 3–5 business days. Free above Rs 3,000."
+      "default": "Delivered to your door in 3-5 business days. Free above Rs 3,000."
     },
     {
       "type": "text",
@@ -347,7 +354,7 @@
       "type": "text",
       "id": "stat3_num",
       "label": "Stat 3 Number",
-      "default": "3–5"
+      "default": "3-5"
     },
     {
       "type": "text",
@@ -359,7 +366,7 @@
       "type": "text",
       "id": "stat4_num",
       "label": "Stat 4 Number",
-      "default": "5★"
+      "default": "5 Star"
     },
     {
       "type": "text",

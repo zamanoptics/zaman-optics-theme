@@ -1,0 +1,102 @@
+{%- liquid
+  assign icon_key = icon | default: 'sparkle' | downcase | replace: '_', '-' | strip
+  assign icon_class = class | default: ''
+-%}
+
+<svg
+  class="zaman-premium-icon {{ icon_class }}"
+  width="{{ size | default: 24 }}"
+  height="{{ size | default: 24 }}"
+  viewBox="0 0 24 24"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+>
+  {%- case icon_key -%}
+    {%- when 'glasses' -%}
+      <circle cx="8" cy="14" r="4.25"></circle>
+      <circle cx="16" cy="14" r="4.25"></circle>
+      <path d="M12.25 13.2c.52-.44 1-.44 1.5 0M3.75 13.15l.8-3.05c.22-.83.88-1.45 1.72-1.63M20.25 13.15l-.8-3.05a2.36 2.36 0 0 0-1.72-1.63"></path>
+    {%- when 'sunglasses' -%}
+      <path d="M3.25 10.75h5.1c.76 0 1.4.55 1.52 1.3l.26 1.66A3.55 3.55 0 0 1 6.62 17H6.2a3.55 3.55 0 0 1-3.45-4.39l.29-1.18c.03-.16.08-.36.21-.68Z"></path>
+      <path d="M20.75 10.75h-5.1c-.76 0-1.4.55-1.52 1.3l-.26 1.66A3.55 3.55 0 0 0 17.38 17h.42a3.55 3.55 0 0 0 3.45-4.39l-.29-1.18a4.6 4.6 0 0 0-.21-.68Z"></path>
+      <path d="M10 12.15h4"></path>
+    {%- when 'screen' -%}
+      <rect x="3" y="5" width="18" height="12" rx="2.2"></rect>
+      <path d="M9 21h6M12 17v4"></path>
+      <path d="M8 9.5h8M7 12.5h10"></path>
+    {%- when 'kids' -%}
+      <circle cx="12" cy="8.2" r="3.2"></circle>
+      <path d="M5.25 20.5a6.8 6.8 0 0 1 13.5 0"></path>
+      <path d="M8.1 6.8 6.7 5.4M15.9 6.8l1.4-1.4"></path>
+    {%- when 'sparkle' -%}
+      <path d="M12 3.5l1.65 4.2L18 9.35l-4.35 1.65L12 15.5l-1.65-4.5L6 9.35l4.35-1.65L12 3.5Z"></path>
+      <path d="M5.5 14.5l.75 1.9 1.95.75-1.95.75-.75 1.9-.75-1.9-1.95-.75 1.95-.75.75-1.9ZM18.2 15.25l.55 1.38 1.45.57-1.45.55-.55 1.45-.57-1.45-1.38-.55 1.38-.57.57-1.38Z"></path>
+    {%- when 'best-seller', 'star' -%}
+      <path d="m12 3.25 2.35 4.76 5.25.76-3.8 3.7.9 5.22L12 15.23 7.3 17.69l.9-5.22-3.8-3.7 5.25-.76L12 3.25Z"></path>
+    {%- when 'lens', 'prescription' -%}
+      <circle cx="12" cy="12" r="7.5"></circle>
+      <path d="M4.5 12h15M12 4.5c2.2 2.15 3.25 4.65 3.25 7.5S14.2 17.35 12 19.5M12 4.5C9.8 6.65 8.75 9.15 8.75 12S9.8 17.35 12 19.5"></path>
+    {%- when 'delivery', 'truck' -%}
+      <path d="M3 7.5h11v8H3z"></path>
+      <path d="M14 10h3.4l2.1 2.4v3.1H14z"></path>
+      <circle cx="7" cy="17.5" r="1.8"></circle>
+      <circle cx="17" cy="17.5" r="1.8"></circle>
+    {%- when 'payment', 'card' -%}
+      <rect x="3" y="5.5" width="18" height="13" rx="2.4"></rect>
+      <path d="M3 9.5h18M7 14h4M14 14h3"></path>
+    {%- when 'return', 'refresh' -%}
+      <path d="M20 7.5v5h-5"></path>
+      <path d="M19.3 12.5A7.5 7.5 0 1 1 17.6 5"></path>
+    {%- when 'quality', 'shield' -%}
+      <path d="M12 3.5 19 6v5.2c0 4.25-2.88 7.52-7 9.3-4.12-1.78-7-5.05-7-9.3V6l7-2.5Z"></path>
+      <path d="m8.8 12 2.05 2.05L15.4 9.5"></path>
+    {%- when 'ruler', 'fit' -%}
+      <path d="M4.2 15.2 15.2 4.2l4.6 4.6-11 11-4.6-4.6Z"></path>
+      <path d="m8.2 15.8-1.6-1.6M10.7 13.3l-1.6-1.6M13.2 10.8l-1.6-1.6M15.7 8.3l-1.6-1.6"></path>
+    {%- when 'search' -%}
+      <circle cx="10.8" cy="10.8" r="6.3"></circle>
+      <path d="m16 16 4.2 4.2"></path>
+    {%- when 'account', 'user' -%}
+      <circle cx="12" cy="7.8" r="3.4"></circle>
+      <path d="M5.4 20.2a6.8 6.8 0 0 1 13.2 0"></path>
+    {%- when 'cart', 'bag' -%}
+      <path d="M6.2 8.5h15l-1.55 8.4H8.15L6.2 4.5H3"></path>
+      <circle cx="9.2" cy="20" r="1.2"></circle>
+      <circle cx="18" cy="20" r="1.2"></circle>
+    {%- when 'menu' -%}
+      <path d="M4 7h16M4 12h16M4 17h16"></path>
+    {%- when 'close' -%}
+      <path d="M18 6 6 18M6 6l12 12"></path>
+    {%- when 'whatsapp', 'chat' -%}
+      <path d="M5.2 19.2 6.4 16A7.4 7.4 0 1 1 9 18.1l-3.8 1.1Z"></path>
+      <path d="M9.1 8.9c.2 2.35 1.62 4.1 3.95 5 .62.24 1.35-.18 1.62-.78l.23-.5c.12-.28.02-.6-.24-.75l-1.4-.82a.62.62 0 0 0-.78.12l-.38.42a5.15 5.15 0 0 1-1.78-1.78l.42-.38c.23-.2.28-.53.12-.78l-.82-1.4a.58.58 0 0 0-.75-.24l-.5.23c-.6.27-1.02 1-.78 1.62Z"></path>
+    {%- when 'mail', 'email' -%}
+      <rect x="3" y="5.5" width="18" height="13" rx="2.4"></rect>
+      <path d="m4.5 8 7.5 5.15L19.5 8"></path>
+    {%- when 'phone' -%}
+      <path d="M8.6 4.2 10 7.25c.2.45.08.98-.3 1.3l-1.18.98a12.3 12.3 0 0 0 5.95 5.95l.98-1.18c.32-.38.85-.5 1.3-.3l3.05 1.4c.5.23.78.78.66 1.32l-.5 2.28c-.13.6-.66 1.02-1.27 1.02C10.58 20.02 3.98 13.42 3.98 5.31c0-.61.42-1.14 1.02-1.27l2.28-.5c.54-.12 1.09.16 1.32.66Z"></path>
+    {%- when 'map', 'pin' -%}
+      <path d="M19 10c0 5.25-7 10.5-7 10.5S5 15.25 5 10a7 7 0 1 1 14 0Z"></path>
+      <circle cx="12" cy="10" r="2.4"></circle>
+    {%- when 'clock', 'time' -%}
+      <circle cx="12" cy="12" r="8.5"></circle>
+      <path d="M12 7.5V12l3 2"></path>
+    {%- when 'chevron-down' -%}
+      <path d="m6 9 6 6 6-6"></path>
+    {%- when 'filter' -%}
+      <path d="M4 5h16l-6.4 7.25v4.9L10.4 19v-6.75L4 5Z"></path>
+    {%- when 'arrow-right' -%}
+      <path d="M4.5 12h15M13.5 5.5 20 12l-6.5 6.5"></path>
+    {%- when 'image' -%}
+      <rect x="3.5" y="4" width="17" height="16" rx="2.4"></rect>
+      <circle cx="8.5" cy="9" r="1.5"></circle>
+      <path d="m4 17 5.1-5.1a1.4 1.4 0 0 1 1.98 0l1.42 1.42 2.08-2.08a1.4 1.4 0 0 1 1.98 0L20 14.7"></path>
+    {%- when 'info' -%}
+      <circle cx="12" cy="12" r="8.5"></circle>
+      <path d="M12 11.5v5M12 7.5h.01"></path>
+    {%- else -%}
+      <path d="M12 3.5l1.65 4.2L18 9.35l-4.35 1.65L12 15.5l-1.65-4.5L6 9.35l4.35-1.65L12 3.5Z"></path>
+      <path d="M5.5 14.5l.75 1.9 1.95.75-1.95.75-.75 1.9-.75-1.9-1.95-.75 1.95-.75.75-1.9Z"></path>
+  {%- endcase -%}
+</svg>

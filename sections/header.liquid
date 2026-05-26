@@ -12,19 +12,11 @@
 <header class="zaman-header">
   <div class="zaman-header-inner">
     <button class="zaman-burger zaman-burger--desktop" type="button" onclick="openMobileMenu()" aria-label="Open menu">
-      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <line x1="4" y1="7" x2="20" y2="7"></line>
-        <line x1="4" y1="12" x2="20" y2="12"></line>
-        <line x1="4" y1="17" x2="20" y2="17"></line>
-      </svg>
+      {% render 'zaman-premium-icon', icon: 'menu', size: 22 %}
     </button>
 
     <a href="/" class="zaman-logo" aria-label="Zaman Optics home">
-      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-        <circle cx="9" cy="15" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle>
-        <circle cx="21" cy="15" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle>
-        <line x1="15" y1="12" x2="15" y2="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></line>
-      </svg>
+      {% render 'zaman-premium-icon', icon: 'glasses', size: 32 %}
       <span class="zaman-logo-name">Zaman Optics</span>
     </a>
 
@@ -42,26 +34,16 @@
         class="zaman-search-input"
         autocomplete="off">
       <button type="submit" class="zaman-search-btn" aria-label="Search">
-        <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"></circle>
-          <path d="m20 20-3.8-3.8" stroke-linecap="round"></path>
-        </svg>
+        {% render 'zaman-premium-icon', icon: 'search', size: 18 %}
       </button>
     </form>
 
     <div class="zaman-header-icons">
       <a href="/account" class="zaman-icon-btn" aria-label="Account">
-        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-        </svg>
+        {% render 'zaman-premium-icon', icon: 'account', size: 22 %}
       </a>
       <a href="/cart" class="zaman-cart-btn" aria-label="Cart">
-        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path d="M6 6h15l-1.5 9H8L6 3H3"></path>
-          <circle cx="9" cy="20" r="1.5"></circle>
-          <circle cx="18" cy="20" r="1.5"></circle>
-        </svg>
+        {% render 'zaman-premium-icon', icon: 'cart', size: 22 %}
         {% if cart.item_count > 0 %}
           <span class="zaman-cart-count">{{ cart.item_count }}</span>
         {% endif %}
@@ -88,19 +70,11 @@
 
 <header class="zaman-mobile-header">
   <button class="zaman-burger" id="zamanBurger" type="button" onclick="openMobileMenu()" aria-label="Open menu">
-    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
-      <line x1="4" y1="7" x2="20" y2="7"></line>
-      <line x1="4" y1="12" x2="20" y2="12"></line>
-      <line x1="4" y1="17" x2="20" y2="17"></line>
-    </svg>
+    {% render 'zaman-premium-icon', icon: 'menu', size: 24 %}
   </button>
   <a href="/" class="zaman-mobile-logo">Zaman Optics</a>
   <a href="/cart" class="zaman-mobile-cart" aria-label="Cart">
-    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path d="M6 6h15l-1.5 9H8L6 3H3"></path>
-      <circle cx="9" cy="20" r="1.5"></circle>
-      <circle cx="18" cy="20" r="1.5"></circle>
-    </svg>
+    {% render 'zaman-premium-icon', icon: 'cart', size: 24 %}
     {% if cart.item_count > 0 %}
       <span class="zaman-cart-count">{{ cart.item_count }}</span>
     {% endif %}
@@ -115,9 +89,7 @@
       <span>Zaman Optics</span>
     </a>
     <button class="zdrawer-close" type="button" onclick="closeMobileMenu()" aria-label="Close menu">
-      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
-        <path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"></path>
-      </svg>
+      {% render 'zaman-premium-icon', icon: 'close', size: 18 %}
     </button>
   </div>
 
