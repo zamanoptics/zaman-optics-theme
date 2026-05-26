@@ -16,12 +16,12 @@
   white-space: nowrap;
 }
 .zaman-header-navlink:hover {
-  color: #0071e3;
+  color: #0F766E;
   background: #f5f5f7;
   text-decoration: none;
 }
 .zaman-header-navlink.active {
-  color: #0071e3;
+  color: #0F766E;
   font-weight: 700;
 }
 

@@ -64,12 +64,12 @@
   transition: background 0.15s;
 }
 .custom-filters-card .facets__item label:hover {
-  background: #FFF3E0;
+  background: #F0FDFA;
 }
 .custom-filters-card .facets__checkbox {
   width: 17px;
   height: 17px;
-  accent-color: #FF8C00;
+  accent-color: #0F766E;
   cursor: pointer;
   flex-shrink: 0;
   border-radius: 4px;

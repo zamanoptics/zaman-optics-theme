@@ -1,95 +1,79 @@
-{% comment %}theme-check-disable UndefinedObject{% endcomment %}
 {{ 'footer-custom.css' | asset_url | stylesheet_tag }}
 
-<footer class="footer-custom section-{{ section.id }}-padding">
-  <!-- 4-Column Footer Layout -->
+<footer class="footer-custom">
   <div class="footer-custom__content">
-    <div class="footer-custom__container">
-      <!-- Column 1: Brand -->
-      <div class="footer-custom__column footer-custom__column--brand">
-        <h3 class="footer-custom__brand-name">Zaman Optics</h3>
-        <p class="footer-custom__tagline">Your vision, our priority.</p>
-        <p class="footer-custom__address">
-          Gujar Khan<br>
-          Punjab, Pakistan
+    <section class="footer-custom__brand-panel" aria-label="Zaman Optics store information">
+      <div>
+        <a href="{{ routes.root_url }}" class="footer-custom__brand-name">Zaman Optics</a>
+        <p class="footer-custom__tagline">
+          Minimal eyewear, prescription lenses, and in-store optical guidance from Gujar Khan.
         </p>
-        
-        <!-- Social Icons -->
-        <div class="footer-custom__socials">
-          <a href="https://facebook.com" class="footer-custom__social-link" title="Facebook" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-          </a>
-          <a href="https://instagram.com" class="footer-custom__social-link" title="Instagram" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm3.591 1.47a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm4.259 1.271a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0z"/>
-            </svg>
-          </a>
-          <a href="https://wa.me/923336551122" class="footer-custom__social-link" title="WhatsApp" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.98 1.429 9.856 9.856 0 007.064 16.885h.003a9.857 9.857 0 004.98-1.429 9.857 9.857 0 00-7.063-16.885zm8.905-10.789C15.875.09 12.234 0 9.955 0 4.95 0 1.2 3.749 1.2 8.754c0 1.995.537 3.953 1.566 5.675L.654 23.194l7.175-1.964a9.805 9.805 0 005.24 1.624h.004c5.006 0 8.755-3.749 8.755-8.754 0-2.34-.902-4.542-2.54-6.182"/>
-            </svg>
-          </a>
-        </div>
       </div>
 
-      <!-- Column 2: Shop -->
-      <div class="footer-custom__column">
-        <h3 class="footer-custom__column-title">Shop</h3>
+      <div class="footer-custom__payment-methods" aria-label="Payment methods">
+        <span class="footer-custom__payment-badge">COD</span>
+        <span class="footer-custom__payment-badge">EasyPaisa</span>
+        <span class="footer-custom__payment-badge">JazzCash</span>
+        <span class="footer-custom__payment-badge">Cards</span>
+      </div>
+    </section>
+
+    <div class="footer-custom__container">
+      <nav class="footer-custom__column" aria-label="Shop collections">
+        <h2 class="footer-custom__column-title">Shop</h2>
         <ul class="footer-custom__link-list">
           <li><a href="/collections/eyeglasses">Eyeglasses</a></li>
           <li><a href="/collections/sunglasses">Sunglasses</a></li>
-          <li><a href="/collections/blue-light">Blue Light Glasses</a></li>
-          <li><a href="/collections/kids">Kids Glasses</a></li>
+          <li><a href="/collections/blue-light-glasses">Blue Light Glasses</a></li>
+          <li><a href="/collections/kids-glasses">Kids Glasses</a></li>
+          <li><a href="/collections/contact-lenses">Contact Lenses</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-custom__column" aria-label="Discover products">
+        <h2 class="footer-custom__column-title">Discover</h2>
+        <ul class="footer-custom__link-list">
+          <li><a href="/collections/all">All Products</a></li>
           <li><a href="/collections/new-arrivals">New Arrivals</a></li>
           <li><a href="/collections/best-sellers">Best Sellers</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Help -->
-      <div class="footer-custom__column">
-        <h3 class="footer-custom__column-title">Help</h3>
-        <ul class="footer-custom__link-list">
-          <li><a href="/pages/faq">FAQ</a></li>
           <li><a href="/pages/lens-guide">Lens Guide</a></li>
           <li><a href="/pages/size-guide">Size Guide</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-custom__column" aria-label="Customer help">
+        <h2 class="footer-custom__column-title">Help</h2>
+        <ul class="footer-custom__link-list">
           <li><a href="/pages/prescription-guide">Prescription Guide</a></li>
-          <li><a href="/orders">Track Order</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="/pages/about">About</a></li>
+          <li><a href="/pages/contact">Contact</a></li>
           <li><a href="/policies/refund-policy">Return Policy</a></li>
         </ul>
-      </div>
+      </nav>
 
-      <!-- Column 4: Contact -->
-      <div class="footer-custom__column">
-        <h3 class="footer-custom__column-title">Contact</h3>
+      <section class="footer-custom__column" aria-label="Contact details">
+        <h2 class="footer-custom__column-title">Visit</h2>
         <p class="footer-custom__contact-item">
-          <strong>WhatsApp:</strong><br>
-          <a href="https://wa.me/923336551122">+92 333 6551122</a>
+          Gujar Khan, Punjab, Pakistan
         </p>
         <p class="footer-custom__contact-item">
-          <strong>Email:</strong><br>
-          <a href="mailto:hello@zamanoptics.com">hello@zamanoptics.com</a>
+          WhatsApp<br>
+          <a href="https://wa.me/923008888888">+92 300 8888888</a>
         </p>
         <p class="footer-custom__contact-item">
-          <strong>Hours:</strong><br>
-          Mon–Sat, 10am–8pm
+          Hours<br>
+          Mon-Sat, 10:00 AM-8:00 PM
         </p>
-      </div>
+      </section>
     </div>
 
-    <!-- Bottom Bar -->
     <div class="footer-custom__bottom">
-      <div class="footer-custom__bottom-content">
-        <div class="footer-custom__copyright">
-          © 2025 Zaman Optics. All rights reserved.
-        </div>
-        
-        <div class="footer-custom__payment-methods">
-          <span class="footer-custom__payment-badge">COD</span>
-          <span class="footer-custom__payment-badge">EasyPaisa</span>
-          <span class="footer-custom__payment-badge">JazzCash</span>
-        </div>
+      <p>Copyright {{ 'now' | date: '%Y' }} Zaman Optics. All rights reserved.</p>
+      <div class="footer-custom__bottom-links">
+        <a href="/policies/privacy-policy">Privacy</a>
+        <a href="/policies/terms-of-service">Terms</a>
+        <a href="/pages/contact">Support</a>
       </div>
     </div>
   </div>
@@ -97,223 +81,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.footer.name",
-  "blocks": [
-    {
-      "type": "@app"
-    },
-    {
-      "type": "link_list",
-      "name": "t:sections.footer.blocks.link_list.name",
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "default": "t:sections.footer.blocks.link_list.settings.heading.default",
-          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
-        },
-        {
-          "type": "link_list",
-          "id": "menu",
-          "default": "footer",
-          "label": "t:sections.footer.blocks.link_list.settings.menu.label"
-        }
-      ]
-    },
-    {
-      "type": "brand_information",
-      "name": "t:sections.footer.blocks.brand_information.name",
-      "settings": [
-        {
-          "type": "paragraph",
-          "content": "t:sections.footer.blocks.brand_information.settings.paragraph.content"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_social",
-          "default": true,
-          "label": "t:sections.footer.blocks.brand_information.settings.show_social.label",
-          "info": "t:sections.footer.blocks.brand_information.settings.show_social.info"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "name": "t:sections.footer.blocks.text.name",
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "default": "t:sections.footer.blocks.text.settings.heading.default",
-          "label": "t:sections.footer.blocks.text.settings.heading.label"
-        },
-        {
-          "type": "richtext",
-          "id": "subtext",
-          "default": "t:sections.footer.blocks.text.settings.subtext.default",
-          "label": "t:sections.footer.blocks.text.settings.subtext.label"
-        }
-      ]
-    },
-    {
-      "type": "image",
-      "name": "Image",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "range",
-          "id": "image_width",
-          "min": 50,
-          "max": 550,
-          "step": 5,
-          "unit": "px",
-          "label": "Width",
-          "default": 100
-        },
-        {
-          "type": "select",
-          "id": "alignment",
-          "label": "Alignment",
-          "options": [
-            {
-              "value": "",
-              "label": "Left"
-            },
-            {
-              "value": "center",
-              "label": "Center"
-            },
-            {
-              "value": "right",
-              "label": "Right"
-            }
-          ],
-          "default": "center"
-        }
-      ]
-    }
-  ],
-  "settings": [
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__1.content",
-      "info": "t:sections.footer.settings.header__1.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "newsletter_enable",
-      "default": true,
-      "label": "t:sections.footer.settings.newsletter_enable.label"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "newsletter_heading",
-      "default": "t:sections.footer.settings.newsletter_heading.default",
-      "label": "t:sections.footer.settings.newsletter_heading.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__9.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_follow_on_shop",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_follow_on_shop.label",
-      "info": "t:sections.footer.settings.enable_follow_on_shop.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_social",
-      "default": true,
-      "label": "t:sections.footer.settings.show_social.label",
-      "info": "t:sections.footer.settings.show_social.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_country_selector",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_country_selector.label",
-      "info": "t:sections.footer.settings.enable_country_selector.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_language_selector",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_language_selector.label",
-      "info": "t:sections.footer.settings.enable_language_selector.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "payment_enable",
-      "default": true,
-      "label": "t:sections.footer.settings.payment_enable.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_policy",
-      "default": true,
-      "label": "t:sections.footer.settings.show_policy.label",
-      "info": "t:sections.footer.settings.show_policy.info"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.spacing"
-    },
-    {
-      "type": "range",
-      "id": "margin_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.footer.settings.margin_top.label",
-      "default": 0
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
-  ],
-  "default": {
-    "blocks": [
-      {
-        "type": "link_list"
-      },
-      {
-        "type": "text"
-      }
-    ]
-  }
+  "name": "Footer",
+  "settings": []
 }
 {% endschema %}

@@ -51,7 +51,7 @@
 .zfc-badge {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #FF8C00 0%, #FF9E1A 100%);
+  background: linear-gradient(135deg, #0F766E 0%, #14B8A6 100%);
   color: white;
   font-size: 0.875rem;
   font-weight: 600;
@@ -59,7 +59,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -147,7 +147,7 @@
 
 .zfc-grid .grid__item:hover .card-product {
   box-shadow: 0 12px 32px rgba(26, 26, 26, 0.1);
-  border-color: #FF8C00;
+  border-color: #0F766E;
 }
 
 /* PRODUCT IMAGE WRAPPER */
@@ -192,7 +192,7 @@
 }
 
 .zfc-grid .grid__item:hover .card-product__title {
-  color: #FF8C00;
+  color: #0F766E;
 }
 
 /* PRODUCT META */
@@ -215,7 +215,7 @@
 
 /* PRODUCT PRICE - SALE */
 .zfc-grid .price-item.price-item--sale {
-  color: #FF8C00;
+  color: #0F766E;
 }
 
 .zfc-grid .price-item.price-item--regular {
@@ -240,7 +240,7 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: #FF8C00;
+  background: #0F766E;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -249,7 +249,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   z-index: 2;
-  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.3);
 }
 
 /* QUICK ADD BUTTON */
@@ -275,8 +275,8 @@
 }
 
 .zfc-grid .quick-add__submit:hover {
-  background: #FF8C00;
-  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.3);
+  background: #0F766E;
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.3);
 }
 
 /* VIEW ALL BUTTON */
@@ -308,14 +308,14 @@
 
 .collection__view-all .button:hover,
 .collection__view-all a:not(.link):hover {
-  background: #FF8C00;
-  border-color: #FF8C00;
-  box-shadow: 0 8px 24px rgba(255, 140, 0, 0.25);
+  background: #0F766E;
+  border-color: #0F766E;
+  box-shadow: 0 8px 24px rgba(15, 118, 110, 0.25);
   transform: translateY(-2px);
 }
 
 .collection__view-all a.link {
-  color: #FF8C00;
+  color: #0F766E;
   text-decoration: underline;
 }
 

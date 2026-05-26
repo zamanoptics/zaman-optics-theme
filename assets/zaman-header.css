@@ -57,8 +57,8 @@
   height: 44px;
 }
 .zaman-search:focus-within {
-  border-color: #0071e3;
-  box-shadow: 0 0 0 3px rgba(0,113,227,0.08);
+  border-color: #0F766E;
+  box-shadow: 0 0 0 3px rgba(15,118,110,0.08);
 }
 .zaman-search-input {
   flex: 1;
@@ -77,7 +77,7 @@
 .zaman-search-btn {
   height: 100%;
   padding: 0 18px;
-  background: #0071e3;
+  background: #0F766E;
   border: none;
   cursor: pointer;
   display: flex;
@@ -87,7 +87,7 @@
   transition: background 0.2s;
 }
 .zaman-search-btn:hover { 
-  background: #0077ed;
+  background: #0B5F59;
 }
 
 /* Header Icons */
@@ -125,14 +125,14 @@
   flex-shrink: 0;
 }
 .zaman-cart-btn:hover {
-  border-color: #0071e3;
+  border-color: #0F766E;
   background: #f5f5f7;
 }
 .zaman-cart-count {
   position: absolute;
   top: -7px;
   right: -7px;
-  background: #0071e3;
+  background: #0F766E;
   color: #FFFFFF;
   font-size: 10px;
   font-weight: 800;
@@ -188,24 +188,24 @@
   left: 18px;
   right: 18px;
   height: 3px;
-  background: #0071e3;
+  background: #0F766E;
   opacity: 0;
   border-radius: 3px 3px 0 0;
   transition: opacity 0.15s;
 }
 .zaman-nav-link:hover {
   background: #f5f5f7;
-  color: #0071e3 !important;
+  color: #0F766E !important;
   text-decoration: none !important;
 }
 .zaman-nav-link:hover::after,
 .zaman-nav-link.active::after { 
   opacity: 1 !important;
-  background: #0071e3 !important;
+  background: #0F766E !important;
 }
 .zaman-nav-link.active {
   background: #f5f5f7 !important;
-  color: #0071e3 !important;
+  color: #0F766E !important;
   font-weight: 700 !important;
 }
 
@@ -335,7 +335,7 @@
   }
   .zaman-drawer-link:hover {
     background: #f5f5f7;
-    color: #0071e3;
+    color: #0F766E;
     padding-left: 26px;
     text-decoration: none;
   }
@@ -374,7 +374,7 @@
 }
 
 .zaman-logo {
-  color: #0071e3;
+  color: #0F766E;
 }
 
 .zaman-logo-name {
@@ -415,7 +415,7 @@
 }
 
 .zaman-cart-count {
-  background: #0071e3;
+  background: #0F766E;
 }
 
 .zaman-nav {
@@ -523,7 +523,7 @@
 
 .zdrawer-link:hover {
   background: #f5f5f7;
-  color: #0071e3;
+  color: #0F766E;
   text-decoration: none;
 }
 

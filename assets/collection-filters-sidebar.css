@@ -79,7 +79,7 @@ details > summary::-webkit-details-marker {
 }
 .facets__item label:hover,
 .facets__list .facets__item:hover {
-  background: #FFF3E0 !important;
+  background: #F0FDFA !important;
   color: #1A1A1A !important;
 }
 
@@ -90,12 +90,12 @@ input[type="checkbox"].facets__checkbox {
   height: 17px !important;
   border: 2px solid #CCCCCC !important;
   border-radius: 5px !important;
-  accent-color: #FF8C00 !important;
+  accent-color: #0F766E !important;
   cursor: pointer !important;
   flex-shrink: 0 !important;
 }
 input[type="checkbox"]:checked {
-  accent-color: #FF8C00 !important;
+  accent-color: #0F766E !important;
 }
 
 /* Option label text */
@@ -123,8 +123,8 @@ input[type="checkbox"]:checked {
   align-items: center !important;
   gap: 6px !important;
   padding: 6px 14px !important;
-  background: #FFF3E0 !important;
-  border: 1.5px solid #FF8C00 !important;
+  background: #F0FDFA !important;
+  border: 1.5px solid #0F766E !important;
   border-radius: 50px !important;
   font-size: 12px !important;
   font-weight: 600 !important;
@@ -133,7 +133,7 @@ input[type="checkbox"]:checked {
   text-decoration: none !important;
 }
 .active-facets__button:hover {
-  background: #FF8C00 !important;
+  background: #0F766E !important;
   color: #FFFFFF !important;
 }
 .active-facets__button-remove {
@@ -158,6 +158,6 @@ input[type="checkbox"]:checked {
   color: #1A1A1A !important;
 }
 .facets__price input:focus {
-  border-color: #FF8C00 !important;
+  border-color: #0F766E !important;
   outline: none !important;
 }

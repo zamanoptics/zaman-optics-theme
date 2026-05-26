@@ -1,8 +1,8 @@
 /* Enhanced Collection Filter System - Zaman Optics */
 /* Desktop: Left Sidebar + 3-Column Grid | Mobile: Filter Drawer */
 
-:root {  --filter-blue: #FF8C00;
-  --filter-blue-hover: #E07800;
+:root {  --filter-blue: #0F766E;
+  --filter-blue-hover: #0B5F59;
   --filter-border: #E8E8E8;
   --filter-bg: #FFFFFF;
   --text-primary: #1A1A1A;
@@ -563,7 +563,7 @@
 .price-range-inputs input:focus {
   outline: none;
   border-color: var(--filter-blue);
-  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.12);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.12);
 }
 
 .price-range-separator {
@@ -698,7 +698,7 @@
 .select__select:focus {
   outline: none;
   border-color: var(--filter-blue);
-  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.12);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.12);
 }
 
 .select .svg-wrapper {

@@ -4,9 +4,9 @@
    ========================================================= */
 
 :root {
-  --zaman-orange: #0071e3;
-  --zaman-orange-dark: #0077ed;
-  --zaman-orange-soft: #f5f5f7;
+  --zaman-accent: #0F766E;
+  --zaman-accent-dark: #0B5F59;
+  --zaman-accent-soft: #f5f5f7;
   --zaman-black: #1d1d1f;
   --zaman-charcoal: #424245;
   --zaman-muted: #6e6e73;
@@ -21,11 +21,11 @@
   --zaman-radius-large: 16px;
   --zaman-shadow-sm: none;
   --zaman-shadow-md: 0 10px 28px rgba(0, 0, 0, 0.06);
-  --zaman-shadow-orange: none;
+  --zaman-shadow-accent: none;
 
-  --color-brand-primary: var(--zaman-orange);
-  --color-brand-primary-dark: var(--zaman-orange-dark);
-  --color-brand-primary-light: var(--zaman-orange-soft);
+  --color-brand-primary: var(--zaman-accent);
+  --color-brand-primary-dark: var(--zaman-accent-dark);
+  --color-brand-primary-light: var(--zaman-accent-soft);
   --color-text: var(--zaman-black);
   --color-background-primary: var(--zaman-white);
   --color-surface: var(--zaman-surface);
@@ -50,7 +50,7 @@ body {
 main,
 .content-for-layout {
   background:
-    linear-gradient(180deg, rgba(255, 250, 243, 0.44) 0, rgba(255, 255, 255, 0) 320px),
+    linear-gradient(180deg, rgba(248, 250, 252, 0.72) 0, rgba(255, 255, 255, 0) 320px),
     var(--zaman-white);
 }
 
@@ -87,13 +87,13 @@ a:not(.button):not(.zaman-nav-link):not(.zaman-faq-cta-btn):not(.zpf-btn-buy):no
 }
 
 a:not(.button):not(.zaman-nav-link):not(.zaman-faq-cta-btn):not(.zpf-btn-buy):not(.footer-custom__social-link):hover {
-  color: var(--zaman-orange);
+  color: var(--zaman-accent);
   text-decoration: underline;
   text-decoration-color: currentColor;
 }
 
 *:focus-visible {
-  outline: 2px solid var(--zaman-orange) !important;
+  outline: 2px solid var(--zaman-accent) !important;
   outline-offset: 3px;
   box-shadow: none !important;
 }
@@ -125,10 +125,10 @@ button.shopify-payment-button__button--unbranded,
 .add-to-cart-btn,
 .btn-primary,
 .zaman-faq-cta-btn {
-  background: var(--zaman-orange) !important;
-  border: 1px solid var(--zaman-orange) !important;
+  background: var(--zaman-accent) !important;
+  border: 1px solid var(--zaman-accent) !important;
   color: var(--zaman-white) !important;
-  box-shadow: var(--zaman-shadow-orange) !important;
+  box-shadow: var(--zaman-shadow-accent) !important;
 }
 
 .button--primary:hover,
@@ -141,8 +141,8 @@ button.shopify-payment-button__button--unbranded,
 .add-to-cart-btn:hover,
 .btn-primary:hover,
 .zaman-faq-cta-btn:hover {
-  background: var(--zaman-orange-dark) !important;
-  border-color: var(--zaman-orange-dark) !important;
+  background: var(--zaman-accent-dark) !important;
+  border-color: var(--zaman-accent-dark) !important;
   color: var(--zaman-white) !important;
   transform: translateY(-2px);
 }
@@ -205,8 +205,8 @@ select:focus,
 .field__input:focus,
 .select__select:focus,
 .customer .field input:focus {
-  border-color: var(--zaman-orange) !important;
-  box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.12) !important;
+  border-color: var(--zaman-accent) !important;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12) !important;
   outline: none !important;
 }
 
@@ -246,7 +246,7 @@ select:focus,
 }
 
 .rte a {
-  color: var(--zaman-orange) !important;
+  color: var(--zaman-accent) !important;
   font-weight: 700;
 }
 
@@ -286,7 +286,7 @@ select:focus,
 .product-card:hover,
 .cat-card:hover,
 .zaman-why-card:hover {
-  border-color: rgba(255, 140, 0, 0.56) !important;
+  border-color: rgba(15, 118, 110, 0.56) !important;
   box-shadow: var(--zaman-shadow-md) !important;
   transform: translateY(-4px);
 }
@@ -309,7 +309,7 @@ select:focus,
 .product__media,
 .thumbnail {
   background:
-    radial-gradient(circle at 24% 18%, rgba(255, 140, 0, 0.08), transparent 34%),
+    radial-gradient(circle at 24% 18%, rgba(15, 118, 110, 0.08), transparent 34%),
     var(--zaman-surface) !important;
 }
 
@@ -335,7 +335,7 @@ select:focus,
 .price--on-sale .price-item--regular,
 .zpf-total-num,
 .zpf-price-amount {
-  color: var(--zaman-orange) !important;
+  color: var(--zaman-accent) !important;
 }
 
 .badge,
@@ -364,21 +364,22 @@ select:focus,
 }
 
 .zaman-nav {
-  background: var(--zaman-orange) !important;
-  box-shadow: 0 8px 24px rgba(255, 140, 0, 0.22);
+  background: var(--zaman-white) !important;
+  border-bottom: 1px solid var(--zaman-border) !important;
+  box-shadow: none !important;
 }
 
 .zaman-nav-link {
-  color: var(--zaman-white) !important;
-  font-weight: 800 !important;
+  color: var(--zaman-black) !important;
+  font-weight: 650 !important;
 }
 
 .zaman-header-navlink:hover,
 .zaman-header-navlink.active,
 .zaman-icon-btn:hover,
 .zaman-cart-btn:hover {
-  background: var(--zaman-orange-soft) !important;
-  color: var(--zaman-orange) !important;
+  background: var(--zaman-accent-soft) !important;
+  color: var(--zaman-accent) !important;
 }
 
 .zaman-search,
@@ -396,9 +397,9 @@ select:focus,
 
 .hero-label,
 .zaman-section-tag {
-  color: var(--zaman-orange) !important;
-  background: var(--zaman-orange-soft) !important;
-  border: 1px solid rgba(255, 140, 0, 0.18);
+  color: var(--zaman-accent) !important;
+  background: var(--zaman-accent-soft) !important;
+  border: 1px solid rgba(15, 118, 110, 0.18);
   border-radius: 999px;
 }
 
@@ -421,10 +422,10 @@ select:focus,
 
 .hero-placeholder {
   background:
-    radial-gradient(circle at top left, rgba(255, 140, 0, 0.18), transparent 42%),
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 42%),
     var(--zaman-surface) !important;
-  border: 1.5px dashed rgba(255, 140, 0, 0.42) !important;
-  color: var(--zaman-orange) !important;
+  border: 1.5px dashed rgba(15, 118, 110, 0.42) !important;
+  color: var(--zaman-accent) !important;
 }
 
 .category-grid-section,
@@ -459,7 +460,7 @@ select:focus,
 
 .cat-card-link,
 .featured-products-link {
-  color: var(--zaman-orange) !important;
+  color: var(--zaman-accent) !important;
   font-weight: 800 !important;
 }
 
@@ -472,7 +473,7 @@ select:focus,
 
 .zaman-faq-cta {
   background: var(--zaman-surface-warm) !important;
-  border-color: rgba(255, 140, 0, 0.24) !important;
+  border-color: rgba(15, 118, 110, 0.24) !important;
   border-radius: 18px !important;
 }
 
@@ -481,7 +482,7 @@ select:focus,
 .zaman-collection-hero,
 .collection-hero {
   background:
-    linear-gradient(135deg, rgba(255, 243, 224, 0.88) 0%, rgba(255, 255, 255, 0.96) 70%),
+    linear-gradient(135deg, rgba(240, 253, 250, 0.88) 0%, rgba(255, 255, 255, 0.96) 70%),
     var(--zaman-white) !important;
   border-bottom: 1px solid var(--zaman-border) !important;
 }
@@ -525,20 +526,20 @@ select:focus,
 .facets__item label:hover,
 .custom-filters-card .facets__item label:hover,
 .zcf-option:hover {
-  background: var(--zaman-orange-soft) !important;
+  background: var(--zaman-accent-soft) !important;
   color: var(--zaman-black) !important;
 }
 
 input[type='checkbox'],
 input[type='radio'] {
-  accent-color: var(--zaman-orange);
+  accent-color: var(--zaman-accent);
 }
 
 /* Hero contrast overrides */
 .hero-wrapper .hero-label {
-  color: #ffb45a !important;
-  background: rgba(255, 140, 0, 0.13) !important;
-  border-color: rgba(255, 140, 0, 0.36) !important;
+  color: #5EEAD4 !important;
+  background: rgba(15, 118, 110, 0.13) !important;
+  border-color: rgba(15, 118, 110, 0.36) !important;
 }
 
 .hero-wrapper .hero-headline {
@@ -592,7 +593,7 @@ input[type='radio'] {
 
 .cat-card:hover .cat-card-link,
 .product-card:hover .featured-products-link {
-  color: var(--zaman-orange-dark) !important;
+  color: var(--zaman-accent-dark) !important;
 }
 
 /* Collection filter and product card polish */
@@ -697,12 +698,12 @@ input[type='radio'] {
 
 .zcoll-filter-chip {
   background: var(--zaman-white);
-  border: 1px solid rgba(255, 140, 0, 0.32);
+  border: 1px solid rgba(15, 118, 110, 0.32);
   color: var(--zaman-black) !important;
 }
 
 .zcoll-filter-chip span {
-  color: var(--zaman-orange);
+  color: var(--zaman-accent);
 }
 
 .zcoll-clear-filters {
@@ -749,7 +750,7 @@ input[type='radio'] {
 .zcard-images {
   height: clamp(260px, 21vw, 330px) !important;
   background:
-    radial-gradient(circle at 50% 16%, rgba(255, 140, 0, 0.09), transparent 34%),
+    radial-gradient(circle at 50% 16%, rgba(15, 118, 110, 0.09), transparent 34%),
     var(--zaman-surface) !important;
 }
 
@@ -911,7 +912,7 @@ input[type='radio'] {
 .zpf-coat:hover,
 .zpf-coat-sel,
 .zpf-drop-zone:hover {
-  border-color: var(--zaman-orange) !important;
+  border-color: var(--zaman-accent) !important;
   background: var(--zaman-surface-warm) !important;
 }
 
@@ -923,7 +924,7 @@ input[type='radio'] {
 
 .zpf-btn-buy {
   border-radius: var(--zaman-radius) !important;
-  background: var(--zaman-orange) !important;
+  background: var(--zaman-accent) !important;
   color: var(--zaman-white) !important;
   border: 0 !important;
   cursor: pointer;
@@ -935,28 +936,28 @@ input[type='radio'] {
 
 /* Footer */
 .footer-custom {
-  background: #141414 !important;
-  border-top: 4px solid var(--zaman-orange) !important;
+  background: var(--zaman-surface) !important;
+  border-top: 1px solid var(--zaman-border) !important;
 }
 
 .footer-custom__tagline,
 .footer-custom__address,
 .footer-custom__contact-item,
 .footer-custom__link-list a,
-.footer-custom__copyright {
-  color: rgba(255, 255, 255, 0.68) !important;
+.footer-custom__bottom {
+  color: var(--zaman-muted) !important;
 }
 
 .footer-custom__link-list a:hover,
 .footer-custom__contact-item a,
 .footer-custom__column-title {
-  color: var(--zaman-orange) !important;
+  color: var(--zaman-accent) !important;
 }
 
 .footer-custom__payment-badge {
-  background: rgba(255, 140, 0, 0.12) !important;
-  border-color: rgba(255, 140, 0, 0.38) !important;
-  color: var(--zaman-white) !important;
+  background: var(--zaman-white) !important;
+  border-color: var(--zaman-border) !important;
+  color: var(--zaman-black) !important;
   border-radius: 999px !important;
 }
 
@@ -1046,7 +1047,7 @@ main,
 .zaman-header-navlink:hover,
 .zaman-header-navlink.active {
   background: var(--zaman-surface) !important;
-  color: var(--zaman-orange) !important;
+  color: var(--zaman-accent) !important;
 }
 
 .zcoll-filter-toggle,
@@ -1112,7 +1113,7 @@ main,
 }
 
 .hero-wrapper .hero-trust-dot {
-  background: var(--zaman-orange) !important;
+  background: var(--zaman-accent) !important;
   box-shadow: none !important;
 }
 
