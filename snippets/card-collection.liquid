@@ -112,6 +112,16 @@
                 </span>
               </p>
             {%- endif -%}
+            {%- if show_product_count and card_collection != blank -%}
+              <p class="card__collection-count">
+                {{ card_collection.all_products_count }}
+                {%- if card_collection.all_products_count == 1 -%}
+                  product
+                {%- else -%}
+                  products
+                {%- endif -%}
+              </p>
+            {%- endif -%}
           </div>
         </div>
       {%- endif -%}
@@ -146,6 +156,16 @@
               <span class="icon-wrap">
                 {{- 'icon-arrow.svg' | inline_asset_content -}}
               </span>
+            </p>
+          {%- endif -%}
+          {%- if show_product_count and card_collection != blank -%}
+            <p class="card__collection-count">
+              {{ card_collection.all_products_count }}
+              {%- if card_collection.all_products_count == 1 -%}
+                product
+              {%- else -%}
+                products
+              {%- endif -%}
             </p>
           {%- endif -%}
         </div>

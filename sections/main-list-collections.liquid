@@ -1,10 +1,16 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width">
-  <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ section.settings.title }}
-  </h1>
+<div class="page-width main-list-collections-page">
+  <div class="main-list-collections-page__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <p class="main-list-collections-page__eyebrow">Shop by category</p>
+    <h1 class="title title--primary inline-richtext">
+      {{ section.settings.title }}
+    </h1>
+    <p class="main-list-collections-page__intro">
+      Explore frames, sunglasses, lens guides, and optical essentials in one clean view.
+    </p>
+  </div>
   {%- liquid
     case section.settings.sort
       when 'products_high', 'products_low'
@@ -39,7 +45,8 @@
           {% render 'card-collection',
             card_collection: collection,
             media_aspect_ratio: section.settings.image_ratio,
-            columns: 3
+            columns: 3,
+            show_product_count: true
           %}
         </li>
       {%- endfor -%}
