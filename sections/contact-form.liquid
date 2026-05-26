@@ -20,9 +20,7 @@
     <h1 class="zcont-hero-title">Get in Touch</h1>
     <p class="zcont-hero-desc">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
     <div class="zcont-hero-badges">
-      <span class="zcont-badge">📧 Email Support</span>
-      <span class="zcont-badge">💬 Live Chat</span>
-      <span class="zcont-badge">🚀 Fast Response</span>
+      <span class="zcont-badge">{% render 'zaman-premium-icon', icon: 'sparkle', size: 16 %} Fast Response</span>
     </div>
   </div>
 </div>
@@ -33,19 +31,19 @@
       <!-- LEFT: CONTACT INFO -->
       <div class="zcont-info-sidebar">
         <div class="zcont-info-card">
-          <div class="zcont-info-icon">📍</div>
+          <div class="zcont-info-icon">{% render 'zaman-premium-icon', icon: 'map', size: 26 %}</div>
           <h3 class="zcont-info-title">Location</h3>
           <p class="zcont-info-text">Gujar Khan<br>Pakistan</p>
         </div>
         
         <div class="zcont-info-card">
-          <div class="zcont-info-icon">📧</div>
+          <div class="zcont-info-icon">{% render 'zaman-premium-icon', icon: 'mail', size: 26 %}</div>
           <h3 class="zcont-info-title">Email</h3>
           <p class="zcont-info-text"><a href="mailto:info@zamanoptics.com">info@zamanoptics.com</a></p>
         </div>
         
         <div class="zcont-info-card">
-          <div class="zcont-info-icon">📱</div>
+          <div class="zcont-info-icon">{% render 'zaman-premium-icon', icon: 'phone', size: 26 %}</div>
           <h3 class="zcont-info-title">Phone</h3>
           <p class="zcont-info-text">
             <a href="tel:+923215678900">+92 321 5678 900</a>
@@ -53,9 +51,9 @@
         </div>
 
         <div class="zcont-info-card zcont-hours">
-          <div class="zcont-info-icon">🕐</div>
+          <div class="zcont-info-icon">{% render 'zaman-premium-icon', icon: 'clock', size: 26 %}</div>
           <h3 class="zcont-info-title">Hours</h3>
-          <p class="zcont-info-text">Mon–Fri: 9am–6pm<br>Sat: 10am–4pm<br>Sun: Closed</p>
+          <p class="zcont-info-text">Mon-Fri: 9am-6pm<br>Sat: 10am-4pm<br>Sun: Closed</p>
         </div>
       </div>
 
@@ -181,9 +179,7 @@
           <div class="contact__button zcont-button-container">
             <button type="submit" class="button zcont-submit-btn">
               {{ 'templates.contact.form.send' | t }}
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              {% render 'zaman-premium-icon', icon: 'sparkle', size: 16 %}
             </button>
           </div>
         {%- endform -%}

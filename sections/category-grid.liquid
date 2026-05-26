@@ -10,7 +10,7 @@
           <img src="{{ section.settings.eyeglasses_image | img_url: '400x400' }}" 
                alt="Eyeglasses">
         {% else %}
-          <div class="cat-card-placeholder">👓</div>
+          <div class="cat-card-placeholder">{% render 'zaman-premium-icon', icon: 'glasses', size: 42 %}</div>
         {% endif %}
       </div>
       <div class="cat-card-body">
@@ -26,7 +26,7 @@
           <img src="{{ section.settings.sunglasses_image | img_url: '400x400' }}" 
                alt="Sunglasses">
         {% else %}
-          <div class="cat-card-placeholder">🕶️</div>
+          <div class="cat-card-placeholder">{% render 'zaman-premium-icon', icon: 'sunglasses', size: 42 %}</div>
         {% endif %}
       </div>
       <div class="cat-card-body">
@@ -42,7 +42,7 @@
           <img src="{{ section.settings.bluelight_image | img_url: '400x400' }}" 
                alt="Blue Light Glasses">
         {% else %}
-          <div class="cat-card-placeholder">💻</div>
+          <div class="cat-card-placeholder">{% render 'zaman-premium-icon', icon: 'screen', size: 42 %}</div>
         {% endif %}
       </div>
       <div class="cat-card-body">
@@ -58,7 +58,7 @@
           <img src="{{ section.settings.kids_image | img_url: '400x400' }}" 
                alt="Kids Glasses">
         {% else %}
-          <div class="cat-card-placeholder">👦</div>
+          <div class="cat-card-placeholder">{% render 'zaman-premium-icon', icon: 'kids', size: 42 %}</div>
         {% endif %}
       </div>
       <div class="cat-card-body">
@@ -74,7 +74,7 @@
           <img src="{{ section.settings.new_image | img_url: '400x400' }}" 
                alt="New Arrivals">
         {% else %}
-          <div class="cat-card-placeholder">✨</div>
+          <div class="cat-card-placeholder">{% render 'zaman-premium-icon', icon: 'sparkle', size: 42 %}</div>
         {% endif %}
       </div>
       <div class="cat-card-body">
@@ -90,7 +90,7 @@
           <img src="{{ section.settings.bestsellers_image | img_url: '400x400' }}" 
                alt="Best Sellers">
         {% else %}
-          <div class="cat-card-placeholder">🔥</div>
+          <div class="cat-card-placeholder">{% render 'zaman-premium-icon', icon: 'star', size: 42 %}</div>
         {% endif %}
       </div>
       <div class="cat-card-body">

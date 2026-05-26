@@ -66,8 +66,16 @@
 }
 
 .cat-card-placeholder {
-  font-size: 3rem;
+  width: 76px;
+  height: 76px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #0F766E;
+  background: #FFFFFF;
+  border: 1px solid #D9F3EF;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(15, 118, 110, 0.08);
 }
 
 .cat-card-body {
@@ -154,6 +162,7 @@
   }
   
   .cat-card-placeholder {
-    font-size: 2rem;
+    width: 58px;
+    height: 58px;
   }
 }
