@@ -1,8 +1,6 @@
 {{ 'section-trust-features.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  /* Why Choose Us / Trust Features Section */
-  
   .trust-features-section {
     background-color: #F5F5F5;
     padding: 60px 2rem;
@@ -27,19 +25,27 @@
 
   .trust-feature-card {
     background-color: #FFFFFF;
-    border-radius: 10px;
+    border: 1px solid #E8E8ED;
+    border-radius: 16px;
     padding: 2.5rem 1.5rem;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: none;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .trust-feature-card__icon {
-    font-size: 2rem;
+    width: 56px;
+    height: 56px;
     margin-bottom: 1.5rem;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #0F766E;
+    background: #F0FDFA;
+    border: 1px solid #D9F3EF;
+    border-radius: 18px;
   }
 
   .trust-feature-card__title {
@@ -57,7 +63,6 @@
     line-height: 1.6;
   }
 
-  /* Tablet Responsive (2x2 grid) */
   @media screen and (max-width: 989px) and (min-width: 750px) {
     .trust-features-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -67,18 +72,8 @@
     .trust-features-section {
       padding: 50px 1.5rem;
     }
-
-    .trust-features-section__title {
-      font-size: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .trust-feature-card {
-      padding: 2rem 1.25rem;
-    }
   }
 
-  /* Mobile Responsive (1 column) */
   @media screen and (max-width: 749px) {
     .trust-features-grid {
       grid-template-columns: 1fr;
@@ -89,26 +84,14 @@
       padding: 40px 1rem;
     }
 
-    .trust-features-section__title {
-      font-size: 1.375rem;
-      margin-bottom: 2.5rem;
-    }
-
     .trust-feature-card {
       padding: 1.75rem 1.25rem;
     }
 
     .trust-feature-card__icon {
-      font-size: 1.75rem;
+      width: 50px;
+      height: 50px;
       margin-bottom: 1rem;
-    }
-
-    .trust-feature-card__title {
-      font-size: 0.9375rem;
-    }
-
-    .trust-feature-card__description {
-      font-size: 0.8125rem;
     }
   }
 {%- endstyle -%}
@@ -119,9 +102,9 @@
   <div class="trust-features-grid">
     {%- for block in section.blocks -%}
       <div class="trust-feature-card" {{ block.shopify_attributes }}>
-        {%- if block.settings.icon -%}
-          <span class="trust-feature-card__icon">{{ block.settings.icon }}</span>
-        {%- endif -%}
+        <span class="trust-feature-card__icon">
+          {% render 'zaman-premium-icon', icon: block.settings.premium_icon, size: 28 %}
+        </span>
         <h3 class="trust-feature-card__title">{{ block.settings.title }}</h3>
         <p class="trust-feature-card__description">{{ block.settings.description }}</p>
       </div>
@@ -149,10 +132,20 @@
       "limit": 4,
       "settings": [
         {
-          "type": "text",
-          "id": "icon",
-          "label": "Icon (emoji)",
-          "default": "🔬"
+          "type": "select",
+          "id": "premium_icon",
+          "label": "Icon",
+          "default": "lens",
+          "options": [
+            { "value": "lens", "label": "Prescription lens" },
+            { "value": "delivery", "label": "Delivery" },
+            { "value": "payment", "label": "Payment" },
+            { "value": "return", "label": "Returns" },
+            { "value": "glasses", "label": "Glasses" },
+            { "value": "star", "label": "Star rating" },
+            { "value": "shield", "label": "Quality shield" },
+            { "value": "ruler", "label": "Fit guide" }
+          ]
         },
         {
           "type": "text",
@@ -176,7 +169,7 @@
         {
           "type": "feature",
           "settings": {
-            "icon": "🔬",
+            "premium_icon": "lens",
             "title": "Prescription Guaranteed",
             "description": "Every pair made to your exact prescription by certified opticians"
           }
@@ -184,23 +177,23 @@
         {
           "type": "feature",
           "settings": {
-            "icon": "🚚",
+            "premium_icon": "delivery",
             "title": "Fast Delivery Across Pakistan",
-            "description": "Delivered to your door in 3–5 business days. Free above Rs 3,000"
+            "description": "Delivered to your door in 3-5 business days. Free above Rs 3,000"
           }
         },
         {
           "type": "feature",
           "settings": {
-            "icon": "💳",
+            "premium_icon": "payment",
             "title": "Easy Payment",
-            "description": "Cash on Delivery, EasyPaisa & JazzCash accepted"
+            "description": "Cash on Delivery, EasyPaisa and JazzCash accepted"
           }
         },
         {
           "type": "feature",
           "settings": {
-            "icon": "🔄",
+            "premium_icon": "return",
             "title": "Hassle-Free Returns",
             "description": "7-day return policy. Not satisfied? We'll fix it"
           }

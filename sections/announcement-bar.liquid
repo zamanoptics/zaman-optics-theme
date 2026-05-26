@@ -1,10 +1,12 @@
 ﻿<div class="announcement-bar" id="announcementBar">
   <div class="announcement-bar__content">
     <p class="announcement-bar__text">
-      🚚 Free Shipping on orders above Rs 3,000 | 💳 Cash on Delivery Available | 📞 WhatsApp: +92 XXX XXXXXXX
+      <span>{% render 'zaman-premium-icon', icon: 'delivery', size: 15 %} Free Shipping on orders above Rs 3,000</span>
+      <span>{% render 'zaman-premium-icon', icon: 'payment', size: 15 %} Cash on Delivery Available</span>
+      <span>{% render 'zaman-premium-icon', icon: 'phone', size: 15 %} WhatsApp: +92 XXX XXXXXXX</span>
     </p>
     <button class="announcement-bar__close" id="announcementClose" aria-label="Dismiss announcement">
-      ✕
+      {% render 'zaman-premium-icon', icon: 'close', size: 16 %}
     </button>
   </div>
 </div>
@@ -28,10 +30,20 @@
     padding: 0;
     font-size: 13px;
     font-weight: 500;
-    color: #1A1A1A;
+    color: #FFFFFF;
     text-align: center;
     line-height: 1.38;
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+  .announcement-bar__text span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
   }
   .announcement-bar__close {
     position: absolute;
@@ -39,7 +51,7 @@
     background: none;
     border: none;
     font-size: 20px;
-    color: #1A1A1A;
+    color: #FFFFFF;
     cursor: pointer;
     padding: 0;
     width: 20px;
@@ -61,6 +73,7 @@
     }
     .announcement-bar__text {
       font-size: 12px;
+      gap: 10px;
     }
     .announcement-bar__close {
       right: 16px;

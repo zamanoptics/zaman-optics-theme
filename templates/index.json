@@ -109,33 +109,33 @@
         "prescription": {
           "type": "feature",
           "settings": {
-            "icon": "🔬",
             "title": "Prescription Guaranteed",
-            "description": "Every pair made to your exact prescription by certified opticians"
+            "description": "Every pair made to your exact prescription by certified opticians",
+            "premium_icon": "lens"
           }
         },
         "delivery": {
           "type": "feature",
           "settings": {
-            "icon": "🚚",
             "title": "Fast Delivery Across Pakistan",
-            "description": "Delivered to your door in 3–5 business days. Free above Rs 3,000"
+            "description": "Delivered to your door in 3-5 business days. Free above Rs 3,000",
+            "premium_icon": "delivery"
           }
         },
         "payment": {
           "type": "feature",
           "settings": {
-            "icon": "💳",
             "title": "Easy Payment",
-            "description": "Cash on Delivery, EasyPaisa & JazzCash accepted"
+            "description": "Cash on Delivery, EasyPaisa & JazzCash accepted",
+            "premium_icon": "payment"
           }
         },
         "returns": {
           "type": "feature",
           "settings": {
-            "icon": "🔄",
             "title": "Hassle-Free Returns",
-            "description": "7-day return policy. Not satisfied? We'll fix it"
+            "description": "7-day return policy. Not satisfied? We'll fix it",
+            "premium_icon": "return"
           }
         }
       },

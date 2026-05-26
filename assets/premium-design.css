@@ -36,6 +36,16 @@
   --border-radius-input: var(--zaman-radius);
 }
 
+.zaman-premium-icon {
+  display: block;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
 html {
   scroll-behavior: smooth;
 }

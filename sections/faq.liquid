@@ -20,12 +20,7 @@
         <summary class="zaman-faq-question">
           <span>{{ block.settings.question }}</span>
           <span class="zaman-faq-icon">
-            <svg width="20" height="20" fill="none" 
-                 viewBox="0 0 24 24" stroke="currentColor" 
-                 stroke-width="2.5">
-              <path d="M12 5v14M5 12h14" 
-                    stroke-linecap="round"/>
-            </svg>
+            {% render 'zaman-premium-icon', icon: 'chevron-down', size: 20 %}
           </span>
         </summary>
         <div class="zaman-faq-answer">
@@ -107,7 +102,7 @@
 .zaman-faq-item[open] .zaman-faq-icon {
   background: #0F766E;
   color: #FFFFFF;
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 .zaman-faq-answer {
   padding: 0 24px 20px;
