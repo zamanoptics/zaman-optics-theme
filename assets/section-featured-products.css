@@ -21,7 +21,7 @@
 }
 
 .featured-products-link {
-  color: #FF8C00;
+  color: #0F766E;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -30,7 +30,7 @@
 }
 
 .featured-products-link:hover {
-  color: #E07800;
+  color: #0B5F59;
 }
 
 .featured-products-grid {
@@ -54,7 +54,7 @@
 
 .product-card:hover {
   box-shadow: 0 14px 36px rgba(26, 26, 26, 0.1);
-  border-color: rgba(255, 140, 0, 0.56);
+  border-color: rgba(15, 118, 110, 0.56);
   transform: translateY(-4px);
 }
 
@@ -63,7 +63,7 @@
   width: 100%;
   padding-bottom: 100%;
   background:
-    radial-gradient(circle at 24% 18%, rgba(255, 140, 0, 0.08), transparent 34%),
+    radial-gradient(circle at 24% 18%, rgba(15, 118, 110, 0.08), transparent 34%),
     #F7F7F5;
   overflow: hidden;
 }
@@ -110,8 +110,8 @@
 }
 
 .add-to-cart-btn {
-  background-color: #FF8C00;
-  border: 1px solid #FF8C00;
+  background-color: #0F766E;
+  border: 1px solid #0F766E;
   color: #FFFFFF;
   padding: 0.75rem 1rem;
   border-radius: 10px;
@@ -126,7 +126,7 @@
 }
 
 .add-to-cart-btn:hover {
-  background-color: #DF7600;
+  background-color: #0B5F59;
   color: #FFFFFF;
 }
 
