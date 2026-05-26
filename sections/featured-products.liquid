@@ -1,264 +1,116 @@
 {{ 'section-featured-products.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  /* Best Sellers / Featured Products Section */
+{%- liquid
+  assign featured_collection = section.settings.collection
+  if featured_collection == blank and section.settings.collection_handle != blank
+    assign featured_collection = collections[section.settings.collection_handle]
+  endif
+  if featured_collection == blank
+    assign featured_collection = collections.all
+  endif
+-%}
 
-  .featured-products-section {
-    background-color: #F7F7F5;
-    padding: 60px 2rem;
-  }
+<section class="featured-products-section">
+  <div class="featured-products-inner">
+    <div class="featured-products-header">
+      <div class="featured-products-heading">
+        <span class="featured-products-kicker">{{ section.settings.kicker }}</span>
+        <h2 class="featured-products-title">{{ section.settings.section_title }}</h2>
+        {%- if section.settings.subtitle != blank -%}
+          <p class="featured-products-subtitle">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+      </div>
 
-  .featured-products-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3rem;
-  }
+      {%- if section.settings.view_all_link != blank -%}
+        <a href="{{ section.settings.view_all_link }}" class="featured-products-link">
+          View collection
+          {% render 'zaman-premium-icon', icon: 'arrow-right', size: 15 %}
+        </a>
+      {%- elsif featured_collection != blank -%}
+        <a href="{{ featured_collection.url }}" class="featured-products-link">
+          View collection
+          {% render 'zaman-premium-icon', icon: 'arrow-right', size: 15 %}
+        </a>
+      {%- endif -%}
+    </div>
 
-  .featured-products-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1A1A1A;
-    margin: 0;
-    letter-spacing: -0.01em;
-  }
+    {%- if featured_collection != blank and featured_collection.products.size > 0 -%}
+      <div class="featured-products-grid">
+        {%- for product in featured_collection.products limit: section.settings.products_to_show -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          <article class="featured-product-card">
+            <a href="{{ product.url }}" class="featured-product-card__media" aria-label="{{ product.title | escape }}">
+              {%- if product.featured_image -%}
+                {{
+                  product.featured_image
+                  | image_url: width: 720
+                  | image_tag:
+                    width: 720,
+                    height: 540,
+                    class: 'featured-product-card__image',
+                    sizes: '(min-width: 1200px) 330px, (min-width: 750px) calc(50vw - 48px), calc(100vw - 40px)',
+                    alt: product.featured_image.alt | default: product.title,
+                    loading: 'lazy'
+                }}
+              {%- else -%}
+                <div class="featured-product-card__empty">
+                  {% render 'zaman-premium-icon', icon: 'image', size: 44 %}
+                </div>
+              {%- endif -%}
 
-  .featured-products-link {
-    color: #0F766E;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    white-space: nowrap;
-  }
+              {%- if product.compare_at_price > product.price -%}
+                <span class="featured-product-card__badge">Sale</span>
+              {%- elsif product.tags contains 'new' or product.tags contains 'New' -%}
+                <span class="featured-product-card__badge">New</span>
+              {%- endif -%}
+            </a>
 
-  .featured-products-link:hover {
-    color: #0B5F59;
-  }
+            <div class="featured-product-card__body">
+              <p class="featured-product-card__type">
+                {{ featured_collection.title | default: 'Zaman Optics' }}
+              </p>
 
-  .featured-products-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+              <h3 class="featured-product-card__title">
+                <a href="{{ product.url }}">{{ product.title }}</a>
+              </h3>
 
-  .product-card {
-    background-color: #FFFFFF;
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    border: 1px solid #E8E2DA;
-    box-shadow: 0 4px 14px rgba(26, 26, 26, 0.06);
-  }
+              <div class="featured-product-card__meta">
+                <div class="featured-product-card__price">
+                  {%- if product.price_varies -%}
+                    From {{ product.price_min | money }}
+                  {%- else -%}
+                    {{ product.price | money }}
+                  {%- endif -%}
+                  {%- if product.compare_at_price > product.price -%}
+                    <s>{{ product.compare_at_price | money }}</s>
+                  {%- endif -%}
+                </div>
 
-  .product-card:hover {
-    box-shadow: 0 14px 36px rgba(26, 26, 26, 0.1);
-    border-color: rgba(15, 118, 110, 0.56);
-    transform: translateY(-4px);
-  }
+                <span class="featured-product-card__stock">
+                  {%- if current_variant.available -%}
+                    In stock
+                  {%- else -%}
+                    Sold out
+                  {%- endif -%}
+                </span>
+              </div>
 
-  .product-image-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%;
-    background:
-      radial-gradient(circle at 24% 18%, rgba(15, 118, 110, 0.08), transparent 34%),
-      #F7F7F5;
-    overflow: hidden;
-  }
-
-  .product-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-
-  .product-card:hover .product-image {
-    transform: scale(1.03);
-  }
-
-  .product-info {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .product-name {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #1A1A1A;
-    margin: 0 0 0.75rem 0;
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .product-price {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1A1A1A;
-    margin: 0 0 1rem 0;
-  }
-
-  .add-to-cart-btn {
-    background-color: #0F766E;
-    border: 1px solid #0F766E;
-    color: #FFFFFF;
-    padding: 0.75rem 1rem;
-    border-radius: 10px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .add-to-cart-btn:hover {
-    background-color: #0B5F59;
-    color: #FFFFFF;
-  }
-
-  /* Tablet Responsive (2 columns) */
-  @media screen and (max-width: 989px) and (min-width: 750px) {
-    .featured-products-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .featured-products-section {
-      padding: 50px 1.5rem;
-    }
-
-    .featured-products-title {
-      font-size: 1.75rem;
-    }
-
-    .featured-products-header {
-      margin-bottom: 2.5rem;
-    }
-  }
-
-  /* Mobile Responsive (1 column) */
-  @media screen and (max-width: 749px) {
-    .featured-products-grid {
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-    }
-
-    .featured-products-section {
-      padding: 40px 1rem;
-    }
-
-    .featured-products-title {
-      font-size: 1.5rem;
-    }
-
-    .featured-products-header {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 2rem;
-      gap: 1rem;
-    }
-
-    .featured-products-link {
-      font-size: 0.9375rem;
-    }
-
-    .product-info {
-      padding: 1.25rem;
-    }
-
-    .product-name {
-      font-size: 0.8125rem;
-    }
-
-    .product-price {
-      font-size: 0.9375rem;
-    }
-
-    .add-to-cart-btn {
-      font-size: 0.8125rem;
-      padding: 0.65rem 0.875rem;
-    }
-  }
-{%- endstyle -%}
-
-<div class="featured-products-section">
-  <div class="featured-products-header">
-    <h2 class="featured-products-title">{{ section.settings.section_title }}</h2>
-    {%- if section.settings.view_all_link -%}
-      <a href="{{ section.settings.view_all_link }}" class="featured-products-link">
-        View All →
-      </a>
+              <a href="{{ product.url }}" class="featured-product-card__cta">
+                View details
+                {% render 'zaman-premium-icon', icon: 'arrow-right', size: 14 %}
+              </a>
+            </div>
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="featured-products-empty">
+        {% render 'zaman-premium-icon', icon: 'glasses', size: 42 %}
+        <p>Select a collection with products to show featured items here.</p>
+      </div>
     {%- endif -%}
   </div>
-
-  {%- assign products_collection = collections[section.settings.collection_handle] -%}
-  
-  {%- if products_collection.products.size > 0 -%}
-    <div class="featured-products-grid">
-      {%- for product in products_collection.products limit: 8 -%}
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            {%- if product.featured_image -%}
-              {{
-                product.featured_image
-                | image_url: width: 500
-                | image_tag:
-                  width: 500,
-                  height: 500,
-                  class: 'product-image',
-                  sizes: '(min-width: 1000px) 250px, (min-width: 750px) calc(50vw - 40px), 100vw',
-                  alt: product.title
-              }}
-            {%- else -%}
-              <div style="width: 100%; height: 100%; background-color: #F5F5F5;"></div>
-            {%- endif -%}
-          </div>
-
-          <div class="product-info">
-            <h3 class="product-name">{{ product.title }}</h3>
-            
-            <div class="product-price">
-              {%- if product.price_min == product.price_max -%}
-                {{ product.price | money }}
-              {%- else -%}
-                {{ product.price_min | money }} - {{ product.price_max | money }}
-              {%- endif -%}
-            </div>
-
-            <a 
-              href="{{ product.url }}" 
-              class="add-to-cart-btn"
-              title="Add {{ product.title }} to cart"
-            >
-              Add to Cart
-            </a>
-          </div>
-        </div>
-      {%- endfor -%}
-    </div>
-  {%- else -%}
-    <div style="text-align: center; padding: 2rem; color: #666666;">
-      <p>No products found in the selected collection.</p>
-    </div>
-  {%- endif -%}
-</div>
+</section>
 
 {% schema %}
 {
@@ -268,22 +120,48 @@
   "settings": [
     {
       "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Featured collection"
+    },
+    {
+      "type": "text",
       "id": "section_title",
       "label": "Section Title",
       "default": "Best Sellers"
     },
     {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "A curated selection of frames and lenses customers choose most often."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
       "type": "text",
       "id": "collection_handle",
-      "label": "Collection Handle",
-      "info": "Enter the collection handle (e.g., 'all', 'best-sellers', 'new-arrivals')",
+      "label": "Fallback collection handle",
+      "info": "Used only when no collection is selected above.",
       "default": "all"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 8,
+      "label": "Products to show"
     },
     {
       "type": "url",
       "id": "view_all_link",
-      "label": "View All Link",
-      "info": "URL to view all products in the collection",
+      "label": "View collection link",
+      "info": "Optional custom URL. Leave blank to use the selected collection URL.",
       "placeholder": "/collections/all"
     }
   ],
@@ -291,8 +169,11 @@
     {
       "name": "Featured Products",
       "settings": {
+        "kicker": "Featured collection",
         "section_title": "Best Sellers",
+        "subtitle": "A curated selection of frames and lenses customers choose most often.",
         "collection_handle": "all",
+        "products_to_show": 8,
         "view_all_link": "/collections/all?sort_by=best-selling"
       }
     }
