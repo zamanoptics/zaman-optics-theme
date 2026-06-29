@@ -408,6 +408,7 @@ select:focus,
 .zaman-nav-link {
   color: var(--zaman-black) !important;
   font-weight: 650 !important;
+  border-radius: 0 !important;
 }
 
 .zaman-header-navlink:hover,
@@ -1079,6 +1080,7 @@ main,
 
 .zaman-nav-link {
   font-weight: 600 !important;
+  border-radius: 0 !important;
 }
 
 .zaman-nav-link:hover,
@@ -1087,6 +1089,7 @@ main,
 .zaman-header-navlink.active {
   background: var(--zaman-surface) !important;
   color: var(--zaman-accent) !important;
+  border-radius: 0 !important;
 }
 
 .zcoll-filter-toggle,

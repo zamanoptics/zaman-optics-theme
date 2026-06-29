@@ -550,3 +550,10 @@
     box-shadow: none;
   }
 }
+
+/* Keep collection navigation hover states crisp, not pill-shaped. */
+.zaman-nav-link,
+.zaman-nav-link:hover,
+.zaman-nav-link.active {
+  border-radius: 0 !important;
+}
