@@ -4,6 +4,8 @@
    ========================================================= */
 
 :root {
+  --zaman-font-body: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --zaman-font-heading: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --zaman-accent: #0F766E;
   --zaman-accent-dark: #0B5F59;
   --zaman-accent-soft: #f5f5f7;
@@ -34,6 +36,12 @@
   --border-radius-card: var(--zaman-radius);
   --border-radius-button: var(--zaman-radius);
   --border-radius-input: var(--zaman-radius);
+
+  --font-body-family: var(--zaman-font-body);
+  --font-heading-family: var(--zaman-font-heading);
+  --font-body-weight: 400;
+  --font-body-weight-bold: 700;
+  --font-heading-weight: 700;
 }
 
 .zaman-premium-icon {
@@ -51,6 +59,7 @@ html {
 }
 
 body {
+  font-family: var(--zaman-font-body) !important;
   color: var(--zaman-black) !important;
   background: var(--zaman-white) !important;
   letter-spacing: 0 !important;
@@ -76,9 +85,26 @@ h6,
 .h3,
 .h4,
 .h5 {
+  font-family: var(--zaman-font-heading) !important;
   color: var(--zaman-black) !important;
   letter-spacing: 0 !important;
   line-height: 1.12;
+  font-weight: 700;
+}
+
+p,
+li,
+input,
+textarea,
+select,
+button,
+.button,
+.rte,
+.caption,
+.subtitle,
+.price,
+.badge {
+  font-family: var(--zaman-font-body) !important;
 }
 
 p,
