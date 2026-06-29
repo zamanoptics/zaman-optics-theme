@@ -918,7 +918,10 @@ input[type='radio'] {
 
 .product__title h1,
 .product__title > * {
-  font-weight: 900 !important;
+  font-size: clamp(3rem, 3vw, 4.4rem) !important;
+  font-weight: 750 !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
 }
 
 .product__description,
@@ -1239,7 +1242,7 @@ main,
   display: block !important;
   width: 100% !important;
   min-height: 0 !important;
-  aspect-ratio: 16 / 10 !important;
+  aspect-ratio: 1 / 1 !important;
   background: var(--zaman-surface) !important;
   border-radius: 18px 18px 0 0 !important;
   overflow: hidden !important;
@@ -1266,7 +1269,7 @@ main,
 .related-products .media img {
   object-fit: contain !important;
   object-position: center !important;
-  padding: 22px !important;
+  padding: 0 !important;
 }
 
 .related-products .card > .card__content {
