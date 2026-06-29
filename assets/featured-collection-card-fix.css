@@ -9,6 +9,20 @@
   padding: 0 !important;
 }
 
+.zfc-section {
+  padding-left: clamp(20px, 4vw, 56px) !important;
+  padding-right: clamp(20px, 4vw, 56px) !important;
+}
+
+.zfc-header-wrapper,
+.zfc-slider-component {
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .zfc-grid > .grid__item,
 .zfc-grid > .slider__slide {
   width: 100% !important;
@@ -30,6 +44,19 @@
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
+  border-color: #e8e8ed !important;
+  box-shadow: none !important;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease !important;
+}
+
+.zfc-grid .card-wrapper:hover,
+.zfc-grid .product-card-wrapper:hover,
+.zfc-grid .card:hover,
+.zfc-grid > .grid__item:hover .card,
+.zfc-grid > .grid__item:hover .product-card-wrapper {
+  border-color: #d2d2d7 !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06) !important;
+  transform: translateY(-2px) !important;
 }
 
 .zfc-grid .card__inner {
@@ -78,7 +105,41 @@
   overflow-wrap: anywhere !important;
 }
 
+.zfc-grid .card__heading a:hover {
+  color: #1d1d1f !important;
+  text-decoration: none !important;
+}
+
+.zfc-grid .price,
+.zfc-grid .price * {
+  text-decoration: none !important;
+}
+
+.zfc-grid .price s,
+.zfc-grid .price .price-item--regular {
+  text-decoration: none !important;
+}
+
+.zfc-grid .price--on-sale .price__sale {
+  display: block !important;
+}
+
+.zfc-grid .price--on-sale .price__regular {
+  display: none !important;
+}
+
+.zfc-grid .price__sale .price-item--sale,
+.zfc-grid .price__regular .price-item--regular {
+  color: #1d1d1f !important;
+  font-weight: 750 !important;
+}
+
 @media screen and (max-width: 749px) {
+  .zfc-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
   .zfc-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 14px !important;
