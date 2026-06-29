@@ -1,0 +1,78 @@
+/* Keep Featured Collection product cards from collapsing into narrow strips. */
+.zfc-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) !important;
+  gap: clamp(18px, 2vw, 28px) !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.zfc-grid > .grid__item,
+.zfc-grid > .slider__slide {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+.zfc-grid .card-wrapper,
+.zfc-grid .product-card-wrapper,
+.zfc-grid .card {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: 100% !important;
+}
+
+.zfc-grid .card {
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.zfc-grid .card__inner {
+  width: 100% !important;
+  min-width: 0 !important;
+  aspect-ratio: 4 / 3 !important;
+  height: auto !important;
+}
+
+.zfc-grid .card__media,
+.zfc-grid .media {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+}
+
+.zfc-grid .media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.zfc-grid .card__content {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.zfc-grid .card__heading,
+.zfc-grid .card__heading a,
+.zfc-grid .price {
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+@media screen and (max-width: 749px) {
+  .zfc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .zfc-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
