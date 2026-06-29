@@ -64,10 +64,9 @@ Line item properties do not change Shopify checkout price. Lens upgrade charging
 
 Prioritize:
 - PKR / Rs
-- COD
-- EasyPaisa
-- JazzCash
-- Credit/debit cards
+- Secure online payments
+- Supported checkout payment methods
+- Credit/debit cards where available
 - WhatsApp support
 - Pakistan shipping
 

@@ -14,7 +14,7 @@ This update moves the Zaman Optics Shopify theme closer to launch readiness.
 - Added branded About page template.
 - Improved cart payment trust messaging.
 - Reworked 404 page into a branded shopping recovery page.
-- Localized FAQ and guide content for Pakistan, PKR, COD, EasyPaisa, and JazzCash.
+- Localized FAQ and guide content for Pakistan, PKR pricing, online checkout, and delivery support.
 - Removed duplicated homepage sections from the active order.
 
 ## Notes
