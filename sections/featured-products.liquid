@@ -41,6 +41,7 @@
           <article class="featured-product-card">
             <a href="{{ product.url }}" class="featured-product-card__media" aria-label="{{ product.title | escape }}">
               {%- if product.featured_image -%}
+                {%- assign product_image_alt = product.featured_image.alt | default: product.title -%}
                 {{
                   product.featured_image
                   | image_url: width: 720
@@ -49,7 +50,7 @@
                     height: 540,
                     class: 'featured-product-card__image',
                     sizes: '(min-width: 1200px) 330px, (min-width: 750px) calc(50vw - 48px), calc(100vw - 40px)',
-                    alt: product.featured_image.alt | default: product.title,
+                    alt: product_image_alt,
                     loading: 'lazy'
                 }}
               {%- else -%}
