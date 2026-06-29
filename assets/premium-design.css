@@ -1276,3 +1276,24 @@ main,
   display: block !important;
   flex: 1 1 auto !important;
 }
+
+/* Collection grid cards */
+.zcoll-grid .zcard-images {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  background: var(--zaman-surface) !important;
+}
+
+.zcoll-grid .zcard-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  padding: 0 !important;
+}
+
+.zcoll-grid .zcard:hover .zcard-img--primary:only-child {
+  transform: scale(1.02) !important;
+}
