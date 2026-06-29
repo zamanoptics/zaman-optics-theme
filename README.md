@@ -94,8 +94,8 @@ git push origin main
 - Install and configure Shopify Search & Discovery for metafield filters
 - Confirm product metafields are populated consistently
 - Configure Pakistan shipping zones
-- Enable Cash on Delivery
-- Configure EasyPaisa/JazzCash/card payment methods
+- Enable the store's supported checkout payment methods
+- Use generic storefront copy such as "secure online payments available" unless a method is confirmed live
 - Upload real hero, category, and product photography
 - Add real WhatsApp number and live contact details
 - Test a complete live order from product page to Shopify Admin

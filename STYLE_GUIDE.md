@@ -71,9 +71,9 @@ The prescription flow should be clear and compact:
 
 Use:
 - PKR / Rs
-- Cash on Delivery
-- EasyPaisa
-- JazzCash
+- Secure online payments available
+- Available payment methods shown at checkout
+- Pakistan delivery
 - WhatsApp support
 - Delivery across Pakistan
 

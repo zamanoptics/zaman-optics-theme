@@ -14,7 +14,7 @@ Observed category structure:
 | Gender | Male glasses, female glasses, unisex products | Men, Women, Unisex, Kids filters and optional collections |
 | Lens use case | Screen protection, transition, prescription/non-prescription | Lens type and lens material selection on product page |
 | Product attributes | Frame material, frame shape, gender, size, trend | Required product metafields and Search & Discovery filters |
-| Trust content | Reviews, delivery policy, money-back promise, COD | Reviews, COD, WhatsApp help, Pakistan delivery, prescription support |
+| Trust content | Reviews, delivery policy, money-back promise, payment trust | Reviews, WhatsApp help, Pakistan delivery, prescription support, secure online checkout |
 
 Sources reviewed:
 
@@ -175,6 +175,6 @@ Prescription line item properties captured:
 4. Enable metafield filters.
 5. Upload real product/category photos.
 6. Add real WhatsApp number.
-7. Configure COD, EasyPaisa, JazzCash.
+7. Configure supported checkout payment methods and only mention exact names after they are live.
 8. Configure Pakistan shipping zones.
 9. Place one test order and confirm line item properties appear in Shopify Admin.

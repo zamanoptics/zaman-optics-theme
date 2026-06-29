@@ -100,8 +100,8 @@ Required sections:
 
 Required:
 - PKR / Rs pricing
-- Cash on Delivery visibility
-- EasyPaisa and JazzCash visibility
+- Generic payment visibility only: secure online payments available
+- Exact payment methods should appear only after they are confirmed live in Shopify
 - Credit/debit card visibility
 - WhatsApp support
 - Delivery across Pakistan
@@ -124,8 +124,8 @@ Still needs admin assignment/content confirmation for actual Shopify pages.
 - Configure Search & Discovery filters
 - Confirm product metafields
 - Configure Pakistan shipping zones
-- Enable COD
-- Configure EasyPaisa/JazzCash/card payments
+- Enable the store's supported payment methods
+- Confirm exact payment names before mentioning them in customer-facing copy
 - Upload real product and category images
 - Add real WhatsApp number
 - Test prescription order in Shopify Admin
