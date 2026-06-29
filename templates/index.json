@@ -1,280 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
       "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Glasses that fit your life.",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop eyeglasses",
-            "button_link_1": "/collections/eyeglasses",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false,
-        "hero_label": "Optical care in Gujar Khan",
-        "hero_headline": "Glasses that fit your life.",
-        "hero_subtext": "Shop everyday frames, sunglasses, screen glasses, and prescription-ready options with guidance from a local optical team.",
-        "btn_primary_text": "Shop eyeglasses",
-        "btn_primary_url": "/collections/eyeglasses",
-        "btn_secondary_text": "Explore sunglasses",
-        "btn_secondary_url": "/collections/sunglasses",
-        "trust_1": "Prescription support",
-        "trust_2": "Online payments available",
-        "trust_3": "Delivery across Pakistan"
+        "hero_label": "PAKISTAN'S TRUSTED OPTICAL STORE",
+        "hero_headline": "Find Your Perfect Pair of Glasses",
+        "hero_subtext": "Prescription eyewear, sunglasses & blue light protection — crafted for clarity and delivered across Pakistan.",
+        "btn_primary_text": "Shop Eyeglasses",
+        "btn_primary_url": "",
+        "btn_secondary_text": "View All Frames",
+        "btn_secondary_url": "",
+        "trust_1": "Free Delivery above Rs 3,000",
+        "trust_2": "Cash on Delivery",
+        "trust_3": "Prescription Guaranteed",
+        "hero_image": "shopify://shop_images/Gemini_Generated_Image_dazol9dazol9dazo.png"
       }
     },
-    "category_grid": {
+    "category_grid_PDHbRk": {
       "type": "category-grid",
-      "blocks": {
-        "eyeglasses": {
-          "type": "category",
-          "settings": {
-            "category_name": "Eyeglasses",
-            "category_subtitle": "Everyday optical frames",
-            "category_link": "/collections/eyeglasses"
-          }
-        },
-        "sunglasses": {
-          "type": "category",
-          "settings": {
-            "category_name": "Sunglasses",
-            "category_subtitle": "Sun-ready styles",
-            "category_link": "/collections/sunglasses"
-          }
-        },
-        "blue_light": {
-          "type": "category",
-          "settings": {
-            "category_name": "Blue Light Glasses",
-            "category_subtitle": "Comfort for screen time",
-            "category_link": "/collections/blue-light-glasses"
-          }
-        },
-        "kids": {
-          "type": "category",
-          "settings": {
-            "category_name": "Kids Glasses",
-            "category_subtitle": "Lightweight kids frames",
-            "category_link": "/collections/kids-glasses"
-          }
-        },
-        "new_arrivals": {
-          "type": "category",
-          "settings": {
-            "category_name": "New Arrivals",
-            "category_subtitle": "Fresh styles",
-            "category_link": "/collections/all?sort_by=created-descending"
-          }
-        },
-        "best_sellers": {
-          "type": "category",
-          "settings": {
-            "category_name": "Best Sellers",
-            "category_subtitle": "Customer favorites",
-            "category_link": "/collections/all?sort_by=best-selling"
-          }
-        }
-      },
-      "block_order": [
-        "eyeglasses",
-        "sunglasses",
-        "blue_light",
-        "kids",
-        "new_arrivals",
-        "best_sellers"
-      ],
+      "name": "Shop by Category",
       "settings": {
-        "section_title": "Shop by Category"
+        "eyeglasses_image": "shopify://shop_images/Generated_Image_April_03_2026_-_8_37PM_1.png",
+        "sunglasses_image": "shopify://shop_images/Generated_Image_April_03_2026_-_8_50PM_1.png",
+        "bluelight_image": "shopify://shop_images/Generated_Image_April_05_2026_-_7_53PM.png",
+        "kids_image": "shopify://shop_images/Generated_Image_April_07_2026_-_7_19PM_3_8c075b9d-abf5-441f-8215-4f9e744eece1.png",
+        "new_image": "shopify://shop_images/Generated_Image_April_07_2026_-_7_21PM.png",
+        "bestsellers_image": "shopify://shop_images/Generated_Image_April_03_2026_-_8_45PM.png"
       }
     },
-    "trust_features": {
-      "type": "trust-features",
-      "blocks": {
-        "prescription": {
-          "type": "feature",
-          "settings": {
-            "title": "Prescription Support",
-            "description": "Enter your details online or upload a prescription file for review before fulfillment.",
-            "premium_icon": "lens"
-          }
-        },
-        "delivery": {
-          "type": "feature",
-          "settings": {
-            "title": "Pakistan Delivery",
-            "description": "Orders are packed with care and delivered through trusted local courier partners.",
-            "premium_icon": "delivery"
-          }
-        },
-        "payment": {
-          "type": "feature",
-          "settings": {
-            "title": "Clear Checkout",
-            "description": "Available payment options are shown securely at checkout before you place the order.",
-            "premium_icon": "payment"
-          }
-        },
-        "returns": {
-          "type": "feature",
-          "settings": {
-            "title": "Helpful Aftercare",
-            "description": "If something needs attention after delivery, contact our team and we will guide the next step.",
-            "premium_icon": "return"
-          }
-        }
-      },
-      "block_order": [
-        "prescription",
-        "delivery",
-        "payment",
-        "returns"
-      ],
-      "settings": {
-        "section_title": "Why Choose Zaman Optics?"
-      }
-    },
-    "featured_products": {
-      "type": "featured-products",
-      "settings": {
-        "kicker": "Featured collection",
-        "section_title": "Best Sellers",
-        "subtitle": "Popular eyewear picks selected for everyday comfort, clean style, and easy prescription customization.",
-        "collection_handle": "all",
-        "products_to_show": 8,
-        "view_all_link": "/collections/all?sort_by=best-selling"
-      }
-    },
-    "lens_options": {
-      "type": "lens-options",
-      "blocks": {
-        "single_vision": {
-          "type": "lens",
-          "settings": {
-            "label": "Included",
-            "title": "Single Vision",
-            "text": "For distance, reading, or everyday prescription use.",
-            "link": "/pages/lens-guide"
-          }
-        },
-        "progressive": {
-          "type": "lens",
-          "settings": {
-            "label": "+ Rs 1,200",
-            "title": "Progressive",
-            "text": "A smooth lens option for near, intermediate, and distance vision.",
-            "link": "/pages/lens-guide"
-          }
-        },
-        "blue_cut": {
-          "type": "lens",
-          "settings": {
-            "label": "+ Rs 500",
-            "title": "Blue Cut",
-            "text": "Designed for long screen hours and daily digital comfort.",
-            "link": "/collections/blue-light-glasses"
-          }
-        },
-        "photochromic": {
-          "type": "lens",
-          "settings": {
-            "label": "+ Rs 1,500",
-            "title": "Photochromic",
-            "text": "Lenses that darken outdoors and stay clear indoors.",
-            "link": "/pages/lens-guide"
-          }
-        }
-      },
-      "block_order": [
-        "single_vision",
-        "progressive",
-        "blue_cut",
-        "photochromic"
-      ],
-      "settings": {
-        "kicker": "Lens Options",
-        "title": "Lens choices made simple.",
-        "subtitle": "Compare everyday lens upgrades before you customize your frame."
-      }
-    },
-    "shop_guide": {
-      "type": "shop-guide",
-      "blocks": {
-        "choose_frame": {
-          "type": "step",
-          "settings": {
-            "title": "Choose a frame",
-            "text": "Pick a shape, size, and color that suits your everyday style."
-          }
-        },
-        "pick_lenses": {
-          "type": "step",
-          "settings": {
-            "title": "Choose lens options",
-            "text": "Select the lens type and upgrades that match how you wear your glasses."
-          }
-        },
-        "add_prescription": {
-          "type": "step",
-          "settings": {
-            "title": "Add prescription details",
-            "text": "Enter SPH, CYL, Axis, and PD or upload your prescription file."
-          }
-        }
-      },
-      "block_order": [
-        "choose_frame",
-        "pick_lenses",
-        "add_prescription"
-      ],
-      "settings": {
-        "kicker": "How It Works",
-        "title": "Build your glasses in three clear steps.",
-        "subtitle": "The product page keeps frame, lens, and prescription details together so the order is easy to review."
-      }
-    },
-    "featured_collection": {
+    "featured_collection_BpQGch": {
       "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
+        "collection": "new-arrivals",
+        "products_to_show": 4,
+        "title": "New Arrivals",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -282,149 +61,56 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "padding_top": 44,
+        "swipe_on_mobile": true,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "why_choose_us": {
-      "type": "why-choose-us",
-      "settings": {
-        "tag_text": "WHY ZAMAN OPTICS",
-        "title": "Eyewear made clear.",
-        "subtitle": "From frame selection to prescription details, we keep every step simple, transparent, and easy to review.",
-        "f1_title": "Prescription Help",
-        "f1_text": "Enter your details online or upload a prescription file; our team reviews the order before fulfillment.",
-        "f2_title": "Pakistan Delivery",
-        "f2_text": "Orders are prepared carefully and delivered through trusted local courier partners.",
-        "f3_title": "Flexible Checkout",
-        "f3_text": "Use the payment option available at checkout, including supported online methods.",
-        "f4_title": "Clear Support",
-        "f4_text": "Questions about size, lenses, or prescription values? Contact us before you order.",
-        "f5_title": "Everyday Frames",
-        "f5_text": "A focused selection of frames for work, study, screens, sun, and daily wear.",
-        "f6_title": "Local Optical Care",
-        "f6_text": "Built around personal service from Gujar Khan with an online experience made for Pakistan.",
-        "stat1_num": "4",
-        "stat1_label": "Main Collections",
-        "stat2_num": "3+",
-        "stat2_label": "Lens Options",
-        "stat3_num": "PKR",
-        "stat3_label": "Local Pricing",
-        "stat4_num": "Online",
-        "stat4_label": "Order Support"
-      }
-    },
-    "reviews": {
+    "reviews_7j6fk6": {
       "type": "reviews",
       "blocks": {
-        "review_1": {
+        "review_Bf6BLp": {
           "type": "review",
           "settings": {
-            "quote": "Frame, lens, and prescription details are kept together so the order is easier to review before checkout.",
-            "name": "Prescription eyewear",
-            "meta": "Order guidance"
+            "quote": "The frame quality feels premium and the prescription was made exactly as requested. Delivery was smooth and the team confirmed details on WhatsApp.",
+            "name": "Ayesha K.",
+            "meta": "Prescription Eyeglasses"
           }
         },
-        "review_2": {
+        "review_DThXEX": {
           "type": "review",
           "settings": {
-            "quote": "Screen glasses are presented clearly for customers who spend long hours studying, working, or browsing online.",
-            "name": "Screen glasses",
-            "meta": "Everyday comfort"
+            "quote": "I ordered blue cut lenses for office work. The checkout was simple, COD was available, and the glasses are comfortable for long screen hours.",
+            "name": "Hamza R.",
+            "meta": "Blue Light Glasses"
           }
         },
-        "review_3": {
+        "review_dNY38p": {
           "type": "review",
           "settings": {
-            "quote": "Clean product pages help shoppers compare shape, size, and style before choosing the right frame.",
-            "name": "Sunglasses",
-            "meta": "Style and fit"
+            "quote": "Good sunglasses selection and the product photos made it easy to choose. The team helped me pick the right size before shipping.",
+            "name": "Sana M.",
+            "meta": "Sunglasses"
           }
         }
       },
       "block_order": [
-        "review_1",
-        "review_2",
-        "review_3"
+        "review_Bf6BLp",
+        "review_DThXEX",
+        "review_dNY38p"
       ],
+      "name": "Customer Reviews",
       "settings": {
-        "tag_text": "CUSTOMER NOTES",
-        "title": "What shoppers look for.",
-        "subtitle": "Simple ordering, clear prescription guidance, and everyday frames for work, study, sun, and screens."
-      }
-    },
-    "faq": {
-      "type": "faq",
-      "blocks": {
-        "faq1": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How do I enter my prescription?",
-            "answer": "Choose prescription lenses on the product page and enter SPH, CYL, AXIS, and PD exactly as shown on your prescription. You can also upload a prescription file."
-          }
-        },
-        "faq2": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What payment methods are available?",
-            "answer": "Available payment options are shown at checkout, including supported online payment methods enabled for your order."
-          }
-        },
-        "faq3": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How long does delivery take?",
-            "answer": "Delivery timelines are shown during checkout and may vary by city, courier availability, and lens customization needs."
-          }
-        },
-        "faq4": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Can I return my glasses?",
-            "answer": "Contact us as soon as possible if your order needs attention. Our team will review the issue and guide you on the available return, exchange, or correction options."
-          }
-        },
-        "faq5": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is PD?",
-            "answer": "PD is the distance between the centers of your pupils, measured in millimeters. It helps align prescription lenses correctly with your eyes."
-          }
-        },
-        "faq6": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do you offer progressive lenses?",
-            "answer": "Yes. Select the lens type on the product page and add your prescription details before adding the frame to cart."
-          }
-        }
-      },
-      "block_order": [
-        "faq1",
-        "faq2",
-        "faq3",
-        "faq4",
-        "faq5",
-        "faq6"
-      ],
-      "settings": {
-        "tag_text": "FAQ",
-        "title": "Questions before you order?",
-        "subtitle": "Clear answers for choosing frames, lenses, prescriptions, and delivery.",
-        "cta_text": "Need help with your prescription or frame size?",
-        "cta_button": "Contact support",
-        "cta_url": "/pages/contact"
+        "tag_text": "Customer Reviews",
+        "title": "Trusted by Local Customers",
+        "subtitle": "Real feedback from customers who ordered frames, sunglasses, and prescription lenses from Zaman Optics."
       }
     }
   },
   "order": [
     "image_banner",
-    "category_grid",
-    "lens_options",
-    "shop_guide",
-    "featured_products",
-    "why_choose_us",
-    "reviews",
-    "faq"
+    "category_grid_PDHbRk",
+    "featured_collection_BpQGch",
+    "reviews_7j6fk6"
   ]
 }
