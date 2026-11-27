@@ -1,0 +1,70 @@
+{%- assign pick_collection = section.settings.collection | default: collections.sunglasses -%}
+<section class="sh-section sh-container" id="ShadePicker">
+  <div class="sh-head">
+    <h2>{{ section.settings.heading | escape }}</h2>
+    {%- if section.settings.text != blank -%}<p>{{ section.settings.text | escape }}</p>{%- endif -%}
+  </div>
+  <ul class="sh-lens-row">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'lens' -%}
+        <li {{ block.shopify_attributes }}>
+          <a class="sh-lens" href="{{ pick_collection.url }}/{{ 'Lens: ' | append: block.settings.name | handleize }}">
+            <span class="sh-lens__swatch" style="--lens: {{ block.settings.color }}"></span>
+            <span class="sh-lens__name">{{ block.settings.name | escape }}</span>
+          </a>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+  {%- if section.settings.shape_heading != blank -%}<h3 class="sh-subhead">{{ section.settings.shape_heading | escape }}</h3>{%- endif -%}
+  <ul class="sh-shape-row">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'shape' -%}
+        {%- assign shape_tag = 'Shape: ' | append: block.settings.name -%}
+        {%- assign shape_img = block.settings.image -%}
+        {%- unless shape_img -%}
+          {%- for product in pick_collection.products limit: 50 -%}
+            {%- if product.tags contains shape_tag and product.featured_image -%}
+              {%- assign shape_img = product.featured_image -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endunless -%}
+        <li {{ block.shopify_attributes }}>
+          <a class="sh-shape" href="{{ pick_collection.url }}/{{ shape_tag | handleize }}">
+            <span class="sh-shape__img">{%- if shape_img -%}{{ shape_img | image_url: width: 480 | image_tag: widths: '240, 360, 480', sizes: '(min-width: 990px) 15vw, 30vw', loading: 'lazy', alt: '' }}{%- endif -%}</span>
+            <span class="sh-shape__name">{{ block.settings.name | escape }}</span>
+          </a>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</section>
+{% schema %}
+{
+  "name": "Shade picker",
+  "settings": [
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Pick your shade."},
+    {"type": "textarea", "id": "text", "label": "Text", "default": "Start with the lens colour you like, or the frame shape that suits you."},
+    {"type": "collection", "id": "collection", "label": "Collection to filter", "info": "Defaults to Sunglasses."},
+    {"type": "text", "id": "shape_heading", "label": "Shapes heading", "default": "Or start with a shape"}
+  ],
+  "blocks": [
+    {
+      "type": "lens", "name": "Lens colour",
+      "settings": [
+        {"type": "text", "id": "name", "label": "Lens colour name", "info": "Must match the product tag exactly, for example Dark Gray.", "default": "Dark Gray"},
+        {"type": "color", "id": "color", "label": "Swatch colour", "default": "#3a3d40"}
+      ]
+    },
+    {
+      "type": "shape", "name": "Frame shape",
+      "settings": [
+        {"type": "text", "id": "name", "label": "Shape name", "info": "Must match the product tag exactly, for example Aviator.", "default": "Aviator"},
+        {"type": "image_picker", "id": "image", "label": "Image", "info": "Optional. Defaults to the first product with this shape."}
+      ]
+    }
+  ],
+  "presets": [{"name": "Shade picker"}]
+}
+{% endschema %}

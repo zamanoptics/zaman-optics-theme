@@ -1,0 +1,26 @@
+<section class="sh-promise" aria-label="{{ section.settings.label | escape }}">
+  <ul class="sh-container sh-promise__list">
+    {%- for block in section.blocks -%}
+      <li class="sh-promise__item" {{ block.shopify_attributes }}>
+        <strong>{{ block.settings.title | escape }}</strong>
+        {%- if block.settings.text != blank -%}<span>{{ block.settings.text | escape }}</span>{%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{% schema %}
+{
+  "name": "Shade promise strip",
+  "settings": [{"type": "text", "id": "label", "label": "Accessibility label", "default": "Store promises"}],
+  "blocks": [
+    {
+      "type": "item", "name": "Item",
+      "settings": [
+        {"type": "text", "id": "title", "label": "Title", "default": "Delivery across Pakistan"},
+        {"type": "text", "id": "text", "label": "Text"}
+      ]
+    }
+  ],
+  "presets": [{"name": "Shade promise strip"}]
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+{% doc %}
+  Product card used by the Shade sections.
+  @param {product} card_product - Product to show.
+{% enddoc %}
+{%- liquid
+  assign lens_label = ''
+  for product_tag in card_product.tags
+    if product_tag contains 'Lens: '
+      assign lens_label = product_tag | remove_first: 'Lens: ' | append: ' lens'
+      break
+    endif
+  endfor
+  assign short_title = card_product.title | split: ' – ' | first
+  assign meta_label = lens_label | default: card_product.type
+-%}
+{%- if card_product != blank -%}
+<article class="sh-card">
+  <a class="sh-card__media" href="{{ card_product.url }}" aria-label="{{ card_product.title | escape }}">
+    {%- if card_product.featured_image -%}
+      {{ card_product.featured_image | image_url: width: 800 | image_tag: class: 'sh-card__img', widths: '320, 480, 640, 800', sizes: '(min-width: 990px) 22vw, 46vw', loading: 'lazy', alt: card_product.featured_image.alt | default: short_title }}
+      {%- if card_product.images.size > 1 -%}
+        {{ card_product.images[1] | image_url: width: 800 | image_tag: class: 'sh-card__img sh-card__img--alt', widths: '320, 480, 640, 800', sizes: '(min-width: 990px) 22vw, 46vw', loading: 'lazy', alt: '' }}
+      {%- endif -%}
+    {%- endif -%}
+    {%- unless card_product.available -%}<span class="sh-card__badge">Sold out</span>{%- endunless -%}
+  </a>
+  <div class="sh-card__body">
+    {%- if meta_label != blank -%}<p class="sh-card__meta">{{ meta_label | escape }}</p>{%- endif -%}
+    <h3 class="sh-card__title"><a href="{{ card_product.url }}">{{ short_title | escape }}</a></h3>
+    <p class="sh-card__price">{{ card_product.price | money }}</p>
+  </div>
+</article>
+{%- endif -%}
