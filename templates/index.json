@@ -1,283 +1,282 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "shade-hero",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false,
-        "hero_label": "Zaman Optics / Gujar Khan",
-        "hero_headline": "Eyewear for every day.",
-        "hero_subtext": "Find your next pair of eyeglasses or sunglasses, with personal guidance on fit and prescription lenses.",
-        "btn_primary_text": "Shop eyeglasses",
-        "btn_primary_url": "/collections/eyeglasses",
-        "btn_secondary_text": "Shop sunglasses",
-        "btn_secondary_url": "/collections/sunglasses",
-        "trust_1": "Prescription support",
-        "trust_2": "Online payments available",
-        "trust_3": "Delivery across Pakistan"
+        "heading": "Find your shade.",
+        "text": "Sunglasses in every lens colour and frame shape, plus prescription frames and clip-ons from our Gujar Khan shop.",
+        "primary_label": "Shop sunglasses",
+        "primary_url": "/collections/sunglasses",
+        "secondary_label": "Pick by lens colour",
+        "collection": "sunglasses"
       }
     },
-    "category_grid": {
-      "type": "category-grid",
+    "promise": {
+      "type": "shade-promise",
+      "blocks": {
+        "a": {
+          "type": "item",
+          "settings": {
+            "title": "Delivery across Pakistan",
+            "text": "Packed carefully, sent by trusted couriers"
+          }
+        },
+        "b": {
+          "type": "item",
+          "settings": {
+            "title": "Pay online at checkout",
+            "text": "Supported payment options shown before you order"
+          }
+        },
+        "c": {
+          "type": "item",
+          "settings": {
+            "title": "Prescription ready",
+            "text": "Add lenses to any eyeglass or clip-on frame"
+          }
+        },
+        "d": {
+          "type": "item",
+          "settings": {
+            "title": "Local support",
+            "text": "Real people at our Gujar Khan shop"
+          }
+        }
+      },
+      "block_order": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
       "settings": {
-        "section_title": "Shop by Category"
+        "label": "Store promises"
       }
     },
-    "trust_features": {
-      "type": "trust-features",
+    "picker": {
+      "type": "shade-picker",
       "blocks": {
-        "prescription": {
-          "type": "feature",
+        "l1": {
+          "type": "lens",
           "settings": {
-            "title": "Prescription Support",
-            "description": "Enter your details online or upload a prescription file for review before fulfillment.",
-            "premium_icon": "lens"
+            "name": "Dark Gray",
+            "color": "#3a3d40"
           }
         },
-        "delivery": {
-          "type": "feature",
+        "l2": {
+          "type": "lens",
           "settings": {
-            "title": "Pakistan Delivery",
-            "description": "Orders are packed with care and delivered through trusted local courier partners.",
-            "premium_icon": "delivery"
+            "name": "Brown",
+            "color": "#7a4e2d"
           }
         },
-        "payment": {
-          "type": "feature",
+        "l3": {
+          "type": "lens",
           "settings": {
-            "title": "Clear Checkout",
-            "description": "Available payment options are shown securely at checkout before you place the order.",
-            "premium_icon": "payment"
+            "name": "Dark Green",
+            "color": "#2f4a3a"
           }
         },
-        "returns": {
-          "type": "feature",
+        "l4": {
+          "type": "lens",
           "settings": {
-            "title": "Helpful Aftercare",
-            "description": "If something needs attention after delivery, contact our team and we will guide the next step.",
-            "premium_icon": "return"
+            "name": "Blue Mirror",
+            "color": "#3f78b5"
+          }
+        },
+        "l5": {
+          "type": "lens",
+          "settings": {
+            "name": "Gray",
+            "color": "#8a8d90"
+          }
+        },
+        "l6": {
+          "type": "lens",
+          "settings": {
+            "name": "Brown Gradient",
+            "color": "#a0714b"
+          }
+        },
+        "l7": {
+          "type": "lens",
+          "settings": {
+            "name": "Purple-Gray Gradient",
+            "color": "#7d6f8e"
+          }
+        },
+        "l8": {
+          "type": "lens",
+          "settings": {
+            "name": "Yellow",
+            "color": "#e0b92f"
+          }
+        },
+        "s1": {
+          "type": "shape",
+          "settings": {
+            "name": "Aviator"
+          }
+        },
+        "s2": {
+          "type": "shape",
+          "settings": {
+            "name": "Wayfarer"
+          }
+        },
+        "s3": {
+          "type": "shape",
+          "settings": {
+            "name": "Round"
+          }
+        },
+        "s4": {
+          "type": "shape",
+          "settings": {
+            "name": "Square"
+          }
+        },
+        "s5": {
+          "type": "shape",
+          "settings": {
+            "name": "Rectangle"
+          }
+        },
+        "s6": {
+          "type": "shape",
+          "settings": {
+            "name": "Geometric"
           }
         }
       },
       "block_order": [
-        "prescription",
-        "delivery",
-        "payment",
-        "returns"
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6",
+        "l7",
+        "l8",
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6"
       ],
       "settings": {
-        "section_title": "Why Choose Zaman Optics?"
-      },
-      "disabled": true
-    },
-    "featured_products": {
-      "type": "featured-products",
-      "settings": {
-        "kicker": "A closer look",
-        "section_title": "Frames to make your own",
-        "subtitle": "Explore the shapes and details. Choose your lenses on the product page.",
-        "collection_handle": "eyeglasses",
-        "products_to_show": 4,
-        "view_all_link": "/collections/eyeglasses"
+        "heading": "Pick your shade.",
+        "text": "Start with the lens colour you like, or the frame shape that suits you.",
+        "collection": "sunglasses",
+        "shape_heading": "Or start with a shape"
       }
     },
-    "lens_options": {
-      "type": "lens-options",
+    "sun": {
+      "type": "shade-products",
+      "settings": {
+        "heading": "Sunglasses for every day",
+        "text": "Fresh styles in dark, mirrored and gradient lenses.",
+        "collection": "sunglasses",
+        "limit": 8,
+        "link_label": "Shop all sunglasses"
+      }
+    },
+    "cats": {
+      "type": "shade-categories",
       "blocks": {
-        "single_vision": {
-          "type": "lens",
+        "c1": {
+          "type": "category",
           "settings": {
-            "label": "Included",
-            "title": "Single Vision",
-            "text": "For distance, reading, or everyday prescription use.",
-            "link": "/pages/lens-guide"
+            "collection": "sunglasses",
+            "caption": "Every lens colour"
           }
         },
-        "progressive": {
-          "type": "lens",
+        "c2": {
+          "type": "category",
           "settings": {
-            "label": "Price confirmed after review",
-            "title": "Progressive",
-            "text": "A smooth lens option for near, intermediate, and distance vision.",
-            "link": "/pages/lens-guide"
+            "collection": "eyeglasses",
+            "caption": "Prescription ready"
           }
         },
-        "blue_cut": {
-          "type": "lens",
+        "c3": {
+          "type": "category",
           "settings": {
-            "label": "Price confirmed after review",
-            "title": "Blue Cut",
-            "text": "Designed for long screen hours and daily digital comfort.",
-            "link": "/collections/blue-light-glasses"
+            "collection": "clip-on-glasses",
+            "caption": "Frame plus sun lens"
           }
         },
-        "photochromic": {
-          "type": "lens",
+        "c4": {
+          "type": "category",
           "settings": {
-            "label": "Price confirmed after review",
-            "title": "Photochromic",
-            "text": "Lenses that darken outdoors and stay clear indoors.",
-            "link": "/pages/lens-guide"
+            "collection": "kids-glasses",
+            "caption": "Sized for children"
+          }
+        },
+        "c5": {
+          "type": "category",
+          "settings": {
+            "collection": "contact-lenses",
+            "caption": "Power, toric and colour"
           }
         }
       },
       "block_order": [
-        "single_vision",
-        "progressive",
-        "blue_cut",
-        "photochromic"
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
       ],
       "settings": {
-        "kicker": "Lens Options",
-        "title": "Lens choices made simple.",
-        "subtitle": "Compare everyday lens upgrades before you customize your frame."
-      },
-      "disabled": true
+        "heading": "Shop the range"
+      }
     },
-    "shop_guide": {
-      "type": "shop-guide",
-      "blocks": {
-        "choose_frame": {
-          "type": "step",
-          "settings": {
-            "title": "Choose a frame",
-            "text": "Pick a shape, size, and color that suits your everyday style."
-          }
-        },
-        "pick_lenses": {
-          "type": "step",
-          "settings": {
-            "title": "Choose lens options",
-            "text": "Select the lens type and upgrades that match how you wear your glasses."
-          }
-        },
-        "add_prescription": {
-          "type": "step",
-          "settings": {
-            "title": "Add prescription details",
-            "text": "Enter SPH, CYL, Axis, and PD or upload your prescription file."
-          }
-        }
-      },
-      "block_order": [
-        "choose_frame",
-        "pick_lenses",
-        "add_prescription"
-      ],
+    "clip": {
+      "type": "shade-products",
       "settings": {
-        "kicker": "How It Works",
-        "title": "Build your glasses in three clear steps.",
-        "subtitle": "The product page keeps frame, lens, and prescription details together so the order is easy to review."
-      },
-      "disabled": true
+        "heading": "Two looks, one frame.",
+        "text": "Clip-on glasses: your prescription frame with a sun lens that snaps on when you step outside.",
+        "collection": "clip-on-glasses",
+        "limit": 4,
+        "link_label": "Shop clip-ons"
+      }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "eye": {
+      "type": "shade-products",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
-      },
-      "disabled": true
+        "heading": "Eyeglasses",
+        "text": "Prescription-ready frames. Choose your lenses on the product page.",
+        "collection": "eyeglasses",
+        "limit": 4,
+        "link_label": "Shop eyeglasses"
+      }
     },
-    "why_choose_us": {
-      "type": "why-choose-us",
+    "guide": {
+      "type": "eyewear-guidance",
       "settings": {
-        "show_stats": false,
-        "tag_text": "WHY ZAMAN OPTICS",
-        "title": "Eyewear made clear.",
-        "subtitle": "From frame selection to prescription details, we keep every step simple, transparent, and easy to review.",
-        "f1_title": "Prescription Help",
-        "f1_text": "Enter your details online or upload a prescription file; our team reviews the order before fulfillment.",
-        "f2_title": "Pakistan Delivery",
-        "f2_text": "Orders are prepared carefully and delivered through trusted local courier partners.",
-        "f3_title": "Flexible Checkout",
-        "f3_text": "Use the payment option available at checkout, including supported online methods.",
-        "f4_title": "Clear Support",
-        "f4_text": "Questions about size, lenses, or prescription values? Contact us before you order.",
-        "f5_title": "Everyday Frames",
-        "f5_text": "A focused selection of frames for work, study, screens, sun, and daily wear.",
-        "f6_title": "Local Optical Care",
-        "f6_text": "Built around personal service from Gujar Khan with an online experience made for Pakistan.",
-        "stat1_num": "4",
-        "stat1_label": "Main Collections",
-        "stat2_num": "3+",
-        "stat2_label": "Lens Options",
-        "stat3_num": "PKR",
-        "stat3_label": "Local Pricing",
-        "stat4_num": "Online",
-        "stat4_label": "Order Support"
-      },
-      "disabled": true
+        "heading": "Your glasses, made personal."
+      }
     },
-    "reviews": {
-      "type": "reviews",
-      "blocks": {
-        "review_1": {
-          "type": "review",
-          "settings": {
-            "quote": "Frame, lens, and prescription details are kept together so the order is easier to review before checkout.",
-            "name": "Prescription eyewear",
-            "meta": "Order guidance"
-          }
-        },
-        "review_2": {
-          "type": "review",
-          "settings": {
-            "quote": "Screen glasses are presented clearly for customers who spend long hours studying, working, or browsing online.",
-            "name": "Screen glasses",
-            "meta": "Everyday comfort"
-          }
-        },
-        "review_3": {
-          "type": "review",
-          "settings": {
-            "quote": "Clean product pages help shoppers compare shape, size, and style before choosing the right frame.",
-            "name": "Sunglasses",
-            "meta": "Style and fit"
-          }
-        }
-      },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3"
-      ],
+    "kids": {
+      "type": "shade-products",
       "settings": {
-        "show_verified_reviews": false,
-        "tag_text": "CUSTOMER NOTES",
-        "title": "What shoppers look for.",
-        "subtitle": "Simple ordering, clear prescription guidance, and everyday frames for work, study, sun, and screens."
-      },
-      "disabled": true
+        "heading": "Kids glasses",
+        "text": "Frames sized and styled for children.",
+        "collection": "kids-glasses",
+        "limit": 4,
+        "link_label": "Shop kids glasses"
+      }
+    },
+    "contacts": {
+      "type": "shade-products",
+      "settings": {
+        "heading": "Contact lenses",
+        "text": "Power, toric and colour lenses.",
+        "collection": "contact-lenses",
+        "limit": 4,
+        "link_label": "Shop contact lenses"
+      }
     },
     "faq": {
       "type": "faq",
@@ -341,99 +340,19 @@
         "cta_button": "Contact support",
         "cta_url": "/pages/contact"
       }
-    },
-    "eyewear_guidance": {
-      "type": "eyewear-guidance",
-      "settings": {
-        "heading": "Your glasses, made personal."
-      }
-    },
-    "sunglasses_edit": {
-      "type": "featured-products",
-      "settings": {
-        "kicker": "For brighter days",
-        "section_title": "Find your sunny-day pair",
-        "subtitle": "From classic silhouettes to a bolder look. Explore our sunglasses collection.",
-        "collection_handle": "sunglasses",
-        "products_to_show": 4,
-        "view_all_link": "/collections/sunglasses"
-      }
-    },
-    "contact_lenses_edit": {
-      "type": "featured-products",
-      "settings": {
-        "kicker": "Contact lenses",
-        "section_title": "Contact Lenses",
-        "subtitle": "Compare the brand, colour, pack size and replacement schedule before choosing your lenses.",
-        "collection_handle": "contact-lenses",
-        "products_to_show": 4,
-        "view_all_link": "/collections/contact-lenses",
-        "show_empty": true,
-        "empty_text": "Our online contact lens selection is coming soon. Ask our team about power, toric and fashion lenses, available shades and pack sizes."
-      }
-    },
-    "kids_edit": {
-      "type": "featured-products",
-      "settings": {
-        "kicker": "Explore the collection",
-        "section_title": "Kids Glasses",
-        "subtitle": "Frames for their everyday adventures.",
-        "collection_handle": "kids-glasses",
-        "products_to_show": 4,
-        "view_all_link": "/collections/kids-glasses"
-      }
-    },
-    "blue_screen_edit": {
-      "type": "featured-products",
-      "settings": {
-        "kicker": "Explore the collection",
-        "section_title": "Blue Screen Glasses",
-        "subtitle": "Explore our frames and ask about blue-cut lens options.",
-        "collection_handle": "blue-light-glasses",
-        "products_to_show": 4,
-        "view_all_link": "/collections/blue-light-glasses"
-      }
-    },
-    "new_arrivals_edit": {
-      "type": "featured-products",
-      "settings": {
-        "kicker": "Explore the collection",
-        "section_title": "New Arrivals",
-        "subtitle": "Discover the latest additions to our collection.",
-        "collection_handle": "new-arrivals",
-        "products_to_show": 4,
-        "view_all_link": "/collections/new-arrivals"
-      }
-    },
-    "best_sellers_edit": {
-      "type": "featured-products",
-      "settings": {
-        "kicker": "Explore the collection",
-        "section_title": "Best Sellers",
-        "subtitle": "Explore the frames in our best sellers collection.",
-        "collection_handle": "best-sellers",
-        "products_to_show": 4,
-        "view_all_link": "/collections/best-sellers"
-      }
     }
   },
   "order": [
-    "image_banner",
-    "category_grid",
-    "featured_products",
-    "eyewear_guidance",
-    "sunglasses_edit",
-    "kids_edit",
-    "blue_screen_edit",
-    "contact_lenses_edit",
-    "new_arrivals_edit",
-    "best_sellers_edit",
-    "faq",
-    "trust_features",
-    "lens_options",
-    "shop_guide",
-    "featured_collection",
-    "why_choose_us",
-    "reviews"
+    "hero",
+    "promise",
+    "picker",
+    "sun",
+    "cats",
+    "clip",
+    "eye",
+    "guide",
+    "kids",
+    "contacts",
+    "faq"
   ]
 }

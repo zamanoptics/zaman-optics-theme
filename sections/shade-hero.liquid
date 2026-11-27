@@ -1,0 +1,41 @@
+{%- liquid
+  assign hero_collection = section.settings.collection
+  assign tile_count = 0
+-%}
+<section class="sh-hero" aria-labelledby="ShHeroTitle-{{ section.id }}">
+  <div class="sh-container sh-hero__inner">
+    <div class="sh-hero__copy">
+      <h1 id="ShHeroTitle-{{ section.id }}">{{ section.settings.heading | escape }}</h1>
+      {%- if section.settings.text != blank -%}<p class="sh-hero__text">{{ section.settings.text | escape }}</p>{%- endif -%}
+      <div class="sh-actions">
+        {%- if section.settings.primary_label != blank -%}<a class="sh-button" href="{{ section.settings.primary_url | default: routes.all_products_collection_url }}">{{ section.settings.primary_label | escape }}</a>{%- endif -%}
+        {%- if section.settings.secondary_label != blank -%}<a class="sh-button sh-button--ghost" href="{{ section.settings.secondary_url | default: '#ShadePicker' }}">{{ section.settings.secondary_label | escape }}</a>{%- endif -%}
+      </div>
+    </div>
+    <div class="sh-hero__tiles">
+      {%- for product in hero_collection.products limit: 6 -%}
+        {%- if product.featured_image and tile_count < 3 -%}
+          {%- assign tile_count = tile_count | plus: 1 -%}
+          <a class="sh-hero__tile sh-hero__tile--{{ tile_count }}" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+            {{ product.featured_image | image_url: width: 700 | image_tag: widths: '320, 480, 700', sizes: '(min-width: 990px) 20vw, 30vw', loading: 'eager', alt: product.featured_image.alt | default: product.title }}
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Shade hero",
+  "settings": [
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Find your shade."},
+    {"type": "textarea", "id": "text", "label": "Text", "default": "Sunglasses in every lens colour and frame shape, plus prescription frames and clip-ons from our Gujar Khan shop."},
+    {"type": "text", "id": "primary_label", "label": "Primary button label", "default": "Shop sunglasses"},
+    {"type": "url", "id": "primary_url", "label": "Primary button link"},
+    {"type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Pick by lens colour"},
+    {"type": "url", "id": "secondary_url", "label": "Secondary button link", "info": "Leave empty to scroll to the shade picker."},
+    {"type": "collection", "id": "collection", "label": "Collection for the three photos"}
+  ],
+  "presets": [{"name": "Shade hero"}]
+}
+{% endschema %}
