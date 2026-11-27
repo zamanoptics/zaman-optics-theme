@@ -21,7 +21,7 @@
     {%- for block in section.blocks -%}
       {%- if block.type == 'shape' -%}
         {%- assign shape_tag = 'Shape: ' | append: block.settings.name -%}
-        {%- assign shape_img = block.settings.image -%}
+        {%- assign shape_img = block.settings.image | default: block.settings.product.featured_image -%}
         {%- unless shape_img -%}
           {%- for product in pick_collection.products limit: 50 -%}
             {%- if product.tags contains shape_tag and product.featured_image -%}
@@ -61,7 +61,8 @@
       "type": "shape", "name": "Frame shape",
       "settings": [
         {"type": "text", "id": "name", "label": "Shape name", "info": "Must match the product tag exactly, for example Aviator.", "default": "Aviator"},
-        {"type": "image_picker", "id": "image", "label": "Image", "info": "Optional. Defaults to the first product with this shape."}
+        {"type": "product", "id": "product", "label": "Product photo", "info": "Optional. Its main photo is used for this tile."},
+        {"type": "image_picker", "id": "image", "label": "Image", "info": "Optional. Overrides the product photo."}
       ]
     }
   ],
